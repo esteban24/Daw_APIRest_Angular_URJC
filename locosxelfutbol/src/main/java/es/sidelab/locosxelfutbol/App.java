@@ -3,6 +3,7 @@ package es.sidelab.locosxelfutbol;
 /**
  *  JORGE SIMÓN MARTÍNEZ 	GIS + MAT
  *  JORGE ALCAIDE GARCÍA    GIS 
+ *  Oscar Sánchez Sánchez
  **/
 
 
