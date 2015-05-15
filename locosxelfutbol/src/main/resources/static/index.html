@@ -13,10 +13,17 @@
 	<div id="logo">
 		<h1>Locos x el futbol</h1>
 	</div>
+	<div>
+		<form action="#/adminLogin">
+			<label>Nombre Usuario:</label><input type="text" name="adminName"/>
+			<label>Contraseña</label><input type="password" name="password"/>
+			<input type="submit" name="send" value=Identificarse>
+		</form>
+	</div>
 	<div id="mainNavbar">
 		<ul>
 			<li>
-				<a href="#">Home</a>
+				<a href="#/home">Home</a>
 			</li>
 			<li>
 				<a href="#">Pistas</a>
@@ -32,7 +39,7 @@
 			</li>
 		</ul>
 	</div>
-	<div ng-view id="mainBody"></div>
+	<div ng-view></div>
 
 	<script src="./app/app.js"></script>
 	<script src="./app/blogmanager.js"></script>
