@@ -13,12 +13,17 @@ public class Player {
 	private String lastName;
 	private String position;
 	private int age;
-	private String team;
+	private Team team;
 
-	public Player() {
+	public Player(){
+		this.name="";
+		this.lastName="";
+		this.position="";
+		this.age=0;
+		this.team= new Team();
 	}
 
-	public Player(String name, String lastName, String position, int age, String team) {
+	public Player(String name, String lastName, String position, int age, Team team) {
 		this.name = name;
 		this.lastName = lastName;
 		this.position = position;
@@ -66,11 +71,11 @@ public class Player {
 		this.age = age;
 	}
 
-	public String getTeam() {
+	public Team getTeam() {
 		return team;
 	}
 
-	public void setTeam(String team) {
+	public void setTeam(Team team) {
 		this.team = team;
 	}
 	
