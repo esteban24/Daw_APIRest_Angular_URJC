@@ -42,7 +42,7 @@ public class Team {
 		this.gf=gf;
 	}	
 	
-	public void calculatePoints(int win, int draw, int defeat){
+	public void refreshPoints(int win, int draw, int defeat){
 		int pointsnew= (win*3)+draw;
 		this.setPoints(pointsnew);
 	}
