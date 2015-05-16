@@ -1,6 +1,6 @@
 angular.module("app").factory("homeController", homeController);
 
-homeController.java.$inject = [ "$resource", "$timeout" ];
+homeController.$inject = [ "$resource", "$timeout" ];
 
 function homeController($resource, $timeout) {
 

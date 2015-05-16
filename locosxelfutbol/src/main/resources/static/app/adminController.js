@@ -1,6 +1,6 @@
 angular.module("app").factory("adminController", adminController);
 
-adminController.java.$inject = [ "$resource", "$timeout" ];
+adminController.$inject = [ "$resource", "$timeout" ];
 
 function adminController($resource, $timeout) {
 
