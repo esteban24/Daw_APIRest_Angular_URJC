@@ -11,19 +11,19 @@ public class Player {
 	private long id;	
 	private String name;
 	private String lastName;
-	private String position;
+	private Positions position;
 	private int age;
-	private Team team;
+	private String team;
 
 	public Player(){
 		this.name="";
 		this.lastName="";
-		this.position="";
+		this.position = Positions.Jugador;
 		this.age=0;
-		this.team= new Team();
+		this.team= "";
 	}
 
-	public Player(String name, String lastName, String position, int age, Team team) {
+	public Player(String name, String lastName, Positions position, int age, String team) {
 		this.name = name;
 		this.lastName = lastName;
 		this.position = position;
@@ -55,11 +55,11 @@ public class Player {
 		this.lastName = lastName;
 	}
 
-	public String getPosition() {
+	public Positions getPosition() {
 		return position;
 	}
 
-	public void setPosition(String position) {
+	public void setPosition(Positions position) {
 		this.position = position;
 	}
 
@@ -71,11 +71,11 @@ public class Player {
 		this.age = age;
 	}
 
-	public Team getTeam() {
+	public String getTeam() {
 		return team;
 	}
 
-	public void setTeam(Team team) {
+	public void setTeam(String team) {
 		this.team = team;
 	}
 	

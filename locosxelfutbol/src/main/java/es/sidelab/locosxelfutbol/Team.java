@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import es.sidelab.locosxelfutbol.Player;
 
 @Entity
 public class Team {
@@ -12,7 +13,7 @@ public class Team {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private long id;	
 	private String name;
-	private ArrayList<Player> players;
+	private String players;
 	private int win;
 	private int draw;
 	private int defeat;
@@ -22,7 +23,7 @@ public class Team {
 
 	public Team() {
 		this.name="";
-		this.players= new ArrayList<Player>();
+		this.players= "";
 		this.win=0;
 		this.draw=0;
 		this.defeat=0;
@@ -31,7 +32,7 @@ public class Team {
 		this.gf=0;
 	}
 
-	public Team(String name, ArrayList<Player> players, int win, int draw, int defeat, int points, int gc, int gf) {
+	public Team(String name, String players, int win, int draw, int defeat, int points, int gc, int gf) {
 		this.name = name;
 		this.players= players;
 		this.win=win;
@@ -62,11 +63,11 @@ public class Team {
 		this.name = name;
 	}
 
-	public ArrayList<Player> getPlayers() {
+	public String getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(ArrayList<Player> players) {
+	public void setPlayers(String players) {
 		this.players = players;
 	}
 
