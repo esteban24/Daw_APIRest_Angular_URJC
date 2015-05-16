@@ -1,1 +1,1 @@
-angular.module("app", [ "ngResource", "ngRoute", "lumx" ]);
+angular.module("app", [ "ngResource", "ngRoute"]);

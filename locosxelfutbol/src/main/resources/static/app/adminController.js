@@ -1,8 +1,8 @@
-angular.module("app").factory("homeController", homeController);
+angular.module("app").factory("adminController", adminController);
 
-homeControllerHomeController.java.$inject = [ "$resource", "$timeout" ];
+adminController.java.$inject = [ "$resource", "$timeout" ];
 
-function homeController($resource, $timeout) {
+function adminController($resource, $timeout) {
 
 	function autoreload(){
 		reload();
