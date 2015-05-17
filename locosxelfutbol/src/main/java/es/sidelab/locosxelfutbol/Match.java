@@ -12,22 +12,19 @@ public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private long id;	
-	private String name;
-	private String local;
-	private String visitant;
+	private Team local;
+	private Team visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
 	
 	public Match(){
-		this.name="";
-		this.local= "";
-		this.visitant= "";
+		this.local= new Team();
+		this.visitant= new Team();
 		this.goalsLocal=0;
 		this.goalsVisitant=0;
 	}
 
-	public Match(String name, String local, String visitant, int goalsLocal, int goalsVisitant){
-		this.name= name;
+	public Match(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;
@@ -42,27 +39,19 @@ public class Match {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLocal() {
+	public Team getLocal() {
 		return local;
 	}
 
-	public void setLocal(String local) {
+	public void setLocal(Team local) {
 		this.local = local;
 	}
 
-	public String getVisitant() {
+	public Team getVisitant() {
 		return visitant;
 	}
 
-	public void setVisitant(String visitant) {
+	public void setVisitant(Team visitant) {
 		this.visitant = visitant;
 	}
 
@@ -82,10 +71,10 @@ public class Match {
 		this.goalsVisitant = goalsVisitant;
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return name;
-	}
+	}*/
 
 
 }
