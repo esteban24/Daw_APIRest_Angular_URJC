@@ -26,7 +26,7 @@ public class Tournament {
 		this.matchs=matchs;
 	}
 	
-	public void playMatch(Team local, Team visitant, int goalsLocal, int goalsVisitant){
+	/*public void playMatch(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		local.setGf(goalsLocal);
 		local.setGc(goalsVisitant);
 		visitant.setGf(goalsVisitant);
@@ -47,6 +47,6 @@ public class Tournament {
 			local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
 			local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
 		}
-	}
+	}*/
 
 }

@@ -40,6 +40,7 @@ public class DataBaseController implements CommandLineRunner{
 		//TODO emartin: Cambiar la clase Team cuando se resuelva lo de la BBDD
 		//Insert Team
 		Team team1 = new Team("Los Franciscanos", "ArrayList jugadores1", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team1);
 		
 		Player player6  = new Player("Francisco", "Pizarro", Positions.Jugador, 21 , null );
 		Player player7  = new Player("Francisco", "Ibáñez", Positions.Jugador, 18 , null );
@@ -49,6 +50,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team2 = new Team("Steaua Del Water", "ArrayList jugadores2", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team2);
+
 		
 		Player player11 = new Player("Leo","Messi", Positions.Jugador, 26, null);
 		Player player12 = new Player("Andresito de mi vida", "Iniesta", Positions.Jugador, 32, null);
@@ -58,6 +61,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team3 = new Team("URJCJAI", "ArrayList jugadores3", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team3);
+
 		
 		Player player16 = new Player("Micael", "Gallego", Positions.Jugador, 22, null);
 		Player player17 = new Player("Antonio", "Montemayor", Positions.Portero, 22, null);
@@ -67,6 +72,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team4 = new Team("NewTeam","ArrayList jugadores4", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team4);
+
 		
 		Player player21 = new Player("Cristiano", "Ronaldo", Positions.Jugador, 30, null);
 		Player player22 = new Player("Gareth", "Bale", Positions.Jugador, 24, null);
@@ -76,6 +83,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team5 = new Team("Minabo de Kiev","ArrayList jugadores5", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team5);
+
 		
 		Player player26 = new Player("Skrodan", "Mustafi", Positions.Jugador, 23, null);
 		Player player27 = new Player("Nicolas", "Otamendi", Positions.Jugador, 30, null);
@@ -85,6 +94,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team6 = new Team("Aston Birras","ArrayList jugadores6", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team6);
+
 		
 		Player player31 = new Player("Arda", "Turan", Positions.Jugador, 28, null);
 		Player player32 = new Player("Antoine", "Griezzmann", Positions.Jugador, 24, null);
@@ -94,6 +105,8 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Team
 		Team team7 = new Team("Pajax de Amsterdam","ArrayList jugadores7", 0, 0, 0, 0, 0, 0);
+		teamRepository.save(team7);
+
 				
 		//Insert Courts
 		
