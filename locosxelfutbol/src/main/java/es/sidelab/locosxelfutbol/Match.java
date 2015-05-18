@@ -12,19 +12,20 @@ public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private long id;	
-	private Team local;
-	private Team visitant;
+	//TODO emartin: Cambiado Temam local y Team visitant por String provisionalmente
+	private String local;
+	private String visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
 	
 	public Match(){
-		this.local= new Team();
-		this.visitant= new Team();
+		this.local= "";
+		this.visitant= "";
 		this.goalsLocal=0;
 		this.goalsVisitant=0;
 	}
 
-	public Match(Team local, Team visitant, int goalsLocal, int goalsVisitant){
+	public Match(String local, String visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;
@@ -39,19 +40,19 @@ public class Match {
 		this.id = id;
 	}
 
-	public Team getLocal() {
+	public String getLocal() {
 		return local;
 	}
 
-	public void setLocal(Team local) {
+	public void setLocal(String local) {
 		this.local = local;
 	}
 
-	public Team getVisitant() {
+	public String getVisitant() {
 		return visitant;
 	}
 
-	public void setVisitant(Team visitant) {
+	public void setVisitant(String visitant) {
 		this.visitant = visitant;
 	}
 

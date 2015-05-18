@@ -103,15 +103,17 @@ public class DataBaseController implements CommandLineRunner{
 		Referee referee3 = new Referee("Teixeira", "Vitienes");
 		
 		//Insert Matches
-		Match mactch1 = new Match (team1, team2, 4, 3);
-		Match mactch2 = new Match (team3, team4, 1, 2);
-		Match mactch3 = new Match (team5, team6, 0, 7);
-		Match mactch4 = new Match (team1, team3, 2, 2);
-		Match mactch5 = new Match (team2, team6, 2, 6);
-		Match mactch6 = new Match (team4, team5, 1, 0);
-		Match mactch7 = new Match (team1, team6, 0, 0);
-		Match mactch8 = new Match (team2, team5, 3, 2);
-		Match mactch9 = new Match (team3, team4, 10, 3);
+		//TODO emartin: cambiados los equipos de Team a String para que el proyecto compile a falta de 
+		//añadir la parte de BBDD y las relaciones entre tablas
+		Match mactch1 = new Match ("team1", "team2", 4, 3);
+		Match mactch2 = new Match ("team3", "team4", 1, 2);
+		Match mactch3 = new Match ("team5", "team6", 0, 7);
+		Match mactch4 = new Match ("team1", "team3", 2, 2);
+		Match mactch5 = new Match ("team2", "team6", 2, 6);
+		Match mactch6 = new Match ("team4", "team5", 1, 0);
+		Match mactch7 = new Match ("team1", "team6", 0, 0);
+		Match mactch8 = new Match ("team2", "team5", 3, 2);
+		Match mactch9 = new Match ("team3", "team4", 10, 3);
 		
 		
 		
