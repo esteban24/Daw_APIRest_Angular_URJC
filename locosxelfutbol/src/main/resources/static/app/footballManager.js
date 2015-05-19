@@ -48,6 +48,10 @@ function FootballManager($resource, $timeout) {
 		return vm.modifyReferee;
 	}
 	
+	vm.addReferee= function(addReferee){
+		RefereeResource.save(addReferee);
+	}
+	
 	vm.modifying= function(referee){
 		$id=referee.id;
 		RefereeModifyResource.update({id:$id},referee);

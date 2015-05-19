@@ -26,12 +26,19 @@ function RefereeController(footballManager, $timeout, $location) {
 		$location.path('/modifyReferee');
 	}
 	
+	vm.addReferee= function(referee){
+		footballManager.addReferee(referee);
+		vm.referee={};
+		vm.reload();
+		$location.path('/refereeAdmin');
+	}
+	
 	vm.modifying= function(referee){
 		footballManager.modifying(referee);
 		vm.modifyReferee={};
 		footballManager.setModifyReferee(vm.modifyReferee);
 		vm.reload();
-		$location.path('/refereeAdmin')
+		$location.path('/refereeAdmin');
 	}
 	
 	vm.deleteReferee = function(referee){
