@@ -146,11 +146,17 @@ public class DataBaseController implements CommandLineRunner{
 
 				
 		//Insert Courts
+		Court court1 = new Court("Pabellón Las Lomax","Pabellón con magníficos vestuarios y grandes graderíos.");
+		courtRepository.save(court1);
+		Court court2 = new Court("Pabellón Villafontana","Pabellón donde Ronaldinho comenzó a forjar su carrera.");
+		courtRepository.save(court2);
+		Court court3 = new Court("Pista de la URJC","Pista al aire libre donde Aketxe le partió la pierna a Maradona.");
+		courtRepository.save(court3);
+		
 		
 		//Insert Referees
 		Referee referee1 = new Referee("Luigi", "Colina");
 		refereeRepository.save(referee1);
-
 		Referee referee2 = new Referee("Sergey", "Piptukin");
 		refereeRepository.save(referee2);
 		Referee referee3 = new Referee("Teixeira", "Vitienes");

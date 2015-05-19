@@ -12,15 +12,15 @@ public class Court{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
-	private int name;
-	private Calendar schedule; 
+	private String name;
+	private String description; 
 
 	public Court() {
 	}
 
-	public Court(int name, Calendar calendar) {
+	public Court(String name, String description) {
 		this.name = name;
-		calendar= Calendar.getInstance();
+		this.description = description;
 	}	
 
 	public Long getId() {
@@ -31,20 +31,20 @@ public class Court{
 		this.id = id;
 	}
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Calendar getSchedule() {
-		return schedule;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setSchedule(Calendar schedule) {
-		this.schedule = schedule;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
