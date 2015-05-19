@@ -35,5 +35,10 @@ public class RefereeController {
 			refereeRepository.setLastName(id,referee.getLastName());
 		//}
 	}
+	
+	@RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
+	public void deleteReferee(@PathVariable long id, HttpSession sesion){
+		refereeRepository.delete(id);
+	}
 
 }

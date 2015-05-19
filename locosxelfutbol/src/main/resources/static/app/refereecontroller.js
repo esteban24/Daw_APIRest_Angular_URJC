@@ -33,4 +33,11 @@ function RefereeController(footballManager, $timeout, $location) {
 		vm.reload();
 		$location.path('/refereeAdmin')
 	}
+	
+	vm.deleteReferee = function(referee){
+		footballManager.deleteReferee(referee);
+		vm.referee={};
+		vm.reload();
+		$location.path('/refereeAdmin');
+	}
 };

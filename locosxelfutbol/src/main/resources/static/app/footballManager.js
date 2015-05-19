@@ -16,13 +16,9 @@ function FootballManager($resource, $timeout) {
 		{save : {method : 'GET'}
 	});
 
-	/*var RefereeUserResource= $resource('/referee/:id',
-			{id:'@id'},
-			{save : {method : 'POST'}
-	});*/
-	
 	var RefereeResource = $resource('/refereeAdmin/:id',
 			{id:'@id'},
+			{deleteReferee:{method: 'DELETE'}},
 			{save : {method : 'GET'}
 	});
 
@@ -54,7 +50,12 @@ function FootballManager($resource, $timeout) {
 	
 	vm.modifying= function(referee){
 		$id=referee.id;
-		RefereeModifyResource.update({id:$id},referee,function(){vm.showAlert(referee.name+"modificado")})
+		RefereeModifyResource.update({id:$id},referee);
+	}
+	
+	vm.deleteReferee= function(referee){
+		$id=referee.id;
+		RefereeResource.deleteReferee({id:$id});
 	}
 	
 	vm.login = function(mail, pass) {
