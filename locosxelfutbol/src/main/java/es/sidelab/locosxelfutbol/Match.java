@@ -1,58 +1,67 @@
 package es.sidelab.locosxelfutbol;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Match {
+public class Match{
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private long id;	
-	//TODO emartin: Cambiado Temam local y Team visitant por String provisionalmente
-	private String local;
-	private String visitant;
+	private Long id;	
+	@OneToOne
+	@JoinColumn(name="LOCAL_TEAM")
+	private Team local;
+	@OneToOne
+	@JoinColumn(name="VISITANT_TEAM")
+	private Team visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
 	
 	public Match(){
-		this.local= "";
-		this.visitant= "";
+		this.local= null;
+		this.visitant= null;
 		this.goalsLocal=0;
 		this.goalsVisitant=0;
 	}
 
-	public Match(String local, String visitant, int goalsLocal, int goalsVisitant){
+	public Match(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;
 		this.goalsVisitant= goalsVisitant;
 	}
 		
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getLocal() {
+	
+	public Team getLocal() {
 		return local;
 	}
-
-	public void setLocal(String local) {
+	
+	public void setLocal(Team local) {
 		this.local = local;
 	}
 
-	public String getVisitant() {
+	public Team getVisitant() {
 		return visitant;
 	}
 
-	public void setVisitant(String visitant) {
+	public void setVisitant(Team visitant) {
 		this.visitant = visitant;
 	}
 

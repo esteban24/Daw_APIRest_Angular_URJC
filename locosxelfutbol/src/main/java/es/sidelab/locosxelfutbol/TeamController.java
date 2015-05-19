@@ -12,7 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeamController {
 
 	@Autowired
-	private TeamRepository teamRepository;
+	PlayerRepository playerRepository;
+	
+	@Autowired
+	TeamRepository teamRepository;
+	
+	@Autowired
+	CourtRepository courtRepository;
+	
+	@Autowired
+	MatchRepository matchRepository;
+	
+	@Autowired
+	RefereeRepository refereeRepository;
+	
+	@Autowired
+	TournamentRepository tournamentRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Team> getTeams() {

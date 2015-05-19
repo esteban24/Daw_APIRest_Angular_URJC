@@ -15,6 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/adminLogin")
 public class AdminController {
+	
+	@Autowired
+	PlayerRepository playerRepository;
+	
+	@Autowired
+	TeamRepository teamRepository;
+	
+	@Autowired
+	CourtRepository courtRepository;
+	
+	@Autowired
+	MatchRepository matchRepository;
+	
+	@Autowired
+	RefereeRepository refereeRepository;
+	
+	@Autowired
+	TournamentRepository tournamentRepository;
 
 	//TODO emartin: meter autowireds
 

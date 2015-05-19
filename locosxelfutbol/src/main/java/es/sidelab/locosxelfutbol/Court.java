@@ -1,4 +1,6 @@
 package es.sidelab.locosxelfutbol;
+import java.io.Serializable;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Entity;
@@ -7,26 +9,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Court {
+public class Court{
+
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private long id;	
+	private Long id;	
 	private int name;
-	private GregorianCalendar schedule; 
+	private Calendar schedule; 
 
 	public Court() {
 	}
 
-	public Court(int name, GregorianCalendar schedule) {
+	public Court(int name, Calendar calendar) {
 		this.name = name;
-		schedule= new GregorianCalendar();
+		calendar= Calendar.getInstance();
 	}	
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -38,11 +42,11 @@ public class Court {
 		this.name = name;
 	}
 
-	public GregorianCalendar getSchedule() {
+	public Calendar getSchedule() {
 		return schedule;
 	}
 
-	public void setSchedule(GregorianCalendar schedule) {
+	public void setSchedule(Calendar schedule) {
 		this.schedule = schedule;
 	}
 

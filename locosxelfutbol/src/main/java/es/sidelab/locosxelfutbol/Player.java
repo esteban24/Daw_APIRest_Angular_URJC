@@ -1,41 +1,80 @@
 package es.sidelab.locosxelfutbol;
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Player {
+public class Player implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1171515667236399734L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private long id;	
+	private Long id;	
 	private String name;
 	private String lastName;
 	private Positions position;
 	private int age;
-	private String team;
+	@ManyToOne
+	@JoinColumn(name="TEAM")
+	private Team team;
 
 	public Player(){
 		this.name="";
 		this.lastName="";
 		this.position = Positions.Jugador;
 		this.age=0;
-		this.team= "";
+		this.team= null;
 	}
 
-	public Player(String name, String lastName, Positions position, int age, String team) {
+	public Player(String name, String lastName, Positions position, int age, Team team) {
 		this.name = name;
 		this.lastName = lastName;
 		this.position = position;
 		this.age = age;
 		this.team = team;
 	}
+	
+	public void setA(Team team) {
+        setTeam(team, true);
+    }
+     
+    void setTeam(Team team, boolean add) {
+        this.team = team;
+        if (team != null && add) {
+            team.addPlayer(this, false);
+        }
+    }
+ 
 
-	public long getId() {
+    public boolean equals(Object object) {
+        if (object == this)
+            return true;
+        if ((object == null) || !(object instanceof Player))
+            return false;
+ 
+        final Player player = (Player)object;
+ 
+        if (id != null && player.getId() != null) {
+            return id.equals(player.getId());
+        }
+        return false;
+    }
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -70,19 +109,13 @@ public class Player {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-	public String getTeam() {
+	
+	public Team getTeam() {
 		return team;
 	}
 
-	public void setTeam(String team) {
+	public void setTeam(Team team) {
 		this.team = team;
-	}
-	
-	@Override
-	public String toString() {
-		return "Jugador [id=" + id + ", Nombre=" + name + ", Apellido=" + lastName
-				+ ", Posicion=" + position + ", Edad=" + age + ", Equipo=" + team +"]";
 	}
 
 }
