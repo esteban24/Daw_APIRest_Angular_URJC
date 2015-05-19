@@ -10,6 +10,7 @@ function FootballManager($resource, $timeout) {
 	vm.teams = [];
 	vm.referee = {};
 	vm.referees = [];
+	vm.modifyReferee={};
 
 	var TeamResource = $resource('/team/equipos',  
 		{save : {method : 'GET'}
@@ -23,6 +24,11 @@ function FootballManager($resource, $timeout) {
 		{save : {method : 'GET'}
 	});
 
+	var RefereeModifyResource = $resource('/referee/:id', 
+			{id:'@id'},
+			{save : {method : 'PUT'}
+	});
+	
 	var PassResource = $resource('/')
 	
 	vm.getTeams = function() {
@@ -35,6 +41,16 @@ function FootballManager($resource, $timeout) {
 		return RefereeResource.query();
 	}
 
+	vm.setModifyReferee= function(referee){
+		vm.modifyReferee=referee;
+		return vm.modifyReferee;
+	}
+	
+	vm.modifyReferee= function(referee){
+		$id=referee.id;
+		RefereeModifyResource.update({id:$id},referee,function(){vm.showAlert(referee.name+"modificado")})
+	}
+	
 	vm.login = function(mail, pass) {
 		vm.datos = {};
 		vm.datos.mail = mail;

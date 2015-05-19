@@ -10,6 +10,9 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/team', { templateUrl : "templates/team.html" });
 	$routeProvider.when('/referee', { templateUrl : "templates/referee.html" });
 	$routeProvider.when('/refereeAdmin', { templateUrl : "templates/refereeAdmin.html" });
+	
+	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
+	
 
 
 }
