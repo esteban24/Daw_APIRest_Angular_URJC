@@ -22,14 +22,6 @@ public class Team {
 	private int gf;
 
 	public Team() {
-		this.name="";
-		this.players= "";
-		this.win=0;
-		this.draw=0;
-		this.defeat=0;
-		this.points=0;
-		this.gc=0;
-		this.gf=0;
 	}
 
 	public Team(String name, String players, int win, int draw, int defeat, int points, int gc, int gf) {

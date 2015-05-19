@@ -20,7 +20,7 @@ function FootballManager($resource, $timeout) {
 			{id:'@id'},
 			{save: {method: 'POST'}}
 	);
-	
+		
 	vm.getTeams= function(){
 		vm.teams=TeamResource.query();
 		return TeamResource.query();
@@ -28,10 +28,11 @@ function FootballManager($resource, $timeout) {
 	
 	vm.getReferees= function(){
 		vm.referees=RefereeResource.query();
-		return Referee.query();
+		return RefereeResource.query();
 	}
 	
 	vm.reload= function(){
+		vm.referees=vm.getReferees();
 		vm.teams=vm.getTeams();
 	}
 	

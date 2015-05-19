@@ -112,8 +112,12 @@ public class DataBaseController implements CommandLineRunner{
 		
 		//Insert Referees
 		Referee referee1 = new Referee("Luigi", "Colina");
-		Referee referee2 = new Referee("Julio", "Borbalan");
+		refereeRepository.save(referee1);
+		Referee referee2 = new Referee("Sergey", "Piptukin");
+		refereeRepository.save(referee2);
 		Referee referee3 = new Referee("Teixeira", "Vitienes");
+		refereeRepository.save(referee3);
+
 		
 		//Insert Matches
 		//TODO emartin: cambiados los equipos de Team a String para que el proyecto compile a falta de 
@@ -128,8 +132,7 @@ public class DataBaseController implements CommandLineRunner{
 		Match mactch8 = new Match ("team2", "team5", 3, 2);
 		Match mactch9 = new Match ("team3", "team4", 10, 3);
 		
-		
-		
+
 		
 	}
 
