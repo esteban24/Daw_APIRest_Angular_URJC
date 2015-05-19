@@ -14,7 +14,7 @@ public class TeamController {
 	@Autowired
 	private TeamRepository teamRepository;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/equipos" ,method = RequestMethod.GET)
 	public List<Team> getTeams() {
 		return teamRepository.findAll();
 	}

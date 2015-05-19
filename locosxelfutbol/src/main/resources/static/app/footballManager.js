@@ -4,44 +4,95 @@ FootballManager.$inject = [ "$resource", "$timeout" ];
 
 function FootballManager($resource, $timeout) {
 
-	var vm= this;
+	var vm = this;
+
+	vm.team = {};
+	vm.teams = [];
+	vm.referee = {};
+	vm.referees = [];
+
+	var TeamResource = $resource('/team/equipos',  
+		{save : {method : 'GET'}
+	});
+
+	var RefereeResource = $resource('/referee',
+		{save : {method : 'POST'}
+	});
+
+	var SessionResource = $resource('/adminLogin/seguridad', 
+		{save : {method : 'GET'}
+	});
+
+	var PassResource = $resource('/')
 	
-	vm.team={};
-	vm.teams=[];
-	vm.referee={};
-	vm.referees=[];
-	
-	var TeamResource = $resource('/team/:id',
-			{id:'@id'},
-			{save: {method: 'POST'}}
-	);
-	
-	var RefereeResource = $resource('/referee/:id',
-			{id:'@id'},
-			{save: {method: 'POST'}}
-	);
-		
-	vm.getTeams= function(){
-		vm.teams=TeamResource.query();
+	vm.getTeams = function() {
+		vm.teams = TeamResource.query();
 		return TeamResource.query();
 	}
-	
-	vm.getReferees= function(){
-		vm.referees=RefereeResource.query();
+
+	vm.getReferees = function() {
+		vm.referees = RefereeResource.query();
 		return RefereeResource.query();
 	}
-	
-	vm.reload= function(){
-		vm.referees=vm.getReferees();
-		vm.teams=vm.getTeams();
+
+	vm.login = function(mail, pass) {
+		vm.datos = {};
+		vm.datos.mail = mail;
+		vm.datos.pass = pass;
+		SessionResource.save(vm.datos, function() {
+		});
 	}
-	
-	function autoreload(){
+
+	vm.islog = function() {
+		return SessionResource.query();
+	}
+
+	vm.logout = function() {
+		SessionResource.remove(function() {
+		});
+	}
+	/*
+	 * vm.signup = function(mail,pass){
+	 * 
+	 * for (var i = 0; i < vm.personas.length; i++) { if ((vm.personas[i].correo
+	 * === mail)&&(vm.personas[i].pass === pass)) { vm.persona = vm.personas[i];
+	 * $id=vm.persona.id;
+	 * SignupResource.update({id:$id},true,function(){vm.showAlert("Te has
+	 * registrasdo correctamente")}); } }
+	 *  }
+	 */
+
+	vm.pass = function(pass, idpers) {
+		$id = idpers;
+		PassResource.update({
+			id : $id
+		}, pass, function() {
+			vm.showAlert("Contraseña cambiada")
+		});
+
+	}
+	vm.passCorrecta = function(pass, id) {
+		$id = id;
+		$pass = pass;
+		vm.passcorrecta = PassCorrectaResource.get({
+			id : $id
+		}, {
+			pass : $pass
+		}, function() {
+		});
+		return vm.passcorrecta;
+	}
+
+	vm.reload = function() {
+		vm.referees = vm.getReferees();
+		vm.teams = vm.getTeams();
+	}
+
+	function autoreload() {
 		vm.reload();
 		$timeout(autoreload, 1000);
 	}
-	
+
 	autoreload();
-	
-	
+
 }

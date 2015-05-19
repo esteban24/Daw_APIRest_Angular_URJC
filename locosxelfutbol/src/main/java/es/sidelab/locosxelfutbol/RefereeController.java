@@ -13,7 +13,7 @@ public class RefereeController {
 
 	@Autowired
 	private RefereeRepository refereeRepository;
-
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Referee> getReferees() {
 		return refereeRepository.findAll();
