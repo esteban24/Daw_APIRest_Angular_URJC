@@ -23,7 +23,7 @@
 	</div>
 </div>
 <div ng-controller="RefereeController as vm">
-<form class="form-horizontal" ng-submit="vm.modifying(vm.modifyReferee)" >
+<form class="form-horizontal" >
 	<fieldset>
 		<legend>Modificando {{vm.modifyReferee.name}}</legend>
 		<div class="form-group">
@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		
-		<a id="submit" class="md-raised md-primary text-center">Guardar curso modificado</a>
+		<a ng-click=vm.modifying(vm.modifyReferee) class="md-raised md-primary text-center">Guardar curso modificado</a>
 		<a href="#/refereeAdmin" class="md-raised text-center">Cancelar</a>	
 	</fieldset>
 </form>

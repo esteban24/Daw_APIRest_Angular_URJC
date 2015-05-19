@@ -9,6 +9,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Referee implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8657278808944294842L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	

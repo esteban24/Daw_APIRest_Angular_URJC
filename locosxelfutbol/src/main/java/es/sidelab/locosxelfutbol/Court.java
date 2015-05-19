@@ -1,8 +1,5 @@
 package es.sidelab.locosxelfutbol;
-import java.io.Serializable;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -1,15 +1,10 @@
 package es.sidelab.locosxelfutbol;
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Player implements Serializable{
@@ -24,9 +19,10 @@ public class Player implements Serializable{
 	private String lastName;
 	private Positions position;
 	private int age;
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="TEAM")
-	private Team team;
+	private Team team;*/
+	private String team;
 
 	public Player(){
 		this.name="";
@@ -36,7 +32,15 @@ public class Player implements Serializable{
 		this.team= null;
 	}
 
-	public Player(String name, String lastName, Positions position, int age, Team team) {
+	/*public Player(String name, String lastName, Positions position, int age, Team team) {
+		this.name = name;
+		this.lastName = lastName;
+		this.position = position;
+		this.age = age;
+		this.team = team;
+	}*/
+	
+	public Player(String name, String lastName, Positions position, int age, String team) {
 		this.name = name;
 		this.lastName = lastName;
 		this.position = position;
@@ -44,16 +48,17 @@ public class Player implements Serializable{
 		this.team = team;
 	}
 	
-	public void setA(Team team) {
+	/*public void setTeam(Team team) {
         setTeam(team, true);
-    }
+    }*/
+	
      
-    void setTeam(Team team, boolean add) {
+    /*void setTeam(Team team, boolean add) {
         this.team = team;
         if (team != null && add) {
             team.addPlayer(this, false);
         }
-    }
+    }*/
  
 
     public boolean equals(Object object) {
@@ -110,11 +115,19 @@ public class Player implements Serializable{
 		this.age = age;
 	}
 	
-	public Team getTeam() {
+	/*public Team getTeam() {
+		return team;
+	}*/
+	
+	public String getTeam() {
 		return team;
 	}
 
-	public void setTeam(Team team) {
+	/*public void setTeam(Team team) {
+		this.team = team;
+	}*/
+	
+	public void setTeam(String team) {
 		this.team = team;
 	}
 

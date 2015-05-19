@@ -1,9 +1,5 @@
 package es.sidelab.locosxelfutbol;
 
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -35,7 +31,7 @@ public class DataBaseController implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/* ANTERIOR CODIGO
+//		// ANTERIOR CODIGO
 		// TODO Auto-generated method stub
 		Player player1  = new Player("Уscar", "Sanchez", Positions.Jugador, 18 , null );
 		playerRepository.save(player1);
@@ -160,7 +156,7 @@ public class DataBaseController implements CommandLineRunner{
 		Referee referee3 = new Referee("Teixeira", "Vitienes");
 		refereeRepository.save(referee3);
 
-		//Insert Matches
+		/*Insert Matches
 		//TODO emartin: cambiados los equipos de Team a String para que el proyecto compile a falta de 
 		//aсadir la parte de BBDD y las relaciones entre tablas
 		Match match1 = new Match ("team1", "team2", 4, 3);
@@ -182,7 +178,9 @@ public class DataBaseController implements CommandLineRunner{
 		Match match9 = new Match ("team3", "team4", 10, 3);
 		matchRepository.save(match9);*/
 		
-		//Codigo de la BBDD
+		//*************000000000J00000000000*******************//
+		
+		/*Codigo de la BBDD
 		//Insert Players
 		Player player1  = new Player("Óscar", "Sanchez", Positions.Jugador, 18 , null );
 		Player player2  = new Player("David", "Robles", Positions.Portero, 19 , null );
@@ -371,7 +369,7 @@ public class DataBaseController implements CommandLineRunner{
 		playerRepository.save(players4);
 		playerRepository.save(players5);
 		playerRepository.save(players6);
-		playerRepository.save(players7);*/
+		playerRepository.save(players7);
 
 		//Insert Courts
 		Court court1 = new Court(1, GregorianCalendar.getInstance());
@@ -460,7 +458,7 @@ public class DataBaseController implements CommandLineRunner{
 		
 		Tournament tournament1 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
 		
-		*/
+		
 		//All saves
 		teamRepository.save(team1);
 		teamRepository.save(team2);

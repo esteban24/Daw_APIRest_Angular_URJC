@@ -1,18 +1,9 @@
 package es.sidelab.locosxelfutbol;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import es.sidelab.locosxelfutbol.Player;
 
 @Entity
 public class Team{
@@ -21,8 +12,9 @@ public class Team{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String name;
-	@OneToMany(mappedBy="team")
-	private List<Player> players;
+/*	@OneToMany(mappedBy="team")
+	private List<Player> players;*/
+	private String players;
 	private int win;
 	private int draw;
 	private int defeat;
@@ -41,7 +33,7 @@ public class Team{
 		this.gf=0;
 	}
 
-	public Team(String name, List<Player> players, int win, int draw, int defeat, int points, int gc, int gf) {
+	public Team(String name, String players, int win, int draw, int defeat, int points, int gc, int gf) {
 		this.name = name;
 		this.players= players;
 		this.win=win;
@@ -51,7 +43,7 @@ public class Team{
 		this.gf=gf;
 	}	
 	
-	public void addPlayer(Player player) {
+	/*public void addPlayer(Player player) {
         addPlayer(player, true);
     }
 	
@@ -72,7 +64,7 @@ public class Team{
 	public void removePlayer(Player player) {
         getPlayers().remove(player);
         player.setA(null);
-    }    
+    } */   
  
      
 	public boolean equals(Object object) {
@@ -110,13 +102,22 @@ public class Team{
 		this.name = name;
 	}
 
-	@OneToMany(cascade={CascadeType.ALL})
+	/*@OneToMany(cascade={CascadeType.ALL})
 	public List<Player> getPlayers() {
+		return players;
+	}*/
+	
+	public String getPlayers() {
 		return players;
 	}
 
-	@OneToMany(cascade={CascadeType.ALL})
+	/*@OneToMany(cascade={CascadeType.ALL})
 	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}*/
+	
+	//@OneToMany(cascade={CascadeType.ALL})
+	public void setPlayers(String players) {
 		this.players = players;
 	}
 

@@ -21,9 +21,9 @@ function FootballManager($resource, $timeout) {
 			{save : {method : 'POST'}
 	});*/
 	
-	var RefereeResource = $resource('/referee/:id',
+	var RefereeResource = $resource('/refereeAdmin/:id',
 			{id:'@id'},
-			{save : {method : 'POST'}
+			{save : {method : 'GET'}
 	});
 
 	var RefereeModifyResource = $resource('/refereeAdmin/:id', 
