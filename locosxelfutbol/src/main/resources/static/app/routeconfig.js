@@ -12,6 +12,7 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/refereeAdmin', { templateUrl : "templates/refereeAdmin.html" });
 	$routeProvider.when('/addReferee', { templateUrl : "templates/addReferee.html" });
 	$routeProvider.when('/tournament', { templateUrl : "templates/tournament.html" });
+	$routeProvider.when('/tournamentAdmin', { templateUrl : "templates/tournamentAdmin.html" });
 	
 	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
 	
