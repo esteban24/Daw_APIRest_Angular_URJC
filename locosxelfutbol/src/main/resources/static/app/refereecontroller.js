@@ -26,8 +26,8 @@ function RefereeController(footballManager, $timeout, $location) {
 		$location.path('/modifyReferee');
 	}
 	
-	vm.modifyReferee= function(referee){
-		footballManager.modifyReferee(referee);
+	vm.modifying= function(referee){
+		footballManager.modifying(referee);
 		vm.modifyReferee={};
 		footballManager.setModifyReferee(vm.modifyReferee);
 		vm.reload();

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/referee")
+@RequestMapping("/refereeAdmin")
 public class RefereeController {
 
 	@Autowired
@@ -21,6 +21,11 @@ public class RefereeController {
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Referee> getReferees() {
 		return refereeRepository.findAll();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public Referee getReferee (@PathVariable long id) {
+		return refereeRepository.findOne(id);
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)

@@ -16,17 +16,23 @@ function FootballManager($resource, $timeout) {
 		{save : {method : 'GET'}
 	});
 
-	var RefereeResource = $resource('/referee',
-		{save : {method : 'POST'}
+	/*var RefereeUserResource= $resource('/referee/:id',
+			{id:'@id'},
+			{save : {method : 'POST'}
+	});*/
+	
+	var RefereeResource = $resource('/referee/:id',
+			{id:'@id'},
+			{save : {method : 'POST'}
 	});
 
+	var RefereeModifyResource = $resource('/refereeAdmin/:id', 
+			{id:'@id'},
+			{'update' : {method : 'PUT'}
+	});
+	
 	var SessionResource = $resource('/adminLogin/seguridad', 
 		{save : {method : 'GET'}
-	});
-
-	var RefereeModifyResource = $resource('/referee/:id', 
-			{id:'@id'},
-			{save : {method : 'PUT'}
 	});
 	
 	var PassResource = $resource('/')
@@ -46,7 +52,7 @@ function FootballManager($resource, $timeout) {
 		return vm.modifyReferee;
 	}
 	
-	vm.modifyReferee= function(referee){
+	vm.modifying= function(referee){
 		$id=referee.id;
 		RefereeModifyResource.update({id:$id},referee,function(){vm.showAlert(referee.name+"modificado")})
 	}
