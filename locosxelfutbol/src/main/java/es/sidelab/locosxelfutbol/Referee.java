@@ -47,9 +47,4 @@ public class Referee implements Serializable{
 		this.lastName = lastName;
 	}
 
-	@Override
-	public String toString() {
-		return name;
-	}
-
 }

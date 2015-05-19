@@ -29,7 +29,7 @@ public class TeamController {
 	@Autowired
 	TournamentRepository tournamentRepository;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/equipos" ,method = RequestMethod.GET)
 	public List<Team> getTeams() {
 		return teamRepository.findAll();
 	}

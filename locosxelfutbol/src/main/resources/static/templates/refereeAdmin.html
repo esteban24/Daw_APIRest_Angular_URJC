@@ -23,6 +23,7 @@
 			</form>
 
 		</div>
+		<h1>ADMINISTRADOR</h1>
 	</div>
     <div class="list-group-item" ng-repeat="referee in vm.referees">
         <div class="row-picture">
@@ -32,5 +33,9 @@
             <h4 class="list-group-item-heading">{{referee.name}}</h4>
             <p class="list-group-item-text">{{referee.lastName}}</p>
         </div>
+        <div>
+			<a type="button" class="md-raised md-primary" ng-click="vm.modify(referee)">Modificar</a>
+			<a type="button" class="md-raised md-warn" ng-click="vm.deleteCurso(curso)">Eliminar</a>
+		</div>
     </div>    
 </div> 
