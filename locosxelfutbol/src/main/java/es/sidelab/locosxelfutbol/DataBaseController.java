@@ -144,7 +144,13 @@ public class DataBaseController implements CommandLineRunner{
 		Team team7 = new Team("Pajax de Amsterdam","ArrayList jugadores7", 0, 0, 0, 0, 0, 0);
 		teamRepository.save(team7);
 
-				
+		//Insert Tournaments
+		Tournament tournament1 = new Tournament("Torneo Castolo","URJCJAI Y CIA");
+		tournamentRepository.save(tournament1);
+		Tournament tournament2 = new Tournament("Torneo de Barrio","Los chopos Y CIA");
+		tournamentRepository.save(tournament2);
+		
+		
 		//Insert Courts
 		Court court1 = new Court("Pabellón Las Lomax","Pabellón con magníficos vestuarios y grandes graderíos.");
 		courtRepository.save(court1);

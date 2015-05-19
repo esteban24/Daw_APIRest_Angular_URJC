@@ -23,18 +23,18 @@ public class Tournament{
 	joinColumns=@JoinColumn(name="MATCH_ID"),
 	inverseJoinColumns=@JoinColumn(name="TOURNM_ID"))
 	private List<Match> matches;*/
-	private String matches;
+	//private String matches;
 	
 	public Tournament(){
 		this.name="";
 		this.teams= "";
-		this.matches= "";
+		//this.matches= "";
 	}
 	
-	public Tournament(String name, String teams, String matchs){
+	public Tournament(String name, String teams){
 		this.name=name;
 		this.teams=teams;
-		this.matches=matchs;
+		//this.matches=matchs;
 	}
 
 	
@@ -86,13 +86,13 @@ public class Tournament{
 		this.teams = teams;
 	}
 	
-	public String getMatches() {
+	/*public String getMatches() {
 		return matches;
 	}
 
 	public void setMatches(String matches) {
 		this.matches = matches;
-	}
+	}*/
 	
 	
 

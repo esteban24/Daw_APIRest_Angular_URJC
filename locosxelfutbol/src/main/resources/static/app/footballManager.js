@@ -11,7 +11,7 @@ function FootballManager($resource, $timeout) {
 	vm.referee = {};
 	vm.referees = [];
 	vm.tournament= {};
-	vm.tournament= [];
+	vm.tournaments= [];
 	vm.modifyReferee={};
 
 	var TeamResource = $resource('/team/equipos',  
