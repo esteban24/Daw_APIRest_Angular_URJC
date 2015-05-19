@@ -10,9 +10,12 @@ function FootballManager($resource, $timeout) {
 	vm.teams = [];
 	vm.referee = {};
 	vm.referees = [];
+	vm.court = {};
+	vm.courts = [];
 	vm.tournament= {};
 	vm.tournaments= [];
 	vm.modifyReferee={};
+	vm.modifyCourt={};
 
 	var TeamResource = $resource('/team/equipos',  
 		{save : {method : 'GET'}
@@ -23,8 +26,19 @@ function FootballManager($resource, $timeout) {
 			{deleteReferee:{method: 'DELETE'}},
 			{save : {method : 'GET'}
 	});
+	
+	var CourtResource = $resource('/courtAdmin/:id',
+			{id:'@id'},
+			{deleteCourt:{method: 'DELETE'}},
+			{save : {method : 'GET'}
+	});
 
 	var RefereeModifyResource = $resource('/refereeAdmin/:id', 
+			{id:'@id'},
+			{'update' : {method : 'PUT'}
+	});
+	
+	var CourtModifyResource = $resource('/courtAdmin/:id', 
 			{id:'@id'},
 			{'update' : {method : 'PUT'}
 	});
@@ -50,6 +64,11 @@ function FootballManager($resource, $timeout) {
 		vm.referees = RefereeResource.query();
 		return RefereeResource.query();
 	}
+	
+	vm.getCourts = function() {
+		vm.courts = CourtResource.query();
+		return CourtResource.query();
+	}
 
 	vm.getTournaments = function() {
 		vm.tournaments = TournamentResource.query();
@@ -61,8 +80,17 @@ function FootballManager($resource, $timeout) {
 		return vm.modifyReferee;
 	}
 	
+	vm.setModifyCourt= function(court){
+		vm.modifyCourt=referee;
+		return vm.modifyCourt;
+	}
+	
 	vm.addReferee= function(addReferee){
 		RefereeResource.save(addReferee);
+	}
+	
+	vm.addCourt= function(addCourt){
+		CourtResource.save(addCourt);
 	}
 	
 	vm.modifying= function(referee){
@@ -70,9 +98,19 @@ function FootballManager($resource, $timeout) {
 		RefereeModifyResource.update({id:$id},referee);
 	}
 	
+	vm.modifyingcourt= function(court){
+		$id=court.id;
+		CourtModifyResource.update({id:$id},court);
+	}
+	
 	vm.deleteReferee= function(referee){
 		$id=referee.id;
 		RefereeResource.deleteReferee({id:$id});
+	}
+	
+	vm.deleteCourt= function(court){
+		$id=court.id;
+		CourtResource.deleteCourt({id:$id});
 	}
 	
 	vm.deleteTournament= function(tournament){
@@ -132,6 +170,7 @@ function FootballManager($resource, $timeout) {
 		vm.referees = vm.getReferees();
 		vm.tournaments = vm.getTournaments();
 		vm.teams = vm.getTeams();
+		vm.courts = vm.getCourts();
 	}
 
 	function autoreload() {
