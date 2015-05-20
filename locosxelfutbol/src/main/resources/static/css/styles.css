@@ -14,6 +14,11 @@ body {
 	z-index: 100;
 }
 
+.a.mdi-action-launch{
+	color:white;
+	
+}
+
 .list-row a {
 	text-decoration: none;
 	color: #333;
