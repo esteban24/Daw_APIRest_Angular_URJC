@@ -11,13 +11,11 @@
 
 <!-- Elementos del material design en local -->
 <script src="./bower_components/webcomponentsjs/webcomponents.js"></script>
-<link href="./bower_components/font-roboto/roboto.html" rel="import"></link>
-<link href="./bower_components/core-icon/core-icon.html" rel="import"></link>
-<link href="./bower_components/core-icons/core-icons.html" rel="import"></link>
-<link href="./bower_components/paper-button/paper-button.html" rel="import"></link>
-<link href="./bower_components/core-toolbar/core-toolbar.html" rel="import"></link>
-<link href="./bower_components/paper-slider-master/paper-slider.html" rel="import"></link>
-<link href="./bower_components/paper-toggle-botton/paper-toggle-button.html" rel="import"></link>
+<link rel="import" href="./bower_components/font-roboto/roboto.html">
+<link rel="import" href="./bower_components/core-icon/core-icon.html">
+<link rel="import" href="./bower_components/core-icons/core-icons.html">
+<link rel="import" href="./bower_components/paper-button/paper-button.html">
+<link rel="import" href="./bower_components/paper-toggle-button/paper-toggle-button.html">
 
 
 <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
@@ -53,12 +51,8 @@
 		<section>
 			<paper-button raised>raised button</paper-button>
 		</section>
-		<section class="green-slider">
 		<section>
-	      <div center horizontal layout>
-		      <div flex>Wi-Fi</div>
 		      <paper-toggle-button checked></paper-toggle-button>
-    	  </div>
 		</section>
 		<div ng-view></div>
 	</div>
