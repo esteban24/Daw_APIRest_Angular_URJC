@@ -14,7 +14,9 @@ public class TournamentController {
 	@Autowired
 	private TournamentRepository tournamentRepository;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	
+	
+	@RequestMapping(value="/torneos", method = RequestMethod.GET)
 	public List<Tournament> getTournament() {
 		return tournamentRepository.findAll();
 	}

@@ -24,6 +24,10 @@ function FootballManager($resource, $timeout) {
 	var CourtResource = $resource('/courtAdmin/court',  
 			{save : {method : 'GET'}
 		});
+	
+	var TournamentResource = $resource('/tournamentAdmin/torneos',  
+			{save : {method : 'GET'}
+		});
 
 	var RefereeResource = $resource('/refereeAdmin/:id',
 			{id:'@id'},
