@@ -1,5 +1,6 @@
 package es.sidelab.locosxelfutbol;
 
+import javax.persistence.Access;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +19,13 @@ public class SecurityController {
 
 	@RequestMapping(value= "/seguridad", method = RequestMethod.POST)
 	public boolean pruebax(@RequestBody Access datos, HttpSession sesion) {
-		System.out.println("ENtro por seguridad");
-
 		if ((datos.mail.equals("admin@locosxelfutbol.com")) && (datos.pass.equals("1234"))) {
 			sesion.setAttribute("admin", true);
+			System.out.println("ENtro por seguridad");
 			return true;
 		} else {
+			System.out.println("ENtro por seguridad");
+
 			sesion.setAttribute("admin", false);
 			return false;
 		}

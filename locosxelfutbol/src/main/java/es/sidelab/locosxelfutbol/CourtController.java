@@ -37,25 +37,28 @@ public class CourtController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Court> addCourt(@RequestBody Court court, HttpSession sesion){
-		//if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			courtRepository.save(court);
 			return new ResponseEntity<>(court, HttpStatus.CREATED);
-		//}else{
-			//return null;
-		//}	
+		}else{
+			System.out.println("NO ME DEBERIA DEJAR ENTRAR");
+			return null;
+		}	
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
 	public void modificar(@PathVariable long id, @RequestBody Court court, HttpSession sesion){
-		//if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			courtRepository.setName(id,court.getName());
 			courtRepository.setDescription(id,court.getDescription());
-		//}
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
 	public void deleteReferee(@PathVariable long id, HttpSession sesion){
-		courtRepository.delete(id);
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			courtRepository.delete(id);
+		}
 	}
 
 }

@@ -16,6 +16,9 @@ function FootballManager($resource, $timeout, $http) {
 	vm.tournaments= [];
 	vm.modifyReferee={};
 	vm.modifyCourt={};
+	vm.valido=false;
+	vm.pass={};
+	vm.mail={};
 
 	var TeamResource = $resource('/team/equipos',  
 		{save : {method : 'GET'}
@@ -57,9 +60,9 @@ function FootballManager($resource, $timeout, $http) {
 			{save : {method : 'GET'}
 	});
 	
-	var SessionResource = $resource('/adminLogin/seguridad', 
-		{save : {method : 'GET'}
-	});
+	/*var SessionResource = $resource('/adminLogin/seguridad', 
+		{save : {method : 'POST'}
+	});*/
 	
 	var PassResource = $resource('/')
 	
@@ -126,24 +129,18 @@ function FootballManager($resource, $timeout, $http) {
 		TournamentResource.deleteTournament({id:$id});
 	}
 	
-	vm.login = function(mail, pass, callback) {
-		$http.post("/adminLogin/seguridad", {mail:"admin@locosxelfutbol.com",pass:"1234"}).success(callback);
-		
-//		vm.datos = {};
-//		vm.datos.mail = mail;
-//		vm.datos.pass = pass;
-//		SessionResource.save(vm.datos, function() {
-//		});
+	vm.login = function($mail, $pass, callback) {
+		$http.post("/adminLogin/seguridad", {mail:$mail ,pass:$pass}).success(callback);
 	}
 
-	vm.islog = function() {
+	/*vm.islog = function() {
 		return SessionResource.query();
 	}
 
 	vm.logout = function() {
 		SessionResource.remove(function() {
 		});
-	}
+	}*/
 	/*
 	 * vm.signup = function(mail,pass){
 	 * 
@@ -155,7 +152,7 @@ function FootballManager($resource, $timeout, $http) {
 	 *  }
 	 */
 
-	vm.pass = function(pass, idpers) {
+	/*vm.pass = function(pass, idpers) {
 		$id = idpers;
 		PassResource.update({
 			id : $id
@@ -188,6 +185,6 @@ function FootballManager($resource, $timeout, $http) {
 		$timeout(autoreload, 1000);
 	}
 
-	autoreload();
+	autoreload();*/
 
 }

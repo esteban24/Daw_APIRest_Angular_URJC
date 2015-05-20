@@ -21,20 +21,20 @@
 		</div>
 	</div>
 	<div ng-controller="SecurityController as vm">
-	<form class="form-horizontal" action="#/adminLogin" ng-submit="vm.login()">
+	<form class="form-horizontal" ng-submit="vm.login(vm.mail,vm.pass)">
 		<fieldset>
 			<div class="form-group">
 				<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 				<div class="col-lg-10">
-					<input type="email" class="form-control" id="inputEmail"
-						placeholder="Email" ng-model="maillog">
+					<input type="email" class="form-control" id="mail"
+						placeholder="email" ng-model="vm.mail">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword" class="col-lg-2 control-label">Password</label>
 				<div class="col-lg-10">
-					<input type="password" class="form-control" id="inputPassword"
-						placeholder="Password" ng-model="passlog"> <br>
+					<input type="password" class="form-control" id="pass"
+						placeholder="pass" ng-model="vm.pass"> <br>
 				</div>
 			</div>
 			<div class="form-group">

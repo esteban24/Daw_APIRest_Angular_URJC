@@ -1,8 +1,8 @@
 angular.module("app").controller("SecurityController", SecurityController);
 
-SecurityController.$inject = ["footballManager","$location"];
+SecurityController.$inject = ["footballManager","$location", "$http"];
 
-function SecurityController(footballManager, $location) {
+function SecurityController(footballManager, $location, $http) {
 
 	var vm = this;
 	
@@ -13,15 +13,16 @@ function SecurityController(footballManager, $location) {
 	vm.maillog="";
 	vm.pass="";
 	vm.passlog="";
-	vm.islog=footballManager.islog();
+	vm.login= footballManager.login();
+	vm.valido=false;
 	
 	//Controller actions
 	vm.login = function() {
-		footballManager.login(vm.maillog,vm.passlog, function(valido){
+		footballManager.login(vm.mail,vm.pass, function(valido){
 			if(valido){
 				$location.path("/adminLogin");		
 			} else {
-				
+				$location.path("/error");
 			}
 		});
 	};
