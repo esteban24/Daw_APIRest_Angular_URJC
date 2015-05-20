@@ -20,6 +20,11 @@ public class CourtController {
 	@Autowired
 	private CourtRepository courtRepository;
 	
+	@RequestMapping(value = "/court" ,method = RequestMethod.GET)
+	public List<Court> getTeams() {
+		return courtRepository.findAll();
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Court> getCourts() {
 		return courtRepository.findAll();

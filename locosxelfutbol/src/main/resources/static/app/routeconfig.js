@@ -12,7 +12,11 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/refereeAdmin', { templateUrl : "templates/refereeAdmin.html" });
 	$routeProvider.when('/addReferee', { templateUrl : "templates/addReferee.html" });
 	$routeProvider.when('/tournament', { templateUrl : "templates/tournament.html" });
-	$routeProvider.when('/tournamentAdmin', { templateUrl : "templates/tournamentAdmin.html" });
+	
+	$routeProvider.when('/court', { templateUrl : "templates/court.html" });
+	$routeProvider.when('/courtAdmin', { templateUrl : "templates/courtAdmin.html" });
+	$routeProvider.when('/addCourt', { templateUrl : "templates/addCourt.html" });
+	$routeProvider.when('/modifyCourt', { templateUrl : "templates/modifyCourt.html" });
 	
 	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
 	
