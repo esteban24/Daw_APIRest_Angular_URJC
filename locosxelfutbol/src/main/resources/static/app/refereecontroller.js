@@ -1,8 +1,8 @@
 angular.module("app").controller("RefereeController", RefereeController);
 
-RefereeController.$inject = ["footballManager", "$timeout", "$location"];
+RefereeController.$inject = ["footballManager", "$timeout", "$location, $scope,$http"];
 
-function RefereeController(footballManager, $timeout, $location) {
+function RefereeController(footballManager, $timeout, $location,$scope,$http) {
 
 	var vm = this;
 	vm.referees= footballManager.getReferees();
@@ -47,4 +47,17 @@ function RefereeController(footballManager, $timeout, $location) {
 		vm.reload();
 		$location.path('/refereeAdmin');
 	}
+	
+	$scope.uploadFile = function(referee.image) {
+	    var fd = new FormData();
+	    //Take the first selected file
+	    fd.append("file", referee.image[0]);
+
+	    $http.post(uploadUrl, fd, {
+	        withCredentials: true,
+	        headers: {'Content-Type': undefined },
+	        transformRequest: angular.identity
+	    }).success( ...all right!... ).error( ..damn!... );
+
+	};
 };

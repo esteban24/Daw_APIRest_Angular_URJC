@@ -252,32 +252,15 @@ public class DataBaseController implements CommandLineRunner{
 
 		
 		//Insert Referees
-		Referee referee1 = new Referee("Luigi", "Colina");
-		Referee referee2 = new Referee("Julio", "Borbalan");
-		Referee referee3 = new Referee("Teixeira", "Vitienes");
-		Referee referee4 = new Referee("Ramón", "Carvajal");
-		Referee referee5 = new Referee("Maldonado", "Julio");
-		Referee referee6 = new Referee("Santiago", "Morientes");
-		Referee referee7 = new Referee("Fernando", "del Torreón");
-		Referee referee8 = new Referee("Carlos", "Maldini");
-		Referee referee9 = new Referee("Raúl", "González");
-		Referee referee10 = new Referee("Marcos", "Aparicio");
-		Referee referee11 = new Referee("Miguel", "Vitienes");
-		Referee referee12 = new Referee("Óscar", "Sánchez");
+		Referee referee1 = new Referee("Luigi", "Colina","img/collina.jpg");
+		Referee referee2 = new Referee("Julio", "Borbalan","img/julio.jpg");
+		Referee referee3 = new Referee("Teixeira", "Vitienes","img/teixeira.jpg");
+		Referee referee4 = new Referee("Sergey", "Piptukin", "img/sergey.jpeg");
 		
 		refereeRepository.save(referee1);
 		refereeRepository.save(referee2);
 		refereeRepository.save(referee3);
 		refereeRepository.save(referee4);
-		refereeRepository.save(referee5);
-		refereeRepository.save(referee6);
-		refereeRepository.save(referee7);
-		refereeRepository.save(referee8);
-		refereeRepository.save(referee9);
-		refereeRepository.save(referee10);
-		refereeRepository.save(referee11);
-		refereeRepository.save(referee12);
-
 		
 		//Insert Tournaments
 		
@@ -391,14 +374,6 @@ public class DataBaseController implements CommandLineRunner{
 		refereeRepository.save(referee2);
 		refereeRepository.save(referee3);
 		refereeRepository.save(referee4);
-		refereeRepository.save(referee5);
-		refereeRepository.save(referee6);
-		refereeRepository.save(referee7);
-		refereeRepository.save(referee8);
-		refereeRepository.save(referee9);
-		refereeRepository.save(referee10);
-		refereeRepository.save(referee11);
-		refereeRepository.save(referee12);
 	
 		
 		matchRepository.save(match1);

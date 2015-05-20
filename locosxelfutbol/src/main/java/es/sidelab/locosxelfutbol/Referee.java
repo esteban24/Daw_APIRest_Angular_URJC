@@ -18,13 +18,15 @@ public class Referee implements Serializable{
 	private Long id;	
 	private String name;
 	private String lastName;
+	private String image;
 
 	public Referee() {
 	}
 
-	public Referee(String name, String lastName) {
+	public Referee(String name, String lastName, String image) {
 		this.name = name;
 		this.lastName = lastName;
+		this.image=image;
 	}	
 	
 	public Long getId() {
@@ -49,6 +51,14 @@ public class Referee implements Serializable{
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

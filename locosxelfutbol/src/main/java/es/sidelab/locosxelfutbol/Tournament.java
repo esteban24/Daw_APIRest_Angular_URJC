@@ -9,10 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
-
-
-
-
 @Entity
 public class Tournament{
 	
