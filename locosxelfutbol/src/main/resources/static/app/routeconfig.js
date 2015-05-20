@@ -6,6 +6,7 @@ function RouteConfig($routeProvider) {
 
 	$routeProvider.when('/', { templateUrl : "templates/carrousel.html" });
 	$routeProvider.when('/home', { templateUrl : "templates/home.html" });
+	$routeProvider.when('/carrousel', { templateUrl : "templates/carrousel.html" });
 	$routeProvider.when('/adminLogin', { templateUrl : "templates/adminLogin.html" });
 	$routeProvider.when('/team', { templateUrl : "templates/team.html" });
 	$routeProvider.when('/referee', { templateUrl : "templates/referee.html" });
