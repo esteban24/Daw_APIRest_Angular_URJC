@@ -1,9 +1,17 @@
 package es.sidelab.locosxelfutbol;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+
+
+
+
 
 @Entity
 public class Tournament{
@@ -12,17 +20,12 @@ public class Tournament{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String name;
-/*	@OneToMany
-	@JoinTable(name="TOURN_TEAM",
-	joinColumns=@JoinColumn(name="TEAM_ID"),
-	inverseJoinColumns=@JoinColumn(name="TOURNT_ID"))
-	private List<Team> teams;*/
-	private String teams;
-/*	@OneToMany
-	@JoinTable(name="TOURN_MATCH",
-	joinColumns=@JoinColumn(name="MATCH_ID"),
-	inverseJoinColumns=@JoinColumn(name="TOURNM_ID"))
-	private List<Match> matches;*/
+	@OneToMany
+	@JoinTable(name="TOURN_TEAM")
+	private List<Team> teams;
+	//private String teams;
+	@OneToMany
+	private List<Match> matches;
 	//private String matches;
 	
 	
@@ -30,10 +33,10 @@ public class Tournament{
 	public Tournament(){
 	}
 	
-	public Tournament(String name, String teams){
+	public Tournament(String name, List<Team> teams, List<Match> matchs){
 		this.name=name;
 		this.teams=teams;
-		//this.matches=matchs;
+		this.matches=matchs;
 	}
 
 	
@@ -77,11 +80,11 @@ public class Tournament{
 		this.name = name;
 	}
 	
-	public String getTeams() {
+	public List<Team> getTeams() {
 		return teams;
 	}
 	
-	public void setTeams(String teams) {
+	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
 	

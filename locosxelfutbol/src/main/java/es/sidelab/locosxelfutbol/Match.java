@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Match{
@@ -12,14 +14,14 @@ public class Match{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
-/*	@OneToOne
+	@OneToOne
 	@JoinColumn(name="LOCAL_TEAM")
-	private Team local;*/
-	private String local;
-/*	@OneToOne
+	private Team local;
+	//private String local;
+	@OneToOne
 	@JoinColumn(name="VISITANT_TEAM")
-	private Team visitant;*/
-	private String visitant;
+	//private Team visitant;
+	private Team visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
 	
@@ -30,7 +32,7 @@ public class Match{
 		this.goalsVisitant=0;
 	}
 
-	public Match(String local, String visitant, int goalsLocal, int goalsVisitant){
+	public Match(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;
@@ -45,19 +47,19 @@ public class Match{
 		this.id = id;
 	}
 	
-	public String getLocal() {
+	public Team getLocal() {
 		return local;
 	}
 	
-	public void setLocal(String local) {
+	public void setLocal(Team local) {
 		this.local = local;
 	}
 
-	public String getVisitant() {
+	public Team getVisitant() {
 		return visitant;
 	}
 
-	public void setVisitant(String visitant) {
+	public void setVisitant(Team visitant) {
 		this.visitant = visitant;
 	}
 
