@@ -17,5 +17,5 @@ Court findById(long id);
 	@Modifying
 	@Transactional
 	@Query("update Court c set c.description = ?2 where c.id=?1")
-	void setDescription(long id, String lastName);
+	void setDescription(long id, String description);
 }

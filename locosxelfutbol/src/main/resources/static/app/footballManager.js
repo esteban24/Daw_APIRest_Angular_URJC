@@ -89,7 +89,7 @@ function FootballManager($resource, $timeout) {
 	}
 	
 	vm.setModifyCourt= function(court){
-		vm.modifyCourt=referee;
+		vm.modifyCourt=court;
 		return vm.modifyCourt;
 	}
 	

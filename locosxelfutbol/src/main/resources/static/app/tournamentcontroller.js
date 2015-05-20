@@ -5,6 +5,9 @@ TournamentController.$inject = ["footballManager", "$timeout", "$location"];
 function TournamentController(footballManager, $timeout, $location) {
 
 	var vm = this;
+	vm.tournaments= footballManager.getTournaments();
+	vm.tournament={};
+	
 
 	//Controller actions
 	

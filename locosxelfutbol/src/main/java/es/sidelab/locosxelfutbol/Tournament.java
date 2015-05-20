@@ -25,10 +25,9 @@ public class Tournament{
 	private List<Match> matches;*/
 	//private String matches;
 	
+	
+	
 	public Tournament(){
-		this.name="";
-		this.teams= "";
-		//this.matches= "";
 	}
 	
 	public Tournament(String name, String teams){
