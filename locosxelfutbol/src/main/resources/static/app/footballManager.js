@@ -1,8 +1,8 @@
 angular.module("app").service("footballManager", FootballManager);
 
-FootballManager.$inject = [ "$resource", "$timeout" ];
+FootballManager.$inject = [ "$resource", "$timeout", "$http" ];
 
-function FootballManager($resource, $timeout) {
+function FootballManager($resource, $timeout, $http) {
 
 	var vm = this;
 
@@ -126,12 +126,14 @@ function FootballManager($resource, $timeout) {
 		TournamentResource.deleteTournament({id:$id});
 	}
 	
-	vm.login = function(mail, pass) {
-		vm.datos = {};
-		vm.datos.mail = mail;
-		vm.datos.pass = pass;
-		SessionResource.save(vm.datos, function() {
-		});
+	vm.login = function(mail, pass, callback) {
+		$http.post("/adminLogin/seguridad", {mail:"admin@locosxelfutbol.com",pass:"1234"}).success(callback);
+		
+//		vm.datos = {};
+//		vm.datos.mail = mail;
+//		vm.datos.pass = pass;
+//		SessionResource.save(vm.datos, function() {
+//		});
 	}
 
 	vm.islog = function() {

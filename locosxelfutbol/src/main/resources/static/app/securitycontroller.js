@@ -17,8 +17,13 @@ function SecurityController(footballManager, $location) {
 	
 	//Controller actions
 	vm.login = function() {
-		var valido=footballManager.login(vm.maillog,vm.passlog);
-		setTimeout(function(){$location.path("/adminLogin");},1000);
+		footballManager.login(vm.maillog,vm.passlog, function(valido){
+			if(valido){
+				$location.path("/adminLogin");		
+			} else {
+				
+			}
+		});
 	};
 	vm.logout = function() {
 		footballManager.logout();

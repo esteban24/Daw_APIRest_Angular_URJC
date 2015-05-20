@@ -16,14 +16,16 @@ public class SecurityController {
 		public String pass;
 	}
 
-	@RequestMapping(value= "/seguridad", method = RequestMethod.GET)
-	public void pruebax(@RequestBody Access datos, HttpSession sesion) {
+	@RequestMapping(value= "/seguridad", method = RequestMethod.POST)
+	public boolean pruebax(@RequestBody Access datos, HttpSession sesion) {
 		System.out.println("ENtro por seguridad");
 
 		if ((datos.mail.equals("admin@locosxelfutbol.com")) && (datos.pass.equals("1234"))) {
 			sesion.setAttribute("admin", true);
+			return true;
 		} else {
 			sesion.setAttribute("admin", false);
+			return false;
 		}
 
 	}
