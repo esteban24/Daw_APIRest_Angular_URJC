@@ -17,7 +17,7 @@ public class TournamentController {
 	
 	
 	@RequestMapping(value="/torneos", method = RequestMethod.GET)
-	public List<Tournament> getTournament() {
+	public List<Tournament> getTournaments() {
 		return tournamentRepository.findAll();
 	}
 }
