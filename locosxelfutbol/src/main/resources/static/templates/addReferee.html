@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-default menu">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -21,27 +20,30 @@
 	</div>
 </div>
 <div ng-controller="RefereeController as vm">
-<form class="form-horizontal" >
-	<fieldset>
-		<legend>A�adiendo arbitro</legend>
-		<div class="form-group">
-			<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-			<div class="col-lg-10">
-				<input type="text" class="form-control" id="inputName"
-					placeholder="Nombre" ng-model = "vm.referee.name">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword" class="col-lg-2 control-label">Apellido</label>
-			<div class="col-lg-10">
-				<input type="text" class="form-control" id="inputLastName"
-					placeholder="Apellido" ng-model = "vm.referee.lastName">
-			</div>
-		</div>
-		
-		<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.referee.image)"/>
-		
-		<a ng-click=vm.addReferee(vm.referee) class="md-raised md-primary text-center">A�adir Arbitro</a>
-	</fieldset>
-</form>
+	<div if-ng ="vm.valido">
+		<form class="form-horizontal" >
+			<fieldset>
+				<legend>A�adiendo arbitro</legend>
+				<div class="form-group">
+					<label for="inputName" class="col-lg-2 control-label">Nombre</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputName"
+							placeholder="Nombre" ng-model = "vm.referee.name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword" class="col-lg-2 control-label">Apellido</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputLastName"
+							placeholder="Apellido" ng-model = "vm.referee.lastName">
+					</div>
+				</div>
+				
+				<a ng-click=vm.addReferee(vm.referee) class="md-raised md-primary text-center">A�adir Arbitro</a>
+			</fieldset>
+		</form>
+	</div>
+	<div ng-if="!vm.valido">
+		<h1>error, no tiene permisos</h1>
+	</div>
 </div>

@@ -14,12 +14,13 @@ function SecurityController(footballManager, $location, $http) {
 	vm.pass="";
 	vm.passlog="";
 	vm.login= footballManager.login();
-	vm.valido=false;
+	vm.valido=footballManager.getValido();
 	
 	//Controller actions
 	vm.login = function() {
 		footballManager.login(vm.mail,vm.pass, function(valido){
 			if(valido){
+				footballManager.setValido(true);
 				$location.path("/adminLogin");		
 			} else {
 				$location.path("/error");

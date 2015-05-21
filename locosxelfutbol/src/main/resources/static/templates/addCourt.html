@@ -20,25 +20,30 @@
 	</div>
 </div>
 <div ng-controller="CourtController as vm">
-<form class="form-horizontal" >
-	<fieldset>
-		<legend>Añadiendo pista</legend>
-		<div class="form-group">
-			<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-			<div class="col-lg-10">
-				<input type="text" class="form-control" id="inputName"
-					placeholder="Nombre" ng-model = "vm.court.name">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword" class="col-lg-2 control-label">Descripcion</label>
-			<div class="col-lg-10">
-				<input type="text" class="form-control" id="inputDescription"
-					placeholder="Descripcion" ng-model = "vm.court.description">
-			</div>
-		</div>
-		
-		<a ng-click=vm.addCourt(vm.court) class="md-raised md-primary text-center">Añadir Pista</a>
-	</fieldset>
-</form>
+	<div ng-if="vm.valido">
+		<form class="form-horizontal" >
+			<fieldset>
+				<legend>Añadiendo pista</legend>
+				<div class="form-group">
+					<label for="inputName" class="col-lg-2 control-label">Nombre</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputName"
+							placeholder="Nombre" ng-model = "vm.court.name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword" class="col-lg-2 control-label">Descripcion</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputDescription"
+							placeholder="Descripcion" ng-model = "vm.court.description">
+					</div>
+				</div>
+				
+				<a ng-click=vm.addCourt(vm.court) class="md-raised md-primary text-center">Añadir Pista</a>
+			</fieldset>
+		</form>
+	</div>
+	<div ng-if="!vm.valido">
+		<h1>error, no tiene permisos</h1>
+	</div>
 </div>

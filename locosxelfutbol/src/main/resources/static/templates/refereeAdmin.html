@@ -1,4 +1,4 @@
- <div class="list-group"  ng-controller="RefereeController as vm">
+<div class="list-group">
     <div class="navbar navbar-default menu">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -21,20 +21,25 @@
 		</div>
 		<h1>ADMINISTRADOR</h1>
 	</div>
-	<div>
+</div>
+<div  ng-controller="RefereeController as vm">
+	<div ng-if="vm.valido">
 		<a href="#/addReferee">A�adir Arbitro</a>
+	   <div class="list-group-item" ng-repeat="referee in vm.referees">
+	       <div class="row-picture">
+	           <img class="circle" src="https://lh3.googleusercontent.com/-0af3GR5yc0g/AAAAAAAAAAI/AAAAAAAAADI/dKM1l8rRNng/s120-c/photo.jpg" alt="icon">
+	       </div>
+	       <div class="row-content">
+	           <h4 class="list-group-item-heading">{{referee.name}}</h4>
+	           <p class="list-group-item-text">{{referee.lastName}}</p>
+	       </div>
+	      <div>
+				<a type="button" class="md-raised md-primary" ng-click="vm.modify(referee)">Modificar</a>
+				<a type="button" class="md-raised md-warn" ng-click="vm.deleteReferee(referee)">Eliminar</a>
+			</div>
+	   </div> 
 	</div>
-    <div class="list-group-item" ng-repeat="referee in vm.referees">
-        <div class="row-picture">
-            <img class="circle" src={{referee.image}} alt="icon">
-        </div>
-        <div class="row-content">
-            <h4 class="list-group-item-heading">{{referee.name}}</h4>
-            <p class="list-group-item-text">{{referee.lastName}}</p>
-        </div>
-        <div>
-			<a type="button" class="md-raised md-primary" ng-click="vm.modify(referee)">Modificar</a>
-			<a type="button" class="md-raised md-warn" ng-click="vm.deleteReferee(referee)">Eliminar</a>
-		</div>
-    </div>    
-</div> 
+	<div ng-if="!vm.valido">
+		<h1>error, no tiene permisos</h1>
+	</div> 
+</div>    

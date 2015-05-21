@@ -22,6 +22,15 @@ function FootballManager($resource, $timeout, $http) {
 	vm.player={};
 	vm.players=[];
 	vm.playersinteam=[];
+	
+	vm.getValido = function(){
+		return vm.valido;
+	}
+	
+	vm.setValido = function(cambio){
+		vm.valido = cambio;
+		return vm.valido;
+	}
 
 	var TeamResource = $resource('/team/equipos',  
 		{save : {method : 'GET'}

@@ -16,6 +16,8 @@ public class SecurityController {
 		public String mail;
 		public String pass;
 	}
+	
+	
 
 	@RequestMapping(value= "/seguridad", method = RequestMethod.POST)
 	public boolean pruebax(@RequestBody Access datos, HttpSession sesion) {

@@ -7,6 +7,7 @@ function TournamentController(footballManager, $timeout, $location) {
 	var vm = this;
 	vm.tournaments= footballManager.getTournaments();
 	vm.tournament={};
+	vm.valido = footballManager.getValido();
 	
 
 	//Controller actions
