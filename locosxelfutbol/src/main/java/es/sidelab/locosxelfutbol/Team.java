@@ -25,6 +25,8 @@ public class Team{
 	private int points;
 	private int gc;
 	private int gf;
+	private String correo;
+	private String contrasenia;
 
 	public Team() {
 		this.name="";
@@ -35,9 +37,11 @@ public class Team{
 		this.points=0;
 		this.gc=0;
 		this.gf=0;
+		this.correo="";
+		this.contrasenia="";
 	}
 
-	public Team(String name, List<Player> players, int win, int draw, int defeat, int points, int gc, int gf) {
+	public Team(String name, List<Player> players, int win, int draw, int defeat, int points, int gc, int gf,String correo, String contrasenia) {
 		this.name = name;
 		this.players= players;
 		this.win=win;
@@ -45,6 +49,8 @@ public class Team{
 		this.defeat=defeat;
 		this.gc=gc;
 		this.gf=gf;
+		this.correo=correo;
+		this.contrasenia=contrasenia;
 	}	
 	
 	public void addPlayer(Player player) {
@@ -85,6 +91,22 @@ public class Team{
         return false;
     }
  
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+	
     public void setId(Long id) {
         this.id = id;
     }

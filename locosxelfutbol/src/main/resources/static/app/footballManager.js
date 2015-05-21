@@ -19,6 +19,9 @@ function FootballManager($resource, $timeout, $http) {
 	vm.valido=false;
 	vm.pass={};
 	vm.mail={};
+	vm.mailuser={};
+	vm.passuser={};
+	vm.validouser=false;
 	vm.player={};
 	vm.players=[];
 	vm.playersinteam=[];
@@ -30,6 +33,15 @@ function FootballManager($resource, $timeout, $http) {
 	vm.setValido = function(cambio){
 		vm.valido = cambio;
 		return vm.valido;
+	}
+	
+	vm.getValidouser = function(){
+		return vm.validouser;
+	}
+	
+	vm.setValidouser = function(cambio){
+		vm.validouser = cambio;
+		return vm.validouser;
 	}
 
 	var TeamResource = $resource('/team/equipos',  
@@ -88,10 +100,6 @@ function FootballManager($resource, $timeout, $http) {
 		vm.players = PlayerResource.query();
 		return PlayerResource.query();
 	}
-	
-	/*vm.getPlayersByTeam = function(team){
-		vm.playersinteam = PlayerResource.query()
-	}*/
 
 	vm.getReferees = function() {
 		vm.referees = RefereeResource.query();
@@ -163,6 +171,10 @@ function FootballManager($resource, $timeout, $http) {
 	
 	vm.login = function($mail, $pass, callback) {
 		$http.post("/adminLogin/seguridad", {mail:$mail ,pass:$pass}).success(callback);
+	}
+	
+	vm.loginuser = function($mailuser, $passuser, callback) {
+		$http.post("/adminLogin/seguridadUsuario", {mail:$mailuser ,pass:$passuser}).success(callback);
 	}
 
 	/*vm.islog = function() {

@@ -6,15 +6,14 @@ function SecurityController(footballManager, $location, $http) {
 
 	var vm = this;
 	
-	//View model properties
-	//vm.personas = globalService.getPersonas();
-	//vm.persona=globalService.getPersona();
 	vm.mail="";
-	vm.maillog="";
+	vm.mailuser="";
 	vm.pass="";
-	vm.passlog="";
+	vm.passuser="";
 	vm.login= footballManager.login();
+	vm.loginuser= footballManager.loginuser();
 	vm.valido=footballManager.getValido();
+	vm.validouser=footballManager.getValidouser();
 	
 	//Controller actions
 	vm.login = function() {
@@ -27,6 +26,18 @@ function SecurityController(footballManager, $location, $http) {
 			}
 		});
 	};
+	
+	vm.loginuser = function() {
+		footballManager.loginuser(vm.mailuser,vm.passuser, function(validouser){
+			if(validouser){
+				footballManager.setValidouser(true);
+				$location.path("/user");		
+			} else {
+				$location.path("/team");
+			}
+		});
+	};
+	
 	vm.logout = function() {
 		footballManager.logout();
 		$location.path("/#");

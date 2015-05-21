@@ -51,7 +51,7 @@ public class DataBaseController implements CommandLineRunner{
 		players1.add(player5);
 
 		//Insert Team
-		Team team1 = new Team("Steaua Del Water", players1, 0, 0, 0, 0, 0, 0);
+		Team team1 = new Team("Steaua Del Water", players1, 0, 0, 0, 0, 0, 0,"equipo1@team.com","1234");
 		//teamRepository.save(team1);
 		
 		//Set Teams
@@ -75,7 +75,7 @@ public class DataBaseController implements CommandLineRunner{
 		players2.add(player10);
 
 		//Insert Team
-		Team team2 = new Team("Los Franciscanos", players2, 0, 0, 0, 0, 0, 0);
+		Team team2 = new Team("Los Franciscanos", players2, 0, 0, 0, 0, 0, 0,"equipo2@team.com","1234");
 		//teamRepository.save(team2);
 		
 		//Set Teams
@@ -101,7 +101,7 @@ public class DataBaseController implements CommandLineRunner{
 		players3.add(player15);
 		
 		//Insert Team
-		Team team3 = new Team("URJCJAI", players3, 0, 0, 0, 0, 0, 0);
+		Team team3 = new Team("URJCJAI", players3, 0, 0, 0, 0, 0, 0,"equipo3@team.com","1234");
 		//teamRepository.save(team3);
 		
 		//Set Teams
@@ -127,7 +127,7 @@ public class DataBaseController implements CommandLineRunner{
 		players4.add(player20);
 		
 		//Insert Team
-		Team team4 = new Team("NewTeam",players4, 0, 0, 0, 0, 0, 0);
+		Team team4 = new Team("NewTeam",players4, 0, 0, 0, 0, 0, 0,"equipo1@team.com","1234");
 		//teamRepository.save(team4);
 		
 		//Set Teams
@@ -153,7 +153,7 @@ public class DataBaseController implements CommandLineRunner{
 		players5.add(player25);
 		
 		//Insert Team
-		Team team5 = new Team("Minabo de Kiev",players5, 0, 0, 0, 0, 0, 0);
+		Team team5 = new Team("Minabo de Kiev",players5, 0, 0, 0, 0, 0, 0,"equipo5@team.com","1234");
 		//teamRepository.save(team5);
 		
 		//Set Teams
@@ -179,7 +179,7 @@ public class DataBaseController implements CommandLineRunner{
 		players6.add(player30);
 		
 		//Insert Team
-		Team team6 = new Team("Aston Birras", players6, 0, 0, 0, 0, 0, 0);
+		Team team6 = new Team("Aston Birras", players6, 0, 0, 0, 0, 0, 0,"equipo6@team.com","1234");
 		//teamRepository.save(team6);
 		
 		//Set Teams
@@ -205,7 +205,7 @@ public class DataBaseController implements CommandLineRunner{
 		players6.add(player35);
 		
 		//Insert Team
-		Team team7 = new Team("Pajax de Amsterdam", players7, 0, 0, 0, 0, 0, 0);
+		Team team7 = new Team("Pajax de Amsterdam", players7, 0, 0, 0, 0, 0, 0,"equipo7@team.com","1234");
 		//teamRepository.save(team7);
 		
 		//Set Teams

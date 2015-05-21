@@ -1,7 +1,7 @@
-<div ng-controller="CourtController as vm">
+<div class="list-group" ng-controller="CourtController as vm">
 
 	<core-toolbar class="medium-tall">
-		    <div flex><!-- Locos x el Fútbol -->
+		    <div flex><!-- Locos x el FÃºtbol -->
 		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
 		    </div>
 		    <a href="#/home">
@@ -19,26 +19,7 @@
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
-    <!--  <div class="navbar navbar-default menu">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el
-				futbol</a>
-		</div>
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="#/home">Home</a></li>
-				<li><a href="#/court">Pistas</a></li>
-				<li><a href="#/tournament">Torneos</a></li>
-				<li><a href="#/team">Equipos</a></li>
-				<li><a href="#/referee">Arbitros</a></li>
-			</ul>
 
-		</div>-->
     <div class="list-group-item" ng-repeat="court in vm.courts">
         <div class="row-picture">
             <img class="circle" src={{court.image}} alt="icon">
