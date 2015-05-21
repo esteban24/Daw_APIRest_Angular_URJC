@@ -20,15 +20,15 @@
 
 		</div>
 	</div>
-</div>
 <div  ng-controller="CourtController as vm">	
 	<div ng-if="vm.valido">
 		<div>
 			<a href="#/addCourt">A�adir Pista</a>
+			</br></br>
 		</div>
 	    <div class="list-group-item" ng-repeat="court in vm.courts">
 	        <div class="row-picture">
-	            <img class="circle" src="https://lh3.googleusercontent.com/-0af3GR5yc0g/AAAAAAAAAAI/AAAAAAAAADI/dKM1l8rRNng/s120-c/photo.jpg" alt="icon">
+	            <img class="circle" src={{court.image}}>
 	        </div>
 	        <div class="row-content">
 	            <h4 class="list-group-item-heading">{{court.name}}</h4>
@@ -37,11 +37,13 @@
 	        <div>
 				<a type="button" class="md-raised md-primary" ng-click="vm.modify2(court)">Modificar</a>
 				<a href="" type="button" class="md-raised md-warn" ng-click="vm.deleteCourt(court)">Eliminar</a>
+				</br></br>		
 			</div>
 	    </div> 
 	</div>
 	<div ng-if="!vm.valido">
 		<h1>error, no tiene permisos</h1>
 	</div>   
+</div>
 </div>
 	

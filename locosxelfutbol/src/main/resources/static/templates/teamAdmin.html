@@ -1,0 +1,82 @@
+<div ng-controller="TeamController as vm">
+	<div ng-if="vm.valido">
+		<div class="navbar navbar-default menu">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/carrousel">Locos por el futbol</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#/adminLogin">Home</a></li>
+					<li><a href="#/courtAdmin">Pistas</a></li>
+					<li><a href="#/tournamentAdmin">Torneos</a></li>
+					<li><a href="#/teamAdmin">Equipos</a></li>
+					<li><a href="#/refereeAdmin">Arbitros</a></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<h2>Equipos</h2>
+
+		<!-- Responsive table starts here -->
+		<!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+		<div class="table-responsive-vertical shadow-z-1">
+			<!-- Table starts here -->
+			<table id="table" class="table table-hover table-mc-light-blue">
+				<thead>
+					<tr>
+						<th>Equipo</th>
+						<th>Puntos</th>
+						<th>Goles a favor</th>
+						<th>Goles encajados</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="team in vm.teams">
+						<td data-title="Equipo"><a data-toggle="modal"
+							data-target="#simple-dialog">{{team.name}}</a></td>
+						<td data-title="Puntos">{{team.points}}</a></td>
+						<td data-title="Goles a favor">{{team.gf}}</td>
+						<td data-title="Goles encajados">{{team.gc}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div ng-controller="TeamController as vm" id="simple-dialog"
+			class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<table id="table" class="table table-hover table-mc-light-blue">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Apellido</th>
+									<th>Posicion</th>
+									<th>Edad</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="team in vm.teams">
+									<td data-title="Nombre">{{team.players[$index].name}}</td>
+									<td data-title="Apellido">{{team.players[$index].lastName}}</td>
+									<td data-title="Posicion">{{team.players[$index].position}}</td>
+									<td data-title="Equipo">{{team.players[$index].age}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="!vm.valido">
+		<h1>error, no tiene permisos</h1>
+	</div>
+</div>

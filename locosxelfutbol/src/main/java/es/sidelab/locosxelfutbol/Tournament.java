@@ -16,6 +16,7 @@ public class Tournament{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String name;
+	private String image;
 	@OneToMany
 	@JoinTable(name="TOURN_TEAM")
 	private List<Team> teams;
@@ -29,8 +30,9 @@ public class Tournament{
 	public Tournament(){
 	}
 	
-	public Tournament(String name, List<Team> teams, List<Match> matchs){
+	public Tournament(String name, String image, List<Team> teams, List<Match> matchs){
 		this.name=name;
+		this.image=image;
 		this.teams=teams;
 		this.matches=matchs;
 	}
@@ -77,6 +79,14 @@ public class Tournament{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	public List<Team> getTeams() {

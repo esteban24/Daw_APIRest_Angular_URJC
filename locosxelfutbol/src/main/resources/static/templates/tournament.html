@@ -20,6 +20,9 @@
 		</div>
 	</div>
 	<div class="list-group-item" ng-repeat="tournament in vm.tournaments">
+		<div class="row-picture">
+            <img class="circle" src={{tournament.image}} alt="icon">
+        </div>
 		<div class="row-content">
 			<h4 class="list-group-item-heading">
 				<a data-toggle="modal" data-target="#simple-dialog">{{tournament.name}}</a>
