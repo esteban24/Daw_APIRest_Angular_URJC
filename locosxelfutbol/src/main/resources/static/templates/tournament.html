@@ -1,13 +1,12 @@
-<div class="list-group"  ng-controller="TournamentController as vm">
-    <div class="navbar navbar-default menu">
+<div class="list-group" ng-controller="TournamentController as vm">
+	<div class="navbar navbar-default menu">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-responsive-collapse">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el
-				futbol</a>
+			<a class="navbar-brand" href="#/carrousel">Locos por el futbol</a>
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav">
@@ -20,9 +19,37 @@
 
 		</div>
 	</div>
-    <div class="list-group-item" ng-repeat="tournament in vm.tournaments">
-        <div class="row-content">
-            <h4 class="list-group-item-heading">{{tournament.name}}</h4>
-        </div>
-    </div>    
-</div> 
+	<div class="list-group-item" ng-repeat="tournament in vm.tournaments">
+		<div class="row-content">
+			<h4 class="list-group-item-heading">
+				<a data-toggle="modal" data-target="#simple-dialog">{{tournament.name}}</a>
+			</h4>
+		</div>
+	</div>
+	<div ng-controller="TournamentController as vm"  id="simple-dialog" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table id="table" class="table table-hover table-mc-light-blue">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Posicion</th>
+					<th>Edad</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="tournament in vm.tournaments">
+				<tr>
+					<td data-title="Nombre">{{tournament.teams[$index].name}}</td>
+					<td data-title="Apellido">2</td>
+					<td data-title="Posicion">3</td>
+					<td data-title="Equipo">3</td>				
+				</tr>
+			</tbody>
+		</table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

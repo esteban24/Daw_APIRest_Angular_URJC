@@ -295,9 +295,11 @@ public class DataBaseController implements CommandLineRunner{
 		matches2.add(match11);
 		matches2.add(match12);
 		
-		//Tournament tournament1 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
-		Tournament tournament1 = new Tournament("Copa Santiago Bernabéu");
-		tournamentRepository.save(tournament1);
+		Tournament tournament1 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
+		Tournament tournament2 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
+		Tournament tournament3 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
+		Tournament tournament4 = new Tournament("Copa Santiago Bernabéu", teams1, matches1);
+		//Tournament tournament1 = new Tournament("Copa Santiago Bernabéu");
 		
 		//All saves
 		teamRepository.save(team1);
@@ -370,7 +372,7 @@ public class DataBaseController implements CommandLineRunner{
 		matchRepository.save(match11);
 		
 		
-		//tournamentRepository.save(tournament1);
+		tournamentRepository.save(tournament1);
 
 	}
 }

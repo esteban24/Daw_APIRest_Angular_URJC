@@ -69,7 +69,10 @@ function FootballManager($resource, $timeout, $http) {
 			{'update' : {method : 'PUT'}
 	});
 	
-	
+	var TournamentModifyResource = $resource('/tournamentAdmin/:id', 
+			{id:'@id'},
+			{'update' : {method : 'PUT'}
+	});
 	/*var SessionResource = $resource('/adminLogin/seguridad', 
 		{save : {method : 'POST'}
 	});*/
