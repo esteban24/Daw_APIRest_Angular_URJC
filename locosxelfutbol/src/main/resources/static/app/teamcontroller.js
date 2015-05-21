@@ -5,7 +5,9 @@ TeamController.$inject = ["footballManager", "$timeout", "$location"];
 function TeamController(footballManager, $timeout, $location) {
 
 	var vm = this;
-
+	
+	vm.players= footballManager.getPlayers();
+	
 	//Controller actions
 	
 	vm.reload= function(){

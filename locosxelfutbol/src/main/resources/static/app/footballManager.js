@@ -19,10 +19,17 @@ function FootballManager($resource, $timeout, $http) {
 	vm.valido=false;
 	vm.pass={};
 	vm.mail={};
+	vm.player={};
+	vm.players=[];
+	vm.playersinteam=[];
 
 	var TeamResource = $resource('/team/equipos',  
 		{save : {method : 'GET'}
 	});
+	
+	var PlayerResource = $resource('/player/jugadores',  
+			{save : {method : 'GET'}
+		});
 	
 	var CourtResource = $resource('/courtAdmin/court',  
 			{save : {method : 'GET'}
@@ -70,6 +77,15 @@ function FootballManager($resource, $timeout, $http) {
 		vm.teams = TeamResource.query();
 		return TeamResource.query();
 	}
+	
+	vm.getPlayers = function() {
+		vm.players = PlayerResource.query();
+		return PlayerResource.query();
+	}
+	
+	/*vm.getPlayersByTeam = function(team){
+		vm.playersinteam = PlayerResource.query()
+	}*/
 
 	vm.getReferees = function() {
 		vm.referees = RefereeResource.query();
@@ -152,7 +168,7 @@ function FootballManager($resource, $timeout, $http) {
 	 *  }
 	 */
 
-	/*vm.pass = function(pass, idpers) {
+	vm.pass = function(pass, idpers) {
 		$id = idpers;
 		PassResource.update({
 			id : $id
@@ -177,10 +193,11 @@ function FootballManager($resource, $timeout, $http) {
 		vm.referees = vm.getReferees();
 		vm.tournaments = vm.getTournaments();
 		vm.teams = vm.getTeams();
+		vm.player= vm.getPlayers();
 		vm.courts = vm.getCourts();
 	}
 
-	function autoreload() {
+	/*function autoreload() {
 		vm.reload();
 		$timeout(autoreload, 1000);
 	}

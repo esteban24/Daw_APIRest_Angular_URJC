@@ -1,4 +1,4 @@
-<div ng-controller="TeamController as vm">
+<div ng-controller="PlayerController as vm">
 	<div class="navbar navbar-default menu">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -6,7 +6,8 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el futbol</a>
+			<a class="navbar-brand" href="#/carrousel">Locos por el
+				futbol</a>
 		</div>
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav">
@@ -36,9 +37,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="team in vm.teams">
+				<tr ng-repeat="player in vm.players">
 					<td data-title="Posicion">1</td>
-					<td data-title="Equipo"><a data-toggle="modal" data-target="#simple-dialog">{{team.name}}</a></td>
+					<td data-title="Equipo">{{player.name}}</td>
 					<td data-title="Victorias">5</td>
 					<td data-title="Derrotas">2</td>
 				</tr>
@@ -46,34 +47,4 @@
 		</table>
 	</div>
 
-	<div ng-controller="TeamController as vm"  id="simple-dialog" class="modal fade" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <table id="table" class="table table-hover table-mc-light-blue">
-			<thead>
-				<tr>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Posicion</th>
-					<th>Equipo</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="team in vm.teams">
-					<td data-title="Nombre">{{team.players[$index]}}</td>
-					<td data-title="Apellido">3</td>
-					<td data-title="Posicion">2</td>
-					<td data-title="Equipo">2</td>				
-				</tr>
-			</tbody>
-		</table>
-      </div>
-    </div>
-  </div>
 </div>
-
-</div>
-
-
-
