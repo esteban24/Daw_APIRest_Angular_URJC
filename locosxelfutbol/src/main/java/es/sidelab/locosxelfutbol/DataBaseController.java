@@ -228,29 +228,16 @@ public class DataBaseController implements CommandLineRunner{
 		playerRepository.save(players7);*/
 
 		//Insert Courts
-		Court court1 = new Court("1", "");
-		Court court2 = new Court("2", "");
-		Court court3 = new Court("3", "");
-		Court court4 = new Court("4", "");
-		Court court5 = new Court("5", "");
-		Court court6 = new Court("6", "");
-		Court court7 = new Court("7", "");
-		Court court8 = new Court("8", "");
-		Court court9 = new Court("9", "");
-		Court court10 = new Court("10", "");
+		Court court1 = new Court("Pabellon las Lomax", "Pista donde Ronaldinho comenzó su exitosa carrera","img/pabellon.jpg");
+		Court court2 = new Court("Pista de Villafontana", "Pista rapida donde De Jong destrozó el pecho de Xabi","img/pabel.jpg");
+		Court court3 = new Court("Pista de la URJC", "Pista en decadencia","img/pabe.jpg");
+		Court court4 = new Court("Pista del Pozo Murcia", "Pista muy top donde han jugado grandes leyendas","img/pa.jpg");
 		
 		courtRepository.save(court1);
 		courtRepository.save(court2);
 		courtRepository.save(court3);
 		courtRepository.save(court4);
-		courtRepository.save(court5);
-		courtRepository.save(court6);
-		courtRepository.save(court7);
-		courtRepository.save(court8);
-		courtRepository.save(court9);
-		courtRepository.save(court10);
-
-		
+				
 		//Insert Referees
 		Referee referee1 = new Referee("Luigi", "Colina","img/collina.jpg");
 		Referee referee2 = new Referee("Julio", "Borbalan","img/julio.jpg");
@@ -363,12 +350,6 @@ public class DataBaseController implements CommandLineRunner{
 		courtRepository.save(court2);
 		courtRepository.save(court3);
 		courtRepository.save(court4);
-		courtRepository.save(court5);
-		courtRepository.save(court6);
-		courtRepository.save(court7);
-		courtRepository.save(court8);
-		courtRepository.save(court9);
-		courtRepository.save(court10);
 		
 		refereeRepository.save(referee1);
 		refereeRepository.save(referee2);

@@ -1,5 +1,5 @@
 package es.sidelab.locosxelfutbol;
-import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,14 +13,17 @@ public class Court{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String name;
-	private String description; 
+	private String description;
+	private String image;
+
 
 	public Court() {
 	}
 
-	public Court(String name, String description) {
+	public Court(String name, String description, String image) {
 		this.name = name;
 		this.description = description;
+		this.image= image;
 	}	
 
 	public Long getId() {
@@ -45,6 +48,14 @@ public class Court{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override
