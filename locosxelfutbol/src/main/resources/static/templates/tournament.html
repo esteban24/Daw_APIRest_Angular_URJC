@@ -1,4 +1,4 @@
- <div class="list-group"  ng-controller="TournamentController as vm">
+<div class="list-group"  ng-controller="TournamentController as vm">
     <div class="navbar navbar-default menu">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -17,12 +17,10 @@
 				<li><a href="#/team">Equipos</a></li>
 				<li><a href="#/referee">Arbitros</a></li>
 			</ul>
+
 		</div>
 	</div>
     <div class="list-group-item" ng-repeat="tournament in vm.tournaments">
-        <div class="row-picture">
-            <img class="circle" src="https://lh3.googleusercontent.com/-0af3GR5yc0g/AAAAAAAAAAI/AAAAAAAAADI/dKM1l8rRNng/s120-c/photo.jpg" alt="icon">
-        </div>
         <div class="row-content">
             <h4 class="list-group-item-heading">{{tournament.name}}</h4>
         </div>

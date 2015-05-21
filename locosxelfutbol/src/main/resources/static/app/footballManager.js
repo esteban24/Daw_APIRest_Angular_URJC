@@ -39,15 +39,8 @@ function FootballManager($resource, $timeout, $http) {
 	var PlayerResource = $resource('/player/jugadores',  
 			{save : {method : 'GET'}
 		});
-	
-	var CourtResource = $resource('/courtAdmin/court',  
-			{save : {method : 'GET'}
-		});
-	
-	var TournamentResource = $resource('/tournamentAdmin/torneos',  
-			{save : {method : 'GET'}
-		});
 
+	
 	var RefereeResource = $resource('/refereeAdmin/:id',
 			{id:'@id'},
 			{deleteReferee:{method: 'DELETE'}},
@@ -57,6 +50,12 @@ function FootballManager($resource, $timeout, $http) {
 	var CourtResource = $resource('/courtAdmin/:id',
 			{id:'@id'},
 			{deleteCourt:{method: 'DELETE'}},
+			{save : {method : 'GET'}
+	});
+	
+	var TournamentResource = $resource('/tournamentAdmin/:id',
+			{id:'@id'},
+			{deleteTournament:{method: 'DELETE'}},
 			{save : {method : 'GET'}
 	});
 
@@ -70,11 +69,6 @@ function FootballManager($resource, $timeout, $http) {
 			{'update' : {method : 'PUT'}
 	});
 	
-	var TournamentResource = $resource('/tournamentAdmin/:id',
-			{id:'@id'},
-			{deleteTournament:{method: 'DELETE'}},
-			{save : {method : 'GET'}
-	});
 	
 	/*var SessionResource = $resource('/adminLogin/seguridad', 
 		{save : {method : 'POST'}
@@ -105,7 +99,7 @@ function FootballManager($resource, $timeout, $http) {
 		vm.courts = CourtResource.query();
 		return CourtResource.query();
 	}
-
+	
 	vm.getTournaments = function() {
 		vm.tournaments = TournamentResource.query();
 		return TournamentResource.query();
@@ -119,6 +113,11 @@ function FootballManager($resource, $timeout, $http) {
 	vm.setModifyCourt= function(court){
 		vm.modifyCourt=court;
 		return vm.modifyCourt;
+	}
+	
+	vm.setModifyTournament= function(tournament){
+		vm.modifyTournament=tournament;
+		return vm.modifyTournament;
 	}
 	
 	vm.addReferee= function(addReferee){
@@ -137,6 +136,11 @@ function FootballManager($resource, $timeout, $http) {
 	vm.modifyingcourt= function(court){
 		$id=court.id;
 		CourtModifyResource.update({id:$id},court);
+	}
+	
+	vm.modifyingtournament= function(tournament){
+		$id=tournament.id;
+		TournamentModifyResource.update({id:$id},tournament);
 	}
 	
 	vm.deleteReferee= function(referee){
@@ -166,44 +170,13 @@ function FootballManager($resource, $timeout, $http) {
 		SessionResource.remove(function() {
 		});
 	}*/
-	/*
-	 * vm.signup = function(mail,pass){
-	 * 
-	 * for (var i = 0; i < vm.personas.length; i++) { if ((vm.personas[i].correo
-	 * === mail)&&(vm.personas[i].pass === pass)) { vm.persona = vm.personas[i];
-	 * $id=vm.persona.id;
-	 * SignupResource.update({id:$id},true,function(){vm.showAlert("Te has
-	 * registrasdo correctamente")}); } }
-	 *  }
-	 */
-
-	vm.pass = function(pass, idpers) {
-		$id = idpers;
-		PassResource.update({
-			id : $id
-		}, pass, function() {
-			vm.showAlert("Contraseña cambiada")
-		});
-
-	}
-	vm.passCorrecta = function(pass, id) {
-		$id = id;
-		$pass = pass;
-		vm.passcorrecta = PassCorrectaResource.get({
-			id : $id
-		}, {
-			pass : $pass
-		}, function() {
-		});
-		return vm.passcorrecta;
-	}
 
 	vm.reload = function() {
 		vm.referees = vm.getReferees();
-		vm.tournaments = vm.getTournaments();
 		vm.teams = vm.getTeams();
 		vm.player= vm.getPlayers();
 		vm.courts = vm.getCourts();
+		vm.tournaments= vm.getTournaments();
 	}
 
 	/*function autoreload() {

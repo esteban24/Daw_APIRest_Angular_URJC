@@ -16,18 +16,6 @@ public class TeamController {
 	
 	@Autowired
 	TeamRepository teamRepository;
-	
-	@Autowired
-	CourtRepository courtRepository;
-	
-	@Autowired
-	MatchRepository matchRepository;
-	
-	@Autowired
-	RefereeRepository refereeRepository;
-	
-	@Autowired
-	TournamentRepository tournamentRepository;
 
 	@RequestMapping(value = "/equipos" ,method = RequestMethod.GET)
 	public List<Team> getTeams() {

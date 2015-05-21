@@ -20,13 +20,8 @@ public class CourtController {
 	@Autowired
 	private CourtRepository courtRepository;
 	
-	@RequestMapping(value = "/court" ,method = RequestMethod.GET)
-	public List<Court> getTeams() {
-		return courtRepository.findAll();
-	}
-	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Court> getCourts() {
+	public List<Court> getReferees() {
 		return courtRepository.findAll();
 	}
 	
@@ -55,7 +50,7 @@ public class CourtController {
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
-	public void deleteReferee(@PathVariable long id, HttpSession sesion){
+	public void deleteCourt(@PathVariable long id, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			courtRepository.delete(id);
 		}

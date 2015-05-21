@@ -16,12 +16,12 @@ public class Tournament{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	private String name;
-	@OneToMany
-	@JoinTable(name="TOURN_TEAM")
-	private List<Team> teams;
+	//@OneToMany
+	//@JoinTable(name="TOURN_TEAM")
+	//private List<Team> teams;
 	//private String teams;
-	@OneToMany
-	private List<Match> matches;
+	//@OneToMany
+	//private List<Match> matches;
 	//private String matches;
 	
 	
@@ -29,12 +29,15 @@ public class Tournament{
 	public Tournament(){
 	}
 	
-	public Tournament(String name, List<Team> teams, List<Match> matchs){
+	/*public Tournament(String name, List<Team> teams, List<Match> matchs){
 		this.name=name;
 		this.teams=teams;
 		this.matches=matchs;
+	}*/
+	
+	public Tournament(String name){
+		this.name=name;
 	}
-
 	
 	/*public void playMatch(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		local.setGf(goalsLocal);
@@ -76,13 +79,13 @@ public class Tournament{
 		this.name = name;
 	}
 	
-	public List<Team> getTeams() {
+	/*public List<Team> getTeams() {
 		return teams;
 	}
 	
 	public void setTeams(List<Team> teams) {
 		this.teams = teams;
-	}
+	}*/
 	
 	/*public String getMatches() {
 		return matches;

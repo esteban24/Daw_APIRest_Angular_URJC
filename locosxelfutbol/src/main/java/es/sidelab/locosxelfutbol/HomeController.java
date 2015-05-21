@@ -22,9 +22,6 @@ public class HomeController {
 	
 	@Autowired
 	RefereeRepository refereeRepository;
-	
-	@Autowired
-	TournamentRepository tournamentRepository;
 
 	//TODO emartin: meter autowireds
 
