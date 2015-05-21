@@ -29,18 +29,18 @@
 		<table id="table" class="table table-hover table-mc-light-blue">
 			<thead>
 				<tr>
-					<th>Posicion</th>
 					<th>Equipo</th>
-					<th>Victorias</th>
-					<th>Derrotas</th>
+					<th>Puntos</th>
+					<th>Goles a favor</th>
+					<th>Goles encajados</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="team in vm.teams">
-					<td data-title="Posicion">1</td>
 					<td data-title="Equipo"><a data-toggle="modal" data-target="#simple-dialog">{{team.name}}</a></td>
-					<td data-title="Victorias">5</td>
-					<td data-title="Derrotas">2</td>
+					<td data-title="Puntos">{{team.points}}</a></td>
+					<td data-title="Goles a favor">{{team.gf}}</td>
+					<td data-title="Goles encajados">{{team.gc}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -56,15 +56,15 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Posicion</th>
-					<th>Equipo</th>
+					<th>Edad</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="team in vm.teams">
-					<td data-title="Nombre">{{team.players[$index]}}</td>
-					<td data-title="Apellido">3</td>
-					<td data-title="Posicion">2</td>
-					<td data-title="Equipo">2</td>				
+					<td data-title="Nombre">{{team.players[$index].name}}</td>
+					<td data-title="Apellido">{{team.players[$index].lastName}}</td>
+					<td data-title="Posicion">{{team.players[$index].position}}</td>
+					<td data-title="Equipo">{{team.players[$index].age}}</td>				
 				</tr>
 			</tbody>
 		</table>
