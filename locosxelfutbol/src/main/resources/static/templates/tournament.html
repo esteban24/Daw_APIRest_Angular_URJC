@@ -43,9 +43,9 @@
 				</tr>
 			</thead>
 			<tbody ng-repeat="tournament in vm.tournaments">
-				<tr>
-					<td data-title="Nombre">{{tournament.teams[$index].name}}</td>
-					<td data-title="Apellido">2</td>
+				<tr ng-repeat="team in tournament.teams">
+					<td data-title="Nombre">{{team.name}}</td>
+					<td data-title="Jugadores"><a data-toggle="modal" data-target="#doble-dialog">Jugadores</a></td>
 					<td data-title="Posicion">3</td>
 					<td data-title="Equipo">3</td>				
 				</tr>
@@ -55,4 +55,28 @@
     </div>
   </div>
 </div>
+
+
+	<div ng-controller="TeamController as vm" id="doble-dialog"
+		class="modal fade" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+
+
+					<div class="text-center bold" ng-repeat-start="team in vm.teams">
+						<strong>------------------- Team {{team.name}} ---------------------</strong>
+						
+						<div class="text-center" ng-repeat="player in team.players">
+							
+							{{player.name}} {{player.lastName}} {{player.age}}</div>
+					</div>
+					<div ng-repeat-end></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </div>
