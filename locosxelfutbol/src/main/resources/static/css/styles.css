@@ -53,6 +53,7 @@ core-toolbar.medium-tall{
 
 div flex > a{
 	color:black;
+	text-decoration:none;
 }
 
 #homeButton{
@@ -77,7 +78,17 @@ paper-tab {
 	font-size: 1.3em;
 }
 
-paper-tab > a{
+paper-tab > a,
+paper-tab > a:hover,
+paper-tab > a:focus{
 	color: black;
+	text-decoration:none;
 }
+
+core-toolbar.bottom {
+  position: fixed; 
+  z-index: 1000; 
+  top: initial;
+}
+
 
