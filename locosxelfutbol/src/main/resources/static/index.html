@@ -70,9 +70,14 @@
 		-->
 		
 		<core-toolbar class="medium-tall">
-		    <div flex>Locos x el Fútbol</div>
-		    <a href="#/home"><paper-button raised>Accede</paper-button></a>
-		    
+		    <div flex><!-- Locos x el Fútbol -->
+		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
+		    </div>
+		    <a href="#/home">
+		    	<paper-button raised id="accessAdminButton">
+		    		<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso admin
+		    	</paper-button>
+		    </a>
 		    <div class="bottom fit" horizontal layout>
 		    	<paper-tabs selected="0" flex style="max-width: 600px;">
 			    	<paper-tab><a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab>
