@@ -1,31 +1,29 @@
 <div ng-controller="TeamController as vm">
-
-	<core-toolbar class="medium-tall">
-	<div flex>
-		<!-- Locos x el FÃºtbol -->
-		<a href="#/carrousel"><paper-button id="homeButton">Locos
-			x el FÃºtbol</paper-button></a>
-	</div>
-	<a href="#/home"> <paper-button raised id="logOutAdminButton">
-		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-		sesiÃ³n </paper-button>
-	</a>
-	<div class="bottom fit" horizontal layout>
-		<paper-tabs selected="0" flex style="max-width: 600px;">
-		<paper-tab>
-		<a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
-		<paper-tab>
-		<a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
-		<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
-		<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-		<paper-tab>
-		<a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
-		</paper-tabs>
-	</div>
-	</core-toolbar>
-
 	<div if-ng="vm.valido">
 		<form class="form-horizontal">
+
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/tournamentAdmin" horizontal
+					center-center layout>Torneos</a></paper-tab> <paper-tab> <a
+					href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
+				<paper-tab> <a href="#/refereeAdmin" horizontal
+					center-center layout>Árbitros</a></paper-tab> </paper-tabs>
+			</div>
+			</core-toolbar>
+
 			<fieldset>
 				<legend>Modificando {{vm.modifyTeam.name}}</legend>
 				<div class="form-group">
@@ -44,6 +42,29 @@
 		</form>
 	</div>
 	<div ng-if="!vm.valido">
-		<h1>error, no tiene permisos</h1>
+		<div>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
+			</div>
+			</core-toolbar>
+
+		</div>
+
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
+		</div>
 	</div>
 </div>

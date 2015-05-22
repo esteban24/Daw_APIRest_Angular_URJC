@@ -1,44 +1,74 @@
 <div ng-controller="CourtController as vm">
-
-<core-toolbar class="medium-tall">
-		    <div flex><!-- Locos x el Fútbol -->
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
-		    </div>
-		    <a href="#/home">
-		    	<paper-button raised id="logOutAdminButton">
-		    		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión
-		    	</paper-button>
-		    </a>
-		    <div class="bottom fit" horizontal layout>
-		    	<paper-tabs selected="0" flex style="max-width: 600px;">
-			        <paper-tab><a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
-			        <paper-tab><a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab>
-			        <paper-tab><a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab>
-			        <paper-tab><a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab><a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
-		       		</paper-tabs>
-		   	</div>
-		</core-toolbar>
 	<div ng-if="vm.valido">
-		<form class="form-horizontal" >
+		<form class="form-horizontal">
+
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el Fútbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab>
+				<a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
+				<paper-tab>
+				<a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
+				<paper-tab>
+				<a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
+				</paper-tabs>
+			</div>
+			</core-toolbar>
+
 			<fieldset>
 				<legend>Añadiendo pista</legend>
 				<div>
-					<paper-input-decorator label="Nombre:" floatingLabel error="Introduzca el nombre de la pista" autoValidate>
-	      					<input is="core-input" ng-model="vm.court.name" required>
-	    			</paper-input-decorator>
+					<paper-input-decorator label="Nombre:" floatingLabel
+						error="Introduzca el nombre de la pista" autoValidate>
+					<input is="core-input" ng-model="vm.court.name" required> </paper-input-decorator>
 				</div>
 				<div class="form-group">
-					<paper-input-decorator label="Descripción:" floatingLabel error="Introduzca la descripción" autoValidate>
-	      					<input is="core-input" ng-model="vm.court.description" required>
-	    			</paper-input-decorator>
+					<paper-input-decorator label="Descripción:" floatingLabel
+						error="Introduzca la descripción" autoValidate>
+					<input is="core-input" ng-model="vm.court.description" required>
+					</paper-input-decorator>
 				</div>
-				
-				<a ng-click=vm.addCourt(vm.court)><paper-button raised>Añadir Pista</paper-button></a>
+
+				<a ng-click=vm.addCourt(vm.court)><paper-button raised>Añadir
+					Pista</paper-button></a>
 			</fieldset>
 		</form>
 	</div>
 	<div ng-if="!vm.valido">
-		<h1>error, no tiene permisos</h1>
+		<div>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
+			</div>
+			</core-toolbar>
+
+		</div>
+
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
+		</div>
 	</div>
 </div>

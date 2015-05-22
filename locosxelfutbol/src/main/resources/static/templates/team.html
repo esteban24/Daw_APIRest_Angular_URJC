@@ -1,98 +1,100 @@
 <div ng-controller="TeamController as vm">
 	<div ng-if="vm.validouser">
-	<core-toolbar class="medium-tall">
-		    <div flex><!-- Locos x el FÃºtbol -->
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
-		    </div>
-		    <a href="#/accessAdmin">
-		    	<paper-button raised id="accessAdminButton">
-		    		<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso admin
-		    	</paper-button>
-		    </a>
-		    <div class="bottom fit" horizontal layout>
-		    	<paper-tabs selected="0" flex style="max-width: 600px;">
-			    	<paper-tab><a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab>
-			        <paper-tab><a href="#/court" horizontal center-center layout>Pistas</a></paper-tab>
-			        <paper-tab><a href="#/team" horizontal center-center layout>Equipos</a></paper-tab>
-			        <paper-tab><a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab><a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab>
-		       		</paper-tabs>
-		   	</div>
+		<core-toolbar class="medium-tall">
+		<div flex>
+			<!-- Locos x el FÃºtbol -->
+			<a href="#/carrousel"><paper-button id="homeButton">Locos
+				x el Fútbol</paper-button></a>
+		</div>
+		<a href="#/accessAdmin"> <paper-button raised
+				id="accessAdminButton"> <core-icon
+				id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+			admin </paper-button>
+		</a>
+		<div class="bottom fit" horizontal layout>
+			<paper-tabs selected="0" flex style="max-width: 600px;">
+			<paper-tab>
+			<a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab> <paper-tab>
+			<a href="#/court" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+			<a href="#/team" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+			<a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab> <paper-tab>
+			<a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab> </paper-tabs>
+		</div>
 		</core-toolbar>
 
-	<h2>Equipos</h2>
+		<h2>Equipos</h2>
 
-	<!-- Responsive table starts here -->
-	<!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
-	<div class="table-responsive-vertical shadow-z-1">
-		<!-- Table starts here -->
-		<table id="table" class="table table-hover table-mc-light-blue">
-			<thead>
-				<tr>
-					<th>Equipo</th>
-					<th>Puntos</th>
-					<th>Goles a favor</th>
-					<th>Goles encajados</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="team in vm.teams">
-					<td data-title="Equipo"><a data-toggle="modal"
-						data-target="#simple-dialog">{{team.name}}</a></td>
-					<td data-title="Puntos">{{team.points}}</a></td>
-					<td data-title="Goles a favor">{{team.gf}}</td>
-					<td data-title="Goles encajados">{{team.gc}}</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+		
+		<div class="table-responsive-vertical shadow-z-1">
+			<!-- Table starts here -->
+			<table id="table" class="table table-hover table-mc-light-blue">
+				<thead>
+					<tr>
+						<th>Equipo</th>
+						<th>Puntos</th>
+						<th>Goles a favor</th>
+						<th>Goles encajados</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="team in vm.teams">
+						<td data-title="Equipo"><a data-toggle="modal"
+							data-target="#simple-dialog">{{team.name}}</a></td>
+						<td data-title="Puntos">{{team.points}}</a></td>
+						<td data-title="Goles a favor">{{team.gf}}</td>
+						<td data-title="Goles encajados">{{team.gc}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-	<div ng-controller="TeamController as vm" id="simple-dialog"
-		class="modal fade" tabindex="-1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
+		<div ng-controller="TeamController as vm" id="simple-dialog"
+			class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
 
 
-					<div class="text-center bold" ng-repeat-start="team in vm.teams">
-						<strong>------------------- Team {{team.name}} ---------------------</strong>
-						
-						<div class="text-center" ng-repeat="player in team.players">
-							
-							{{player.name}} {{player.lastName}} {{player.age}}</div>
+						<div class="text-center bold" ng-repeat-start="team in vm.teams">
+							<strong>------------------- Team {{team.name}}
+								---------------------</strong>
+
+							<div class="text-center" ng-repeat="player in team.players">
+
+								{{player.name}} {{player.lastName}} {{player.age}}</div>
+						</div>
+						<div ng-repeat-end></div>
 					</div>
-					<div ng-repeat-end></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
 	<div ng-if="!vm.validouser">
-		
+
 		<div>
-	<core-toolbar class="medium-tall">
-	<div flex>
-		<!-- Locos x el FÃºtbol -->
-		<a href="#/carrousel"><paper-button id="homeButton">Locos
-			x el Fútbol</paper-button></a>
-	</div>
-	<a href="#/home"> <paper-button raised id="logOutAdminButton">
-		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-		sesión </paper-button>
-	</a>
-	<div class="bottom fit" horizontal layout>
-		<paper-tabs selected="0" flex style="max-width: 600px;">
-		<paper-tab> <a href="#/access" horizontal center-center
-			layout>Accede</a></paper-tab> <paper-tab>
-	</div>
-	</core-toolbar>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
+			</div>
+			</core-toolbar>
 
-</div>
+		</div>
 
-<div>
-	<h3>No tiene permisos para acceder a esta sección</h3>
-	<a href="#/home">Volver</a>
-</div>
-		
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
+		</div>
+
 	</div>
 </div>

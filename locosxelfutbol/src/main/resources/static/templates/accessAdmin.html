@@ -12,8 +12,8 @@
 		</a>
 		<div class="bottom fit" horizontal layout>
 			<paper-tabs selected="0" flex style="max-width: 600px;">
-			<paper-tab>
-			<a href="#/home" horizontal center-center layout>Inicio</a></paper-tab> <paper-tab>
+			<paper-tab> <a href="#/home" horizontal center-center
+				layout>Inicio</a></paper-tab> <paper-tab>
 		</div>
 		</core-toolbar>
 
@@ -22,18 +22,20 @@
 		<form class="form-horizontal">
 			<fieldset>
 				<div class="form-group">
-						<paper-input-decorator label="Email:" floatingLabel error="El email es requerido para iniciar sesion" autoValidate>
-	      					<input is="core-input" ng-model = "vm.mail" required>
-	    				</paper-input-decorator>
+					<paper-input-decorator label="Email:" floatingLabel
+						error="El email es requerido para iniciar sesion" autoValidate>
+					<input is="core-input" ng-model="vm.mail" required> </paper-input-decorator>
 				</div>
 				<div class="form-group">
-						<paper-input-decorator label="Contraseña:" floatingLabel error="Introduzca su contraseña" autoValidate>
-	      					<input is="core-input" ng-model="vm.pass" type="password" required>
-	    				</paper-input-decorator>
+					<paper-input-decorator label="Contraseña:" floatingLabel
+						error="Introduzca su contraseña" autoValidate>
+					<input is="core-input" ng-model="vm.pass" type="password" required>
+					</paper-input-decorator>
 				</div>
 				<div class="form-group">
-						<!--  <button type="submit" class="btn btn-primary ">Enviar</button> -->
-						<paper-button type="submit" raised  ng-click="vm.login(vm.mail,vm.pass)">Enviar</paper-button>
+					<!--  <button type="submit" class="btn btn-primary ">Enviar</button> -->
+					<paper-button type="submit" raised
+						ng-click="vm.login(vm.mail,vm.pass)">Enviar</paper-button>
 				</div>
 			</fieldset>
 		</form>

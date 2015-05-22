@@ -1,62 +1,65 @@
- <div class="list-group"  ng-controller="RefereeController as vm">
- 
- 	<div ng-if="vm.validouser">
- 	<core-toolbar class="medium-tall">
-		    <div flex>
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
-		    </div>
-		    <a href="#/accessAdmin">
-		    	<paper-button raised id="accessAdminButton">
-		    		<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso admin
-		    	</paper-button>
-		    </a>
-		    <div class="bottom fit" horizontal layout>
-		    	<paper-tabs selected="0" flex style="max-width: 600px;">
-			    	<paper-tab><a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab>
-			        <paper-tab><a href="#/court" horizontal center-center layout>Pistas</a></paper-tab>
-			        <paper-tab><a href="#/team" horizontal center-center layout>Equipos</a></paper-tab>
-			        <paper-tab><a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab><a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab>
-		       		</paper-tabs>
-		   	</div>
+
+<div class="list-group" ng-controller="RefereeController as vm">
+
+	<div ng-if="vm.validouser">
+		<core-toolbar class="medium-tall">
+		<div flex>
+			<a href="#/carrousel"><paper-button id="homeButton">Locos
+				x el Fútbol</paper-button></a>
+		</div>
+		<a href="#/accessAdmin"> <paper-button raised
+				id="accessAdminButton"> <core-icon
+				id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+			admin </paper-button>
+		</a>
+		<div class="bottom fit" horizontal layout>
+			<paper-tabs selected="0" flex style="max-width: 600px;">
+			<paper-tab>
+			<a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab> <paper-tab>
+			<a href="#/court" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+			<a href="#/team" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+			<a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab> <paper-tab>
+			<a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab> </paper-tabs>
+		</div>
 		</core-toolbar>
-    <div class="list-group-item" ng-repeat="referee in vm.referees">
-        <div class="row-picture">
-            <img class="circle" src={{referee.image}} alt="icon">
-        </div>
-        <div class="row-content">
-            <h4 class="list-group-item-heading">{{referee.name}}</h4>
-            <p class="list-group-item-text">{{referee.lastName}}</p>
-  			</br></br>
-        </div>
-    </div>  
-    </div>
-    <div ng-if="!vm.validouser">  
-    	
-    	<div>
-	<core-toolbar class="medium-tall">
-	<div flex>
-		<!-- Locos x el FÃºtbol -->
-		<a href="#/carrousel"><paper-button id="homeButton">Locos
-			x el Fútbol</paper-button></a>
+		<div class="list-group-item" ng-repeat="referee in vm.referees">
+			<div class="row-picture">
+				<img class="circle" src={{referee.image}} alt="icon">
+			</div>
+			<div class="row-content">
+				<h4 class="list-group-item-heading">{{referee.name}}</h4>
+				<p class="list-group-item-text">{{referee.lastName}}</p>
+				</br>
+				</br>
+			</div>
+		</div>
 	</div>
-	<a href="#/home"> <paper-button raised id="logOutAdminButton">
-		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-		sesión </paper-button>
-	</a>
-	<div class="bottom fit" horizontal layout>
-		<paper-tabs selected="0" flex style="max-width: 600px;">
-		<paper-tab> <a href="#/access" horizontal center-center
-			layout>Accede</a></paper-tab> <paper-tab>
+	<div ng-if="!vm.validouser">
+
+		<div>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
+			</div>
+			</core-toolbar>
+
+		</div>
+
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
+		</div>
+
 	</div>
-	</core-toolbar>
-
 </div>
-
-<div>
-	<h3>No tiene permisos para acceder a esta sección</h3>
-	<a href="#/home">Volver</a>
-</div>
-    	
-    </div>
-</div> 

@@ -18,6 +18,11 @@ function RefereeController(footballManager, $timeout, $location) {
 		vm.referees=footballManager.referees;
 	}
 	
+	vm.logout = function() {
+		footballManager.logout();
+		$location.path("/");
+	};
+	
 	setTimeout( function (){
 		vm.reload();}
 	,500);		
