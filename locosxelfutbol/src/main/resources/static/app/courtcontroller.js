@@ -28,6 +28,11 @@ function CourtController(footballManager, $timeout, $location) {
 		$location.path('/modifyCourt');
 	}
 	
+	vm.logout = function() {
+		footballManager.logout();
+		$location.path("/");
+	};
+	
 	vm.addCourt= function(court){
 		footballManager.addCourt(court);
 		vm.court={};
