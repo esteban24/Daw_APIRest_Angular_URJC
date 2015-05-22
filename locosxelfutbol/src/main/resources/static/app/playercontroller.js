@@ -10,6 +10,7 @@ function PlayerController(footballManager, $timeout, $location) {
 	vm.player={};
 	vm.modifyPlayer=footballManager.modifyPlayer;
 	vm.valido = footballManager.getValido();
+	vm.validouser= footballManager.getValidouser();
 
 	//Controller actions
 	

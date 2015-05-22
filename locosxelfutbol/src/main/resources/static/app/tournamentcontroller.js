@@ -9,7 +9,7 @@ function TournamentController(footballManager, $timeout, $location) {
 	vm.tournament={};
 	vm.modifyTournament=footballManager.modifyTournament;
 	vm.valido = footballManager.getValido();
-
+	vm.validouser= footballManager.getValidouser();
 	//Controller actions
 	
 	vm.reload= function(){
