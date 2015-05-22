@@ -25,8 +25,7 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
 	$routeProvider.when('/user', { templateUrl : "templates/user.html" });
 	$routeProvider.when('/access', { templateUrl : "templates/access.html" });
-
-
+	$routeProvider.when('/accessAdmin', { templateUrl : "templates/accessAdmin.html" });
 
 
 }

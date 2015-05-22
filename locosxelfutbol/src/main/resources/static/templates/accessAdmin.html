@@ -6,7 +6,7 @@
 			<a href="#/home"><paper-button id="homeButton">Locos
 				x el Fútbol</paper-button></a>
 		</div>
-		<a href="#/accessAdmin"> <paper-button raised id="accessAdminButton">
+		<a href="#/home"> <paper-button raised id="accessAdminButton">
 			<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
 			admin </paper-button>
 		</a>
@@ -20,20 +20,20 @@
 	</div>
 	<div ng-controller="SecurityController as vm">
 		<form class="form-horizontal"
-			ng-submit="vm.loginuser(vm.mailuser,vm.passuser)">
+			ng-submit="vm.login(vm.mail,vm.pass)">
 			<fieldset>
 				<div class="form-group">
 					<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 					<div class="col-lg-10">
-						<input type="email" class="form-control" id="mailuser"
-							placeholder="email" ng-model="vm.mailuser">
+						<input type="email" class="form-control" id="mail"
+							placeholder="email" ng-model="vm.mail">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPassword" class="col-lg-2 control-label">Password</label>
 					<div class="col-lg-10">
-						<input type="password" class="form-control" id="passuser"
-							placeholder="pass" ng-model="vm.passuser"> <br>
+						<input type="password" class="form-control" id="pass"
+							placeholder="pass" ng-model="vm.pass"> <br>
 					</div>
 				</div>
 				<div class="form-group">

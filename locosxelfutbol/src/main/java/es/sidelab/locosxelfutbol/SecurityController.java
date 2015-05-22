@@ -54,11 +54,8 @@ public class SecurityController {
 		for(Team team: teamrepository.findAll()){
 			if((team.getCorreo().equalsIgnoreCase(datos.mail))&& (team.getContrasenia().equalsIgnoreCase(datos.pass))){
 				sesion.setAttribute("user", true);
-				System.out.println("ENtro por seguridad");
 				devolver=true;
 			} else {
-				System.out.println("ENtro yvtgubh");
-
 				sesion.setAttribute("user", false);
 				devolver=false;
 			}
