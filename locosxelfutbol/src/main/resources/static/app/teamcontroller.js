@@ -32,6 +32,11 @@ function TeamController(footballManager, $timeout, $location) {
 		$location.path('/modifyTeam');
 	}
 	
+	vm.logout = function() {
+		footballManager.logout();
+		$location.path("/");
+	};
+	
 	vm.modifyingteam= function(team){
 		footballManager.modifyingteam(team);
 		vm.modifyTeam={};
