@@ -19,8 +19,7 @@
 
 	</div>
 	<div ng-controller="SecurityController as vm">
-		<form class="form-horizontal"
-			ng-submit="vm.login(vm.mail,vm.pass)">
+		<form class="form-horizontal">
 			<fieldset>
 				<div class="form-group">
 						<paper-input-decorator label="Email:" floatingLabel error="El email es requerido para iniciar sesion" autoValidate>
@@ -29,14 +28,12 @@
 				</div>
 				<div class="form-group">
 						<paper-input-decorator label="Contraseña:" floatingLabel error="Introduzca su contraseña" autoValidate>
-	      					<input is="core-input" ng-model="vm.pass" required>
+	      					<input is="core-input" ng-model="vm.pass" type="password" required>
 	    				</paper-input-decorator>
 				</div>
 				<div class="form-group">
-					<div class="col-lg-10 col-lg-offset-2 text-center">
-						<button class="btn btn-default ">Cancelar</button>
-						<button type="submit" class="btn btn-primary ">Enviar</button>
-					</div>
+						<!--  <button type="submit" class="btn btn-primary ">Enviar</button> -->
+						<paper-button type="submit" raised  ng-click="vm.login(vm.mail,vm.pass)">Enviar</paper-button>
 				</div>
 			</fieldset>
 		</form>
