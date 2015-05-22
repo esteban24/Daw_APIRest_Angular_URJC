@@ -78,7 +78,20 @@ div flex > a{
   	margin: 4.3em 0 0 -11em;
 }
 
+#logOutAdminButton{
+	background-color: #727272;
+	color: #ffffff;
+  	text-transform: none;
+  	width: 165px;
+  	border-radius: 5px;
+  	margin: 4.3em 0 0 -11em;
+}
+
 #accessAdminButtonIcon{
+	margin-right: 0.1em;
+}
+
+#logOutAdminButtonIcon{
 	margin-right: 0.1em;
 }
 
@@ -87,21 +100,47 @@ paper-tab {
 	font-size: 1.3em;
 }
 
+paper-button{
+	text-decoration: none;
+	text-transform: none;
+	
+}
+
 paper-tab > a,
 paper-tab > a:hover,
 paper-tab > a:focus{
 	color: black;
-	text-decoration:none;
+	text-decoration: none;
+	text-transform: none;
 }
 
 #footer {
 	width: 100%;
 	height: 200px;
+	padding-top: 0.5em;
 	margin-top: 1.5em;
-	background: #333;
-	border-top: 2px solid #000;
+	background: #8AD2E7;
 	position: static;
 	bottom: 0;
+	color: #383838;
+}
+
+#polymerIcon{
+	margin-right: 0.8em;
+}
+
+#footerContainer{
+	text-align: center;
+	color: #2b7cc0;
+	font-size: 14px;
+  	font-weight: 500;
+}
+
+#authors{
+	text-align: center;
+	color: #4600b2;
+	font-size: 14px;
+  	font-weight: 500;
 }
 
 

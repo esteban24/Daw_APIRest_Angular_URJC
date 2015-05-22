@@ -48,76 +48,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body ng-app="app">
-	<!-- div class="container"-->
-		<!-- Ejemplos maquetación material design 
-		<section>
-			<paper-button class="colored">active</paper-button>
-		</section>
-		<section>
-			<paper-button raised>raised button</paper-button>
-		</section>
-		<section>
-		      <paper-toggle-button checked></paper-toggle-button>
-		</section>
-		<section>
-			<paper-fab icon="add" title="add"></paper-fab>
-		</section>
-		<section>
-		
-		-->
-		
-	<!-- 	<core-toolbar class="medium-tall">
-		    <div flex><!-- Locos x el Fútbol 
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
-		    </div>
-		    <a href="#/home">
-		    	<paper-button raised id="accessAdminButton" ng-if="!vm.valido">
-		    		<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso admin
-		    	</paper-button>
-		    </a>
-		    <div class="bottom fit" horizontal layout>
-		    	<paper-tabs selected="0" flex style="max-width: 600px;">
-			    	<paper-tab ng-if="!vm.valido"><a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab>
-			        <paper-tab ng-if="!vm.valido"><a href="#/court" horizontal center-center layout>Pistas</a></paper-tab>
-			        <paper-tab ng-if="!vm.valido"><a href="#/team" horizontal center-center layout>Equipos</a></paper-tab>
-			        <paper-tab ng-if="!vm.valido"><a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab ng-if="!vm.valido"><a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab>
-			        <paper-tab ng-if="vm.valido"><a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
-			        <paper-tab ng-if="vm.valido"><a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab>
-			        <paper-tab ng-if="vm.valido"><a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab>
-			        <paper-tab ng-if="vm.valido"><a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab ng-if="vm.valido"><a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
-		       		</paper-tabs>
-		   	</div>
-		</core-toolbar> -->
-			
-		<!-- Ejemplos maquetación material design -->
 	<div ng-view id="mainView"></div>
-		
 	<div id="footer">
-		<div>
-			Footer
+		<div id="footerContainer">
+			<div>
+				<a href="https://www.polymer-project.org/0.5/" target="_blank"><paper-button>
+			    		<core-icon id="polymerIcon" icon="polymer"></core-icon>Polymer
+			    </paper-button></a>
+			</div>
+		    <div>
+		    	<a href="https://www.urjc.es/" target="_blank"><paper-button>
+			    		Universidad Rey Juan Carlos
+			    </paper-button></a>
+		    </div>
+		    <div>
+		    	<a href="https://github.com/esteban24/Daw_APIRest_Angular_URJC.git" target="_blank"><paper-button>
+			    		Repositorio Github
+			    </paper-button></a>
+		    </div>
+		</div>
+		<div id="authors">
+			<div>
+				<paper-button>
+			    		<core-icon id="authorsButton" ></core-icon>Autores: Jorge Alcaide, Jorge Simón, Esteban Martín
+			    </paper-button></a>
+		    </div>
 		</div>
 	</div>
-	
-	<!-- Función para el material design que puede que sea innecesaria -->
-	<script>
-
-    /*function clickAction(e) {
-      var t = e.target;
-      if (t.localName === 'paper-button') {
-        if (t.hasAttribute('disabled')) {
-          console.error('should not be able to click disabled button', t);
-        } else {
-          console.log('click', t);
-        }
-      }
-    }
-
-    addEventListener('template-bound', function(e) {
-      e.target.clickAction = clickAction;
-    });*/
-
-  </script>
 </body>
 </html>
