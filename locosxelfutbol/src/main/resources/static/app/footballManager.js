@@ -17,7 +17,7 @@ function FootballManager($resource, $timeout, $http) {
 	vm.modifyReferee={};
 	vm.modifyCourt={};
 	vm.modifyPlayer={};
-	vm.modifyTeam{};
+	vm.modifyTeam={};
 	vm.valido=false;
 	vm.pass={};
 	vm.mail={};
