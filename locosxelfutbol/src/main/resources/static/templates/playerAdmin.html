@@ -22,33 +22,15 @@
 		</paper-tabs>
 	</div>
 	</core-toolbar>
-
-	<!-- <div class="list-group">
-		
-
-			<div class="list-group-item" ng-repeat="player in vm.players">
-				<div class="row-content">
-					<h4 class="list-group-item-heading">{{player.name}}</h4>
-				</div>
-				<div>
-					<a type="button" class="md-raised md-primary"
-						ng-click="vm.modify4(player)">Modificar</a> <a href=""
-						type="button" class="md-raised md-warn"
-						ng-click="vm.deletePlayer(player)">Eliminar</a> </br>
-					</br>
-				</div>
-			</div>
-		</div>
-		
-	</div>-->
 	
+	<div ng-if="vm.valido">
 	 <div class="table-responsive-vertical shadow-z-1">
 		
 		<table id="table" class="table table-hover table-mc-light-blue">
 			<thead>
 				<tr>
-					<th>Posicion</th>
-					<th>Equipo</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
 					<th>Modificar</th>
 					<th>Eliminar</th>
 				</tr>
@@ -57,13 +39,18 @@
 				<tr ng-repeat="player in vm.players">
 					<td data-title="Posicion">{{player.name}}</td>
 					<td data-title="Equipo">{{player.lastName}}</td>
-					<td data-title="Modificar"><a ng-click="vm.modify4(player)">Modificar</a></td>
-					<td data-title="Eliminar"><a type="button" ng-click="vm.deletePlayer(player)">Eliminar</a></td>   
+					<td data-title="Modificar"><a ng-click="vm.modify4(player)"><paper-fab mini id="modifyButton" icon="create" title="create"></paper-fab></a></td>
+					<td data-title="Eliminar">
+					
+					<a type="button" ng-click="vm.deletePlayer(player)"><paper-fab mini id="deleteButton" icon="delete" title="delete"></paper-fab></a></td>   
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	
+	</div>
+	<div ng-if="!vm.valido">
+		<h1>error, no tiene permisos</h1>
+	</div>
 	</div>
 	
 
