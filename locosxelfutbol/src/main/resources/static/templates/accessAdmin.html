@@ -4,7 +4,7 @@
 		<div flex>
 			<!-- Locos x el Fútbol -->
 			<a href="#/home"><paper-button id="homeButton">Locos
-				x el F�tbol</paper-button></a>
+				x el Fútbol</paper-button></a>
 		</div>
 		<a href="#/home"> <paper-button raised id="accessAdminButton">
 			<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
@@ -23,23 +23,19 @@
 			ng-submit="vm.login(vm.mail,vm.pass)">
 			<fieldset>
 				<div class="form-group">
-					<label for="inputEmail" class="col-lg-2 control-label">Email</label>
-					<div class="col-lg-10">
-						<input type="email" class="form-control" id="mail"
-							placeholder="email" ng-model="vm.mail">
-					</div>
+						<paper-input-decorator label="Email:" floatingLabel error="El email es requerido para iniciar sesion" autoValidate>
+	      					<input is="core-input" ng-model = "vm.mail" required>
+	    				</paper-input-decorator>
 				</div>
 				<div class="form-group">
-					<label for="inputPassword" class="col-lg-2 control-label">Password</label>
-					<div class="col-lg-10">
-						<input type="password" class="form-control" id="pass"
-							placeholder="pass" ng-model="vm.pass"> <br>
-					</div>
+						<paper-input-decorator label="Contraseña:" floatingLabel error="Introduzca su contraseña" autoValidate>
+	      					<input is="core-input" ng-model="vm.pass" required>
+	    				</paper-input-decorator>
 				</div>
 				<div class="form-group">
 					<div class="col-lg-10 col-lg-offset-2 text-center">
-						<button class="btn btn-default ">Cancel</button>
-						<button type="submit" class="btn btn-primary ">Submit</button>
+						<button class="btn btn-default ">Cancelar</button>
+						<button type="submit" class="btn btn-primary ">Enviar</button>
 					</div>
 				</div>
 			</fieldset>

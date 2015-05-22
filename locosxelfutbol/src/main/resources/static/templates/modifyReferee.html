@@ -23,30 +23,12 @@
 		<form class="form-horizontal" >
 			<fieldset>
 				<legend>Modificando {{vm.modifyReferee.name}}</legend>
-				<!--	<paper-input label="Nombre:" ng-model = "vm.modifyReferee.name" floatingLabel></paper-input> -->
 					<paper-input-decorator label="Nombre:" floatingLabel error="El nombre es requerido" autoValidate>
       					<input is="core-input" ng-model = "vm.modifyReferee.name" required>
     				</paper-input-decorator>
-				<!--  <div class="form-group">
-					<paper-input label="Nombre:" ng-model = "vm.modifyReferee.name" floatingLabel></paper-input>
-					<!--<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-					<div class="col-lg-10">
-						<input type="text" class="form-control" id="inputName"
-							placeholder="Nombre" ng-model = "vm.modifyReferee.name">
-					</div>
-				</div>-->
-				<!-- 	<paper-input label="Apellido:" ng-model = "vm.modifyReferee.lastName" floatingLabel></paper-input> -->
 					<paper-input-decorator label="Apellido:" floatingLabel error="El apellido es requerido" autoValidate>
       					<input is="core-input" ng-model = "vm.modifyReferee.lastName" required>
     				</paper-input-decorator>
-				<!--  <div class="form-group">
-					<label for="inputPassword" class="col-lg-2 control-label">Apellido</label>
-					<div class="col-lg-10">
-						<input type="text" class="form-control" id="inputLastName"
-							placeholder="Apellido" ng-model = "vm.modifyReferee.lastName">
-					</div>
-				</div> -->
-				
 				<a ng-click=vm.modifying(vm.modifyReferee)><paper-button raised>Modificar Arbitro</paper-button></a>
 				<a href="#/refereeAdmin"><paper-button raised>Cancelar modificacion</paper-button></a>	
 			</fieldset>
