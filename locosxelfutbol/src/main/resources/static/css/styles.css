@@ -148,4 +148,13 @@ paper-tab > a:focus{
 	float: right;
 }
 
+#deleteButton{
+	background: red;
+}
+
+#modifyButton{
+	background: yellow;
+}
+
+
 

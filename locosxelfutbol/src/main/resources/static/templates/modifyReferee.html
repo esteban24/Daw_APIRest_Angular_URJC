@@ -19,54 +19,36 @@
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
-		
-		<!-- 
-		
-		<div class="navbar navbar-default menu">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".navbar-responsive-collapse">
-			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-				class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="#/carrousel">Locos por el
-			futbol</a>
-	</div>
-	<div class="navbar-collapse collapse navbar-responsive-collapse">
-		<ul class="nav navbar-nav">
-			<li><a href="#/adminLogin">Home</a></li>
-			<li><a href="#/courtAdmin">Pistas</a></li>
-			<li><a href="#/tournamentAdmin">Torneos</a></li>
-			<li><a href="#/teamAdmin">Equipos</a></li>
-			<li><a href="#/refereeAdmin">Arbitros</a></li>
-		</ul>
-
-	</div>
-</div>
-		
-		 -->
-		
 	<div if-ng="vm.valido">
 		<form class="form-horizontal" >
 			<fieldset>
 				<legend>Modificando {{vm.modifyReferee.name}}</legend>
-				<div class="form-group">
-					<label for="inputName" class="col-lg-2 control-label">Nombre</label>
+				<!--	<paper-input label="Nombre:" ng-model = "vm.modifyReferee.name" floatingLabel></paper-input> -->
+					<paper-input-decorator label="Nombre:" floatingLabel error="El nombre es requerido" autoValidate>
+      					<input is="core-input" ng-model = "vm.modifyReferee.name" required>
+    				</paper-input-decorator>
+				<!--  <div class="form-group">
+					<paper-input label="Nombre:" ng-model = "vm.modifyReferee.name" floatingLabel></paper-input>
+					<!--<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="inputName"
 							placeholder="Nombre" ng-model = "vm.modifyReferee.name">
 					</div>
-				</div>
-				<div class="form-group">
+				</div>-->
+				<!-- 	<paper-input label="Apellido:" ng-model = "vm.modifyReferee.lastName" floatingLabel></paper-input> -->
+					<paper-input-decorator label="Apellido:" floatingLabel error="El apellido es requerido" autoValidate>
+      					<input is="core-input" ng-model = "vm.modifyReferee.lastName" required>
+    				</paper-input-decorator>
+				<!--  <div class="form-group">
 					<label for="inputPassword" class="col-lg-2 control-label">Apellido</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="inputLastName"
 							placeholder="Apellido" ng-model = "vm.modifyReferee.lastName">
 					</div>
-				</div>
+				</div> -->
 				
-				<a ng-click=vm.modifying(vm.modifyReferee) class="md-raised md-primary text-center">Modificar Arbitro</a>
-				<a href="#/refereeAdmin" class="md-raised text-center">Cancelar modificacion</a>	
+				<a ng-click=vm.modifying(vm.modifyReferee)><paper-button raised>Modificar Arbitro</paper-button></a>
+				<a href="#/refereeAdmin"><paper-button raised>Cancelar modificacion</paper-button></a>	
 			</fieldset>
 		</form>
 	</div>
