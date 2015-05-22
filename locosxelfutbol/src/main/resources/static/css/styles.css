@@ -143,4 +143,9 @@ paper-tab > a:focus{
   	font-weight: 500;
 }
 
+#addButton{
+	background: green;
+	float: right;
+}
+
 

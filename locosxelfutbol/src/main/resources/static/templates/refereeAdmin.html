@@ -20,33 +20,9 @@
 		   	</div>
 		</core-toolbar>
 
-	<!--
-    <div class="navbar navbar-default menu">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el
-				futbol</a>
-		</div>
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="#/adminLogin">Home</a></li>
-				<li><a href="#/courtAdmin">Pistas</a></li>
-				<li><a href="#/tournamentAdmin">Torneos</a></li>
-				<li><a href="#/teamAdmin">Equipos</a></li>
-				<li><a href="#/refereeAdmin">Arbitros</a></li>
-			</ul>
-
-		</div>
-		<h1>ADMINISTRADOR</h1>
-	</div> -->
-
 <div ng-controller="RefereeController as vm">
 	<div ng-if="vm.valido">
-		<a href="#/addReferee">A�adir Arbitro</a>	
+		<a href="#/addReferee"><paper-fab id="addButton" icon="add" title="add"></paper-fab></a>	
 		</br></br>    
 	   <div class="list-group-item" ng-repeat="referee in vm.referees">
 	       <div class="row-picture">
