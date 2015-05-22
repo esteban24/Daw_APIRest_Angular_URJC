@@ -1,0 +1,53 @@
+<div>
+	<div>
+		<core-toolbar class="medium-tall">
+		<div flex>
+			<!-- Locos x el FÃºtbol -->
+			<a href="#/home"><paper-button id="homeButton">Locos
+				x el Fútbol</paper-button></a>
+		</div>
+		<a href="#/home"> <paper-button raised id="accessAdminButton">
+			<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+			admin </paper-button>
+		</a>
+		<div class="bottom fit" horizontal layout>
+			<paper-tabs selected="0" flex style="max-width: 600px;">
+			<paper-tab>
+			<a href="#/tournament" horizontal center-center layout>Torneos</a></paper-tab> <paper-tab>
+			<a href="#/court" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+			<a href="#/team" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+			<a href="#/player" horizontal center-center layout>Jugadores</a></paper-tab> <paper-tab>
+			<a href="#/referee" horizontal center-center layout>Árbitros</a></paper-tab> </paper-tabs>
+		</div>
+		</core-toolbar>
+
+	</div>
+	<div ng-controller="SecurityController as vm">
+		<form class="form-horizontal"
+			ng-submit="vm.loginuser(vm.mailuser,vm.passuser)">
+			<fieldset>
+				<div class="form-group">
+					<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+					<div class="col-lg-10">
+						<input type="email" class="form-control" id="mailuser"
+							placeholder="email" ng-model="vm.mailuser">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword" class="col-lg-2 control-label">Password</label>
+					<div class="col-lg-10">
+						<input type="password" class="form-control" id="passuser"
+							placeholder="pass" ng-model="vm.passuser"> <br>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-10 col-lg-offset-2 text-center">
+						<button class="btn btn-default ">Cancel</button>
+						<button type="submit" class="btn btn-primary ">Submit</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+
+</div>

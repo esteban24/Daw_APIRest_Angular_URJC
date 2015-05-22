@@ -4,7 +4,7 @@ RouteConfig.$inject = [ '$routeProvider' ];
 
 function RouteConfig($routeProvider) {
 
-	$routeProvider.when('/', { templateUrl : "templates/carrousel.html" });
+	$routeProvider.when('/', { templateUrl : "templates/home.html" });
 	$routeProvider.when('/home', { templateUrl : "templates/home.html" });
 	$routeProvider.when('/carrousel', { templateUrl : "templates/carrousel.html" });
 	$routeProvider.when('/adminLogin', { templateUrl : "templates/adminLogin.html" });
@@ -24,6 +24,8 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/modifyTournament', { templateUrl : "templates/modifyTournament.html" });
 	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
 	$routeProvider.when('/user', { templateUrl : "templates/user.html" });
+	$routeProvider.when('/access', { templateUrl : "templates/access.html" });
+
 
 
 

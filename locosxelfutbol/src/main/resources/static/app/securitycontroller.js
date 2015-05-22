@@ -31,9 +31,9 @@ function SecurityController(footballManager, $location, $http) {
 		footballManager.loginuser(vm.mailuser,vm.passuser, function(validouser){
 			if(validouser){
 				footballManager.setValidouser(true);
-				$location.path("/user");		
+				$location.path("/carrousel");		
 			} else {
-				$location.path("/team");
+				$location.path("/error");
 			}
 		});
 	};
