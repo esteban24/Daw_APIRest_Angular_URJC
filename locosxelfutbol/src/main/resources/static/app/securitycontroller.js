@@ -40,8 +40,9 @@ function SecurityController(footballManager, $location, $http) {
 	
 	vm.logout = function() {
 		footballManager.logout();
-		$location.path("/#");
+		$location.path("/");
 	};
+	
 	vm.signup = function(){
 		footballManager.signup(vm.mail,vm.pass);
 		$location.path("/");

@@ -15,6 +15,7 @@ function CourtController(footballManager, $timeout, $location) {
 	vm.reload= function(){
 		footballManager.reload();
 		vm.courts=footballManager.courts;
+		vm.valido = footballManager.getValido();
 	}
 	
 	setTimeout( function (){

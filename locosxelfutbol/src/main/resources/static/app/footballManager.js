@@ -56,7 +56,7 @@ function FootballManager($resource, $timeout, $http) {
 			{id:'@id'},
 			{deletePlayer:{method: 'DELETE'}},
 			{save : {method : 'GET'}
-		});
+	});
 
 	
 	var RefereeResource = $resource('/refereeAdmin/:id',
@@ -217,12 +217,11 @@ function FootballManager($resource, $timeout, $http) {
 
 	/*vm.islog = function() {
 		return SessionResource.query();
-	}
+	}*/
 
 	vm.logout = function() {
-		SessionResource.remove(function() {
-		});
-	}*/
+		vm.setValido(false);
+	}
 
 	vm.reload = function() {
 		vm.referees = vm.getReferees();

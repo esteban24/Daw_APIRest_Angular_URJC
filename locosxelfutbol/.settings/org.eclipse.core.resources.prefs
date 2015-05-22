@@ -4,6 +4,7 @@ encoding//src/main/resources=UTF-8
 encoding//src/main/resources/static/templates/addReferee.html=UTF-8
 encoding//src/main/resources/static/templates/adminLogin.html=UTF-8
 encoding//src/main/resources/static/templates/court.html=UTF-8
+encoding//src/main/resources/static/templates/courtAdmin.html=UTF-8
 encoding//src/main/resources/static/templates/error.html=UTF-8
 encoding//src/main/resources/static/templates/player.html=UTF-8
 encoding//src/main/resources/static/templates/referee.html=UTF-8

@@ -1,11 +1,11 @@
-<div  ng-controller="CourtController as vm">	
+<div  ng-controller="SecurityController as vm">	
 		<core-toolbar class="medium-tall">
-		    <div flex><!-- Locos x el Fútbol -->
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
+		    <div flex><!-- Locos x el FÃºtbol -->
+		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el FÃºtbol</paper-button></a>
 		    </div>
-		    <a href="#/home">
+		    <a ng-click="vm.logout()">
 		    	<paper-button raised id="logOutAdminButton">
-		    		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión
+		    		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesiÃ³n
 		    	</paper-button>
 		    </a>
 		    <div class="bottom fit" horizontal layout>
@@ -14,12 +14,12 @@
 			        <paper-tab><a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab>
 			        <paper-tab><a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab>
 			        <paper-tab><a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab><a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
+			        <paper-tab><a href="#/refereeAdmin" horizontal center-center layout>Ã�rbitros</a></paper-tab>
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
 
-<div class="list-group">
+<div ng-contoller="CourtController as vm" class="list-group">
 	<div ng-if="vm.valido">
 		<div>
 		<a href="#/addCourt"><paper-fab id="addButton" icon="add" title="add"></paper-fab></a>	
