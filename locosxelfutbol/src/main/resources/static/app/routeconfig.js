@@ -16,6 +16,7 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/tournament', { templateUrl : "templates/tournament.html" });
 	$routeProvider.when('/tournamentAdmin', { templateUrl : "templates/tournamentAdmin.html" });
 	$routeProvider.when('/player', { templateUrl : "templates/player.html" });
+	$routeProvider.when('/playerAdmin', { templateUrl : "templates/playerAdmin.html" });
 	$routeProvider.when('/error', { templateUrl : "templates/error.html" });
 
 	
@@ -25,6 +26,7 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/modifyCourt', { templateUrl : "templates/modifyCourt.html" });
 	$routeProvider.when('/modifyTournament', { templateUrl : "templates/modifyTournament.html" });
 	$routeProvider.when('/modifyReferee', { templateUrl : "templates/modifyReferee.html" });
+	$routeProvider.when('/modifyPlayer', { templateUrl : "templates/modifyPlayer.html" });
 	$routeProvider.when('/user', { templateUrl : "templates/user.html" });
 	$routeProvider.when('/access', { templateUrl : "templates/access.html" });
 	$routeProvider.when('/accessAdmin', { templateUrl : "templates/accessAdmin.html" });
