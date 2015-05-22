@@ -16,6 +16,8 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/tournament', { templateUrl : "templates/tournament.html" });
 	$routeProvider.when('/tournamentAdmin', { templateUrl : "templates/tournamentAdmin.html" });
 	$routeProvider.when('/player', { templateUrl : "templates/player.html" });
+	$routeProvider.when('/error', { templateUrl : "templates/error.html" });
+
 	
 	$routeProvider.when('/court', { templateUrl : "templates/court.html" });
 	$routeProvider.when('/courtAdmin', { templateUrl : "templates/courtAdmin.html" });
