@@ -1,5 +1,5 @@
 <div ng-controller="TeamController as vm">
-	
+	<div ng-if="vm.validouser">
 	<core-toolbar class="medium-tall">
 		    <div flex><!-- Locos x el FÃºtbol -->
 		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
@@ -66,23 +66,33 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	<div ng-if="!vm.validouser">
+		
+		<div>
+	<core-toolbar class="medium-tall">
+	<div flex>
+		<!-- Locos x el FÃºtbol -->
+		<a href="#/carrousel"><paper-button id="homeButton">Locos
+			x el Fútbol</paper-button></a>
+	</div>
+	<a href="#/home"> <paper-button raised id="logOutAdminButton">
+		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+		sesión </paper-button>
+	</a>
+	<div class="bottom fit" horizontal layout>
+		<paper-tabs selected="0" flex style="max-width: 600px;">
+		<paper-tab> <a href="#/access" horizontal center-center
+			layout>Accede</a></paper-tab> <paper-tab>
+	</div>
+	</core-toolbar>
 
-	<!-- <table id="table" class="table table-hover table-mc-light-blue">
-			<thead>
-				<tr>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Posicion</th>
-					<th>Edad</th>
-				</tr>
-			</thead>
-			<tbody ng-repeat="team in vm.teams">
-				<tr ng-repeat="player in team.players">
-					<td data-title="Nombre">{{player.name}}</td>
-					<td data-title="Apellido">3</td>
-					<td data-title="Posicion">4</td>
-					<td data-title="Equipo">5</td>				
-				</tr>
-			</tbody ng-repeat>
-		</table>-->
+</div>
+
+<div>
+	<h3>No tiene permisos para acceder a esta sección</h3>
+	<a href="#/home">Volver</a>
+</div>
+		
+	</div>
 </div>

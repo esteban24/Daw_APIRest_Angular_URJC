@@ -1,5 +1,6 @@
 <div class="list-group" ng-controller="TournamentController as vm">
 
+	<div ng-if="vm.validouser">
 	<core-toolbar class="medium-tall">
 		    <div flex><!-- Locos x el FÃºtbol -->
 		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
@@ -19,27 +20,6 @@
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
-	<!-- 
-	<div class="navbar navbar-default menu">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el futbol</a>
-		</div>
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="#/home">Home</a></li>
-				<li><a href="#/court">Pistas</a></li>
-				<li><a href="#/tournament">Torneos</a></li>
-				<li><a href="#/team">Equipos</a></li>
-				<li><a href="#/referee">Arbitros</a></li>
-			</ul>
-
-		</div>
-	</div> -->
 	<div class="list-group-item" ng-repeat="tournament in vm.tournaments">
 		<div class="row-picture">
             <img class="circle" src={{tournament.image}} alt="icon">
@@ -92,6 +72,35 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
+	<div ng-if="!vm.validouser">
+		
+		<div>
+	<core-toolbar class="medium-tall">
+	<div flex>
+		<!-- Locos x el FÃºtbol -->
+		<a href="#/carrousel"><paper-button id="homeButton">Locos
+			x el Fútbol</paper-button></a>
+	</div>
+	<a href="#/home"> <paper-button raised id="logOutAdminButton">
+		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+		sesión </paper-button>
+	</a>
+	<div class="bottom fit" horizontal layout>
+		<paper-tabs selected="0" flex style="max-width: 600px;">
+		<paper-tab> <a href="#/access" horizontal center-center
+			layout>Accede</a></paper-tab> <paper-tab>
+	</div>
+	</core-toolbar>
+
+</div>
+
+<div>
+	<h3>No tiene permisos para acceder a esta sección</h3>
+	<a href="#/home">Volver</a>
+</div>
+		
 	</div>
 
 
