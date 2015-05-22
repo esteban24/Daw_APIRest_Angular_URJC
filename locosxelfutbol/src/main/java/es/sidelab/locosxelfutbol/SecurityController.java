@@ -49,7 +49,6 @@ public class SecurityController {
 
 	@RequestMapping(value= "/seguridadUsuario", method = RequestMethod.POST)
 	public boolean loginTeam(@RequestBody Access datos, HttpSession sesion){
-		System.out.println("yghin");
 		boolean devolver=false;
 		for(Team team: teamrepository.findAll()){
 			if((team.getCorreo().equalsIgnoreCase(datos.mail))&& (team.getContrasenia().equalsIgnoreCase(datos.pass))){
