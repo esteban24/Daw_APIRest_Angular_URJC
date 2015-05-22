@@ -20,30 +20,9 @@
 		</core-toolbar>
 
 <div class="list-group">
-	<!--  <div class="navbar navbar-default menu">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/carrousel">Locos por el
-				futbol</a>
-		</div>
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="#/adminLogin">Home</a></li>
-				<li><a href="#/courtAdmin">Pistas</a></li>
-				<li><a href="#/tournamentAdmin">Torneos</a></li>
-				<li><a href="#/teamAdmin">Equipos</a></li>
-				<li><a href="#/refereeAdmin">Arbitros</a></li>
-			</ul>
-
-		</div>
-	</div> -->
 	<div ng-if="vm.valido">
 		<div>
-			<a href="#/addCourt">A�adir Pista</a>
+		<a href="#/addCourt"><paper-fab id="addButton" icon="add" title="add"></paper-fab></a>	
 			</br></br>
 		</div>
 	    <div class="list-group-item" ng-repeat="court in vm.courts">
@@ -54,11 +33,10 @@
 	            <h4 class="list-group-item-heading">{{court.name}}</h4>
 	            <p class="list-group-item-text">{{court.description}}</p>
 	        </div>
-	        <div>
-				<a type="button" class="md-raised md-primary" ng-click="vm.modify2(court)">Modificar</a>
-				<a href="" type="button" class="md-raised md-warn" ng-click="vm.deleteCourt(court)">Eliminar</a>
-				</br></br>		
-			</div>
+			<div id="modDelButtonsContainer">
+		           <a ng-click="vm.deleteCourt(court)"><paper-fab mini id="deleteButton" icon="delete" title="delete"></paper-fab></a>
+		           <a ng-click="vm.modify2(court)"><paper-fab mini id="modifyButton" icon="create" title="create"></paper-fab></a>
+	        </div>
 	    </div> 
 	</div>
 	<div ng-if="!vm.valido">
