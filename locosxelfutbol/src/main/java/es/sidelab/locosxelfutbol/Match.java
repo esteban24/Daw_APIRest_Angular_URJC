@@ -15,12 +15,8 @@ public class Match{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 	@OneToOne
-	@JoinColumn(name="LOCAL_TEAM")
 	private Team local;
-	//private String local;
 	@OneToOne
-	@JoinColumn(name="VISITANT_TEAM")
-	//private Team visitant;
 	private Team visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
