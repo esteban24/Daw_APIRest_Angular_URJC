@@ -54,6 +54,7 @@ public class SecurityController {
 			if((team.getCorreo().equalsIgnoreCase(datos.mail))&& (team.getContrasenia().equalsIgnoreCase(datos.pass))){
 				sesion.setAttribute("user", true);
 				devolver=true;
+				break;
 			} else {
 				sesion.setAttribute("user", false);
 				devolver=false;

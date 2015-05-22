@@ -2,11 +2,11 @@
 
 		<core-toolbar class="medium-tall">
 		    <div flex><!-- Locos x el FÃºtbol -->
-		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el Fútbol</paper-button></a>
+		    	<a href="#/carrousel"><paper-button id="homeButton">Locos x el FÃºtbol</paper-button></a>
 		    </div>
 		    <a href="#/home">
 		    	<paper-button raised id="logOutAdminButton">
-		    		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión
+		    		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesiÃ³n
 		    	</paper-button>
 		    </a>
 		    <div class="bottom fit" horizontal layout>
@@ -15,7 +15,7 @@
 			        <paper-tab><a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab>
 			        <paper-tab><a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab>
 			        <paper-tab><a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-			        <paper-tab><a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
+			        <paper-tab><a href="#/refereeAdmin" horizontal center-center layout>Ã�rbitros</a></paper-tab>
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
@@ -27,24 +27,25 @@
 		<div class="table-responsive-vertical shadow-z-1">
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
-				<thead>
-					<tr>
-						<th>Equipo</th>
-						<th>Puntos</th>
-						<th>Goles a favor</th>
-						<th>Goles encajados</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="team in vm.teams">
-						<td data-title="Equipo"><a data-toggle="modal"
-							data-target="#simple-dialog">{{team.name}}</a></td>
-						<td data-title="Puntos">{{team.points}}</a></td>
-						<td data-title="Goles a favor">{{team.gf}}</td>
-						<td data-title="Goles encajados">{{team.gc}}</td>
-					</tr>
-				</tbody>
-			</table>
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Puntos</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="team in vm.teams">
+					<td data-title="Posicion">{{team.name}}</td>
+					<td data-title="Equipo">{{team.points}}</td>
+					<td data-title="Modificar"><a ng-click="vm.modify5(team)"><paper-fab mini id="modifyButton" icon="create" title="create"></paper-fab></a></td>
+					<td data-title="Eliminar">
+					
+					<a type="button" ng-click="vm.deleteTeam(team)"><paper-fab mini id="deleteButton" icon="delete" title="delete"></paper-fab></a></td>   
+				</tr>
+			</tbody>
+		</table>
 		</div>
 
 		<div ng-controller="TeamController as vm" id="simple-dialog"
