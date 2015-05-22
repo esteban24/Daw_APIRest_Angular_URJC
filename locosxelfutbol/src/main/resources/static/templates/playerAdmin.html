@@ -1,13 +1,13 @@
 <div ng-controller="PlayerController as vm">
 	<core-toolbar class="medium-tall">
 	<div flex>
-		<!-- Locos x el FÃºtbol -->
+		<!-- Locos x el FÃƒÂºtbol -->
 		<a href="#/carrousel"><paper-button id="homeButton">Locos
-			x el Fútbol</paper-button></a>
+			x el FÃºtbol</paper-button></a>
 	</div>
-	<a href="#/home"> <paper-button raised id="logOutAdminButton">
+	<a ng-click="vm.logout()"> <paper-button raised id="logOutAdminButton">
 		<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-		sesión </paper-button>
+		sesiÃ³n </paper-button>
 	</a>
 	<div class="bottom fit" horizontal layout>
 		<paper-tabs selected="0" flex style="max-width: 600px;">
@@ -18,7 +18,7 @@
 		<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
 		<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
 		<paper-tab>
-		<a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab>
+		<a href="#/refereeAdmin" horizontal center-center layout>Ã�rbitros</a></paper-tab>
 		</paper-tabs>
 	</div>
 	</core-toolbar>
