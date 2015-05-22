@@ -35,6 +35,11 @@ function TournamentController(footballManager, $timeout, $location) {
 		$location.path('/tournamentAdmin');
 	}
 	
+	vm.logout = function() {
+		footballManager.logout();
+		$location.path("/");
+	};
+	
 	vm.deleteTournament = function(tournament){
 		footballManager.deleteTournament(tournament);
 		vm.tournament={};
