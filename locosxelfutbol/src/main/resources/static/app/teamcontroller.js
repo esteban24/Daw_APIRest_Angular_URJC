@@ -6,7 +6,12 @@ function TeamController(footballManager, $timeout, $location) {
 
 	var vm = this;
 	
-	vm.players= footballManager.getPlayers();
+	vm.teams= footballManager.getTeams();
+	vm.team={};
+	vm.modifyTeam=footballManager.modifyTeam;
+	vm.valido = footballManager.getValido();
+	
+	vm.teams= footballManager.getTeams();
 	
 	//Controller actions
 	
@@ -18,4 +23,25 @@ function TeamController(footballManager, $timeout, $location) {
 	setTimeout( function (){
 		vm.reload();}
 	,500);
+	
+	/*ojooooooo*/vm.modify5 = function(team){
+		vm.modifyTeam=footballManager.setModifyTeam(team);
+		vm.reload();
+		$location.path('/modifyTeam');
+	}
+	
+	vm.modifyingteam= function(team){
+		footballManager.modifyingteam(team);
+		vm.modifyTeam={};
+		footballManager.setModifyTeam(vm.modifyTeam);
+		vm.reload();
+		$location.path('/teamAdmin');
+	}
+	
+	vm.deleteTeam = function(team){
+		footballManager.deleteTeam(team);
+		vm.team={};
+		vm.reload();
+		$location.path('/teamAdmin');
+	}
 };

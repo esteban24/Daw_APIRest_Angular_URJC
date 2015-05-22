@@ -16,6 +16,8 @@ function FootballManager($resource, $timeout, $http) {
 	vm.tournaments= [];
 	vm.modifyReferee={};
 	vm.modifyCourt={};
+	vm.modifyPlayer={};
+	vm.modifyTeam{};
 	vm.valido=false;
 	vm.pass={};
 	vm.mail={};
@@ -44,9 +46,11 @@ function FootballManager($resource, $timeout, $http) {
 		return vm.validouser;
 	}
 
-	var TeamResource = $resource('/team/equipos',  
-		{save : {method : 'GET'}
-	});
+	var TeamResource = $resource('/team/:id',  
+			{id:'@id'},
+			{deleteTeam:{method: 'DELETE'}},
+			{save : {method : 'GET'}
+		});
 	
 	var PlayerResource = $resource('/player/:id',  
 			{id:'@id'},
@@ -92,9 +96,6 @@ function FootballManager($resource, $timeout, $http) {
 			{id:'@id'},
 			{'update' : {method : 'PUT'}
 	});
-	/*var SessionResource = $resource('/adminLogin/seguridad', 
-		{save : {method : 'POST'}
-	});*/
 	
 	var PassResource = $resource('/')
 	
@@ -143,6 +144,11 @@ function FootballManager($resource, $timeout, $http) {
 		return vm.modifyPlayer;
 	}
 	
+	vm.setModifyTeam= function(team){
+		vm.modifyTeam=team;
+		return vm.modifyTeam;
+	}
+	
 	vm.addReferee= function(addReferee){
 		RefereeResource.save(addReferee);
 	}
@@ -171,6 +177,11 @@ function FootballManager($resource, $timeout, $http) {
 		PlayerModifyResource.update({id:$id},player);
 	}
 	
+	vm.modifyingteam= function(team){
+		$id=player.id;
+		TeamModifyResource.update({id:$id},team);
+	}
+	
 	vm.deleteReferee= function(referee){
 		$id=referee.id;
 		RefereeResource.deleteReferee({id:$id});
@@ -189,6 +200,11 @@ function FootballManager($resource, $timeout, $http) {
 	vm.deletePlayer= function(player){
 		$id=player.id;
 		PlayerResource.deletePlayer({id:$id});
+	}
+	
+	vm.deleteTeam= function(team){
+		$id=team.id;
+		TeamResource.deleteTeam({id:$id});
 	}
 	
 	vm.login = function($mail, $pass, callback) {

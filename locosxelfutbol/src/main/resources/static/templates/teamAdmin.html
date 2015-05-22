@@ -19,27 +19,6 @@
 		       		</paper-tabs>
 		   	</div>
 		</core-toolbar>
-	<!-- <div ng-if="vm.valido">
-		<div class="navbar navbar-default menu">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-responsive-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#/carrousel">Locos por el futbol</a>
-			</div>
-			<div class="navbar-collapse collapse navbar-responsive-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#/adminLogin">Home</a></li>
-					<li><a href="#/courtAdmin">Pistas</a></li>
-					<li><a href="#/tournamentAdmin">Torneos</a></li>
-					<li><a href="#/teamAdmin">Equipos</a></li>
-					<li><a href="#/refereeAdmin">Arbitros</a></li>
-				</ul>
-
-			</div>
-		</div> -->
 
 		<h2>Equipos</h2>
 
@@ -74,23 +53,25 @@
 				<div class="modal-content">
 					<div class="modal-body">
 						<table id="table" class="table table-hover table-mc-light-blue">
-							<thead>
-								<tr>
-									<th>Nombre</th>
-									<th>Apellido</th>
-									<th>Posicion</th>
-									<th>Edad</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="team in vm.teams">
-									<td data-title="Nombre">{{team.players[$index].name}}</td>
-									<td data-title="Apellido">{{team.players[$index].lastName}}</td>
-									<td data-title="Posicion">{{team.players[$index].position}}</td>
-									<td data-title="Equipo">{{team.players[$index].age}}</td>
-								</tr>
-							</tbody>
-						</table>
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="team in vm.teams">
+					<td data-title="Posicion">{{team.name}}</td>
+					<td data-title="Equipo">{{team.points}}</td>
+					<td data-title="Modificar"><a ng-click="vm.modify5(team)"><paper-fab mini id="modifyButton" icon="create" title="create"></paper-fab></a></td>
+					<td data-title="Eliminar">
+					
+					<a type="button" ng-click="vm.deleteTeam(team)"><paper-fab mini id="deleteButton" icon="delete" title="delete"></paper-fab></a></td>   
+				</tr>
+			</tbody>
+		</table>
 					</div>
 				</div>
 			</div>
