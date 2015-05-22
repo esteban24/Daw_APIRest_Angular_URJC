@@ -9,6 +9,8 @@ function RefereeController(footballManager, $timeout, $location) {
 	vm.referee={};
 	vm.modifyReferee=footballManager.modifyReferee;
 	vm.valido = footballManager.getValido();
+	vm.validouser= footballManager.getValidouser();
+
 	//Controller actions
 	
 	vm.reload= function(){
