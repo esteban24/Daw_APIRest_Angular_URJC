@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Tournament{
@@ -19,6 +20,7 @@ public class Tournament{
 	private String image;
 	@OneToMany
 	@JoinTable(name="TOURN_TEAM")
+	@OrderBy("points ASC")
 	private List<Team> teams;
 	//private String teams;
 	@OneToMany

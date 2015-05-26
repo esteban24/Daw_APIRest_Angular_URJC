@@ -30,15 +30,17 @@ public class PlayerController {
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
 	public void modificar(@PathVariable long id, @RequestBody Player player, HttpSession sesion){
-		//if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			playerRepository.setName(id,player.getName());
 			//playerRepository.setLastName(id,player.getLastName());
-		//}
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
 	public void deletePlayer(@PathVariable long id, HttpSession sesion){
-		playerRepository.delete(id);
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			playerRepository.delete(id);
+		}
 	}
 
 }

@@ -32,25 +32,27 @@ public class RefereeController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Referee> addReferee(@RequestBody Referee referee, HttpSession sesion){
-		//if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			refereeRepository.save(referee);
 			return new ResponseEntity<>(referee, HttpStatus.CREATED);
-		//}else{
-			//return null;
-		//}	
+		}else{
+			return null;
+		}	
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
 	public void modificar(@PathVariable long id, @RequestBody Referee referee, HttpSession sesion){
-		//if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			refereeRepository.setName(id,referee.getName());
 			refereeRepository.setLastName(id,referee.getLastName());
-		//}
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.DELETE)
 	public void deleteReferee(@PathVariable long id, HttpSession sesion){
-		refereeRepository.delete(id);
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			refereeRepository.delete(id);
+		}
 	}
 
 }

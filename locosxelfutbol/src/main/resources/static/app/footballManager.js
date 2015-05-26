@@ -215,10 +215,6 @@ function FootballManager($resource, $timeout, $http) {
 		$http.post("/adminLogin/seguridadUsuario", {mail:$mailuser ,pass:$passuser}).success(callback);
 	}
 
-	/*vm.islog = function() {
-		return SessionResource.query();
-	}*/
-
 	vm.logout = function() {
 		vm.setValido(false);
 	}

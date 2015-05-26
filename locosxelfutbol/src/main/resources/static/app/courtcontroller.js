@@ -9,6 +9,7 @@ function CourtController(footballManager, $timeout, $location) {
 	vm.court={};
 	vm.modifyCourt=footballManager.modifyCourt;
 	vm.valido = footballManager.getValido();
+	vm.validouser= footballManager.getValidouser();
 
 	//Controller actions
 	
