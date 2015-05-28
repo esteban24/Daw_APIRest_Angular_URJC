@@ -127,7 +127,7 @@ public class DataBaseController implements CommandLineRunner{
 		players4.add(player20);
 		
 		//Insert Team
-		Team team4 = new Team("NewTeam",players4, 0, 0, 0, 0, 0, 0,"equipo1@team.com","1234");
+		Team team4 = new Team("NewTeam",players4, 0, 1, 1, 1, 3, 2,"equipo1@team.com","1234");
 		//teamRepository.save(team4);
 		
 		//Set Teams
@@ -153,7 +153,7 @@ public class DataBaseController implements CommandLineRunner{
 		players5.add(player25);
 		
 		//Insert Team
-		Team team5 = new Team("Minabo de Kiev",players5, 0, 0, 0, 0, 0, 0,"equipo5@team.com","1234");
+		Team team5 = new Team("Minabo de Kiev",players5, 0, 0, 2, 0, 11, 0,"equipo5@team.com","1234");
 		//teamRepository.save(team5);
 		
 		//Set Teams
@@ -179,7 +179,7 @@ public class DataBaseController implements CommandLineRunner{
 		players6.add(player30);
 		
 		//Insert Team
-		Team team6 = new Team("Aston Birras", players6, 0, 0, 0, 0, 0, 0,"equipo6@team.com","1234");
+		Team team6 = new Team("Aston Birras", players6, 2, 0, 0, 6, 3, 7,"equipo6@team.com","1234");
 		//teamRepository.save(team6);
 		
 		//Set Teams
@@ -205,7 +205,7 @@ public class DataBaseController implements CommandLineRunner{
 		players6.add(player35);
 		
 		//Insert Team
-		Team team7 = new Team("Pajax de Amsterdam", players7, 0, 0, 0, 0, 0, 0,"equipo7@team.com","1234");
+		Team team7 = new Team("Pajax de Amsterdam", players7, 1, 0, 0, 3, 1, 3,"equipo7@team.com","1234");
 		//teamRepository.save(team7);
 		
 		//Set Teams

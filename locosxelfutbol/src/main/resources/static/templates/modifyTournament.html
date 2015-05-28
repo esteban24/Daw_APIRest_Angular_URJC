@@ -15,15 +15,13 @@
 			</a>
 			<div class="bottom fit" horizontal layout>
 				<paper-tabs selected="0" flex style="max-width: 600px;">
-				<paper-tab>
-				<a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
-				<paper-tab>
-				<a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+				<paper-tab> <a href="#/tournamentAdmin" horizontal
+					center-center layout>Torneos</a></paper-tab> <paper-tab> <a
+					href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
 				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
 				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
-				<paper-tab>
-				<a href="#/refereeAdmin" horizontal center-center layout>Arbitros</a></paper-tab>
-				</paper-tabs>
+				<paper-tab> <a href="#/refereeAdmin" horizontal
+					center-center layout>Arbitros</a></paper-tab> </paper-tabs>
 			</div>
 			</core-toolbar>
 			<fieldset>
@@ -34,16 +32,42 @@
 					<input is="core-input" ng-model="vm.modifyTournament.name" required>
 					</paper-input-decorator>
 				</div>
+
+				<a data-toggle="modal" data-target="#simple-dialog"><paper-button
+						raised>Equipos</paper-button></a>
+
+				<div ng-controller="TournamentController as vm" id="simple-dialog"
+					class="modal fade" tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-body">
+								<table id="table" class="table table-hover table-mc-light-blue">
+									<thead>
+										<tr>
+											<th><a href=""
+												ng-click="predicate = 'name'; reverse=false">Equipos</a> (<a
+												href="" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
+											<th><a href=""
+												ng-click="predicate = 'phone'; reverse=!reverse">Puntos</a></th>
+										</tr>
+									</thead>
+									<tbody ng-repeat="tournament in vm.tournaments">
+										<tr ng-repeat="team in tournament.teams  | orderBy:'-points'">
+											<td data-title="Nombre">{{team.name}}</td>
+											<td data-title="Puntos">{{team.points}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<a ng-click="vm.modifyingtournament(vm.modifyTournament)"><paper-button
 						raised>Modificar Torneo</paper-button></a> <a href="#/tournamentAdmin"><paper-button
 						raised>Cancelar modificacion</paper-button></a>
 			</fieldset>
-			<tbody>
-					<tr ng-repeat="team in vm.tournament.teams">
-						<td data-title="Posicion">{{team.name}}</td>
-						<td data-title="Equipo">{{team.points}}</td>
-					</tr>
-			</tbody>
+
 		</form>
 	</div>
 	<div ng-if="!vm.valido">

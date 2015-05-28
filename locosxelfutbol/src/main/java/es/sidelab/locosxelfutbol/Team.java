@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Team{
@@ -22,6 +23,7 @@ public class Team{
 	private int win;
 	private int draw;
 	private int defeat;
+	@OrderBy("points ASC")
 	private int points;
 	private int gc;
 	private int gf;
@@ -47,6 +49,7 @@ public class Team{
 		this.win=win;
 		this.draw=draw;
 		this.defeat=defeat;
+		this.points=points;
 		this.gc=gc;
 		this.gf=gf;
 		this.correo=correo;
