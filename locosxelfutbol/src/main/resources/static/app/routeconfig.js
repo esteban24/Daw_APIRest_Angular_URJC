@@ -19,7 +19,7 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/playerAdmin', { templateUrl : "templates/playerAdmin.html" });
 	$routeProvider.when('/error', { templateUrl : "templates/error.html" });
 
-	
+	$routeProvider.when('/createMatch', { templateUrl : "templates/createMatch.html" });
 	$routeProvider.when('/court', { templateUrl : "templates/court.html" });
 	$routeProvider.when('/courtAdmin', { templateUrl : "templates/courtAdmin.html" });
 	$routeProvider.when('/addCourt', { templateUrl : "templates/addCourt.html" });

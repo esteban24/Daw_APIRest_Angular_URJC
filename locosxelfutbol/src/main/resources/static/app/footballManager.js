@@ -97,6 +97,11 @@ function FootballManager($resource, $timeout, $http) {
 			{'update' : {method : 'PUT'}
 	});
 	
+	var TeamModifyResource = $resource('/playerAdmin/:id', 
+			{id:'@id'},
+			{'update' : {method : 'PUT'}
+	});
+	
 	var PassResource = $resource('/')
 	
 	vm.getTeams = function() {
@@ -178,7 +183,7 @@ function FootballManager($resource, $timeout, $http) {
 	}
 	
 	vm.modifyingteam= function(team){
-		$id=player.id;
+		$id=team.id;
 		TeamModifyResource.update({id:$id},team);
 	}
 	

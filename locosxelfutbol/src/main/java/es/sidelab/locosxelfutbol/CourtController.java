@@ -21,7 +21,7 @@ public class CourtController {
 	private CourtRepository courtRepository;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Court> getReferees() {
+	public List<Court> getCourts() {
 		return courtRepository.findAll();
 	}
 	
