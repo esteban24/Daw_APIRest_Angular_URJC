@@ -18,7 +18,7 @@ public class HomeController {
 	CourtRepository courtRepository;
 	
 	@Autowired
-	MatchRepository matchRepository;
+	GameRepository matchRepository;
 	
 	@Autowired
 	RefereeRepository refereeRepository;

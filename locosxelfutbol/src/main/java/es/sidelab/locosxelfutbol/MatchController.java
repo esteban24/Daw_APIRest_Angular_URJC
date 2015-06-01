@@ -18,16 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class MatchController {
 	
 	@Autowired
-	MatchRepository matchRepository;
+	GameRepository matchRepository;
 	
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Match> getPlayers() {
+	public List<Game> getPlayers() {
 		return matchRepository.findAll();
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Match> addMatch(@RequestBody Match match, HttpSession sesion){
+	public ResponseEntity<Game> addMatch(@RequestBody Game match, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			matchRepository.save(match);
 			return new ResponseEntity<>(match, HttpStatus.CREATED);

@@ -23,7 +23,7 @@ public class DataBaseController implements CommandLineRunner{
 	CourtRepository courtRepository;
 	
 	@Autowired
-	MatchRepository matchRepository;
+	GameRepository matchRepository;
 	
 	@Autowired
 	RefereeRepository refereeRepository;
@@ -251,18 +251,18 @@ public class DataBaseController implements CommandLineRunner{
 		//Insert Tournaments
 		
 		//Insert Matches
-		Match match1 = new Match (team1, team2, 4, 3);
-		Match match2 = new Match (team3, team4, 1, 2);
-		Match match3 = new Match (team5, team6, 0, 7);
-		Match match4 = new Match (team1, team3, 2, 2);
-		Match match5 = new Match (team2, team6, 2, 6);
-		Match match6 = new Match (team4, team5, 1, 0);
-		Match match7 = new Match (team1, team6, 0, 0);
-		Match match8 = new Match (team2, team5, 3, 2);
-		Match match9 = new Match (team7, team4, 10, 3);
-		Match match10 = new Match (team3, team4, 10, 3);
-		Match match11 = new Match (team3, team7, 10, 3);
-		Match match12 = new Match (team7, team1, 3, 1);
+		Game match1 = new Game (team1, team2, 4, 3);
+		Game match2 = new Game (team3, team4, 1, 2);
+		Game match3 = new Game (team5, team6, 0, 7);
+		Game match4 = new Game (team1, team3, 2, 2);
+		Game match5 = new Game (team2, team6, 2, 6);
+		Game match6 = new Game (team4, team5, 1, 0);
+		Game match7 = new Game (team1, team6, 0, 0);
+		Game match8 = new Game (team2, team5, 3, 2);
+		Game match9 = new Game (team7, team4, 10, 3);
+		Game match10 = new Game (team3, team4, 10, 3);
+		Game match11 = new Game (team3, team7, 10, 3);
+		Game match12 = new Game (team7, team1, 3, 1);
 		
 		List<Team> teams1 = new ArrayList<Team>();
 		
@@ -277,7 +277,7 @@ public class DataBaseController implements CommandLineRunner{
 		//List<Team> teams2 = new ArrayList<Team>();
 		
 		
-		List<Match> matches1 = new ArrayList<Match>();
+		List<Game> matches1 = new ArrayList<Game>();
 		
 		matches1.add(match1);
 		matches1.add(match2);
@@ -286,7 +286,7 @@ public class DataBaseController implements CommandLineRunner{
 		matches1.add(match5);
 		matches1.add(match6);
 
-		List<Match> matches2 = new ArrayList<Match>();
+		List<Game> matches2 = new ArrayList<Game>();
 
 		matches2.add(match7);
 		matches2.add(match8);

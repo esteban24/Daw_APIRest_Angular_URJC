@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Match{
+public class Game{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
@@ -21,14 +21,14 @@ public class Match{
 	private int goalsLocal;
 	private int goalsVisitant;
 	
-	public Match(){
+	public Game(){
 		this.local= null;
 		this.visitant= null;
 		this.goalsLocal=0;
 		this.goalsVisitant=0;
 	}
 
-	public Match(Team local, Team visitant, int goalsLocal, int goalsVisitant){
+	public Game(Team local, Team visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;

@@ -24,19 +24,23 @@ public class Tournament{
 	private List<Team> teams;
 	//private String teams;
 	@OneToMany
-	private List<Match> matches;
+	private List<Game> games;
 	//private String matches;
 	
 	
 	
 	public Tournament(){
+		this.name = "";
+		this.image = "";
+		this.teams= null;
+		this.games = null;
 	}
 	
-	public Tournament(String name, String image, List<Team> teams, List<Match> matchs){
+	public Tournament(String name, String image, List<Team> teams, List<Game> games){
 		this.name=name;
 		this.image=image;
 		this.teams=teams;
-		this.matches=matchs;
+		this.games=games;
 	}
 	
 	/*public Tournament(String name){
@@ -99,13 +103,13 @@ public class Tournament{
 		this.teams = teams;
 	}
 	
-	/*public String getMatches() {
-		return matches;
+	public List<Game> getGames() {
+		return games;
 	}
 
-	public void setMatches(String matches) {
-		this.matches = matches;
-	}*/
+	public void setGames(List<Game> games) {
+		this.games = games;
+	}
 	
 	
 
