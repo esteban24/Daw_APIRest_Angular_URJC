@@ -1,5 +1,6 @@
 package es.sidelab.locosxelfutbol;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -55,6 +56,32 @@ public class Team{
 		this.correo=correo;
 		this.contrasenia=contrasenia;
 	}	
+	
+	public Team(String name, List<Player> players ,String correo, String contrasenia) {
+		this.name = name;
+		this.players= players;
+		this.win= 0;
+		this.draw= 0;
+		this.defeat= 0;
+		this.points= 0;
+		this.gc= 0;
+		this.gf= 0;
+		this.correo=correo;
+		this.contrasenia=contrasenia;
+	}
+	
+	public Team(String name, String correo, String contrasenia) {
+		this.name = name;
+		this.players= new ArrayList<Player>();
+		this.win= 0;
+		this.draw= 0;
+		this.defeat= 0;
+		this.points= 0;
+		this.gc= 0;
+		this.gf= 0;
+		this.correo=correo;
+		this.contrasenia=contrasenia;
+	}
 	
 	public void addPlayer(Player player) {
         addPlayer(player, true);

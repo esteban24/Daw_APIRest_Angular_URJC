@@ -162,6 +162,10 @@ function FootballManager($resource, $timeout, $http) {
 		CourtResource.save(addCourt);
 	}
 	
+	vm.addTeam= function(addTeam){
+		TeamResource.save(addTeam);
+	}
+	
 	vm.modifying= function(referee){
 		$id=referee.id;
 		RefereeModifyResource.update({id:$id},referee);

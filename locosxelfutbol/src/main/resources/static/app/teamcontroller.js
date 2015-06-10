@@ -37,6 +37,19 @@ function TeamController(footballManager, $timeout, $location) {
 		$location.path("/");
 	};
 	
+	vm.addTeam= function(team){
+		team.win = 0;
+		team.draw = 0;
+		team.defeat = 0;
+		team.points = 0;
+		team.gc = 0;
+		team.gf = 0;
+		footballManager.addTeam(team);
+		vm.team={};
+		vm.reload();
+		$location.path('/teamAdmin');
+	}
+	
 	vm.modifyingteam= function(team){
 		footballManager.modifyingteam(team);
 		vm.modifyTeam={};
