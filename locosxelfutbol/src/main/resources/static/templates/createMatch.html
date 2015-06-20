@@ -1,0 +1,76 @@
+<div ng-controller="TeamController as vm">
+	<div class="list-group">
+		<div ng-if="vm.valido">
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a ng-click="vm.logout()"> <paper-button raised
+					id="logOutAdminButton"> <core-icon
+					id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión
+				</paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/tournamentAdmin" horizontal
+					center-center layout>Torneos</a></paper-tab> <paper-tab> <a
+					href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
+				<paper-tab> <a href="#/refereeAdmin" horizontal
+					center-center layout>Árbitros</a></paper-tab> </paper-tabs>
+			</div>
+			</core-toolbar>
+			<div>
+			<h3>Seleccione equipo local</h3>
+			<select name="equipoLocal">
+				<option ng-repeat="team in vm.teams" value="team" selected="selected">{{team.name}}</option>
+			</select>
+			
+			<h5>Introduzca el numero de goles a favor</h5>
+			<input type="number"/> 
+			
+			</div>
+			
+			<div>
+			<h3>Seleccione equipo visitante</h3>
+			<select name="equipoVisitante">
+				<option ng-repeat="team in vm.teams" value="team" selected="selected">{{team.name}}</option>
+			</select>
+			<h5>Introduzca el numero de goles a favor</h5>
+			<input type="number"/> 
+			</div>
+			
+				
+			
+		</div>
+		<div ng-if="!vm.valido">
+			<div>
+				<core-toolbar class="medium-tall">
+				<div flex>
+					<!-- Locos x el FÃºtbol -->
+					<a href="#/carrousel"><paper-button id="homeButton">Locos
+						x el Fútbol</paper-button></a>
+				</div>
+				<a href="#/home"> <paper-button raised id="logOutAdminButton">
+					<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+					sesión </paper-button>
+				</a>
+				<div class="bottom fit" horizontal layout>
+					<paper-tabs selected="0" flex style="max-width: 600px;">
+					<paper-tab> <a href="#/access" horizontal center-center
+						layout>Accede</a></paper-tab> <paper-tab>
+				</div>
+				</core-toolbar>
+
+			</div>
+
+			<div>
+				<h3>No tiene permisos para acceder a esta sección</h3>
+				<a href="#/home">Volver</a>
+			</div>
+			<h1>error, no tiene permisos</h1>
+		</div>
+	</div>
+</div>
