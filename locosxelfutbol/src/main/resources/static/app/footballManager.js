@@ -12,6 +12,8 @@ function FootballManager($resource, $timeout, $http) {
 	vm.referees = [];
 	vm.court = {};
 	vm.courts = [];
+	vm.game = {};
+	vm.games = [];
 	vm.tournament = {};
 	vm.tournaments = [];
 	vm.modifyReferee = {};
@@ -50,6 +52,18 @@ function FootballManager($resource, $timeout, $http) {
 		id : '@id'
 	}, {
 		deleteTeam : {
+			method : 'DELETE'
+		}
+	}, {
+		save : {
+			method : 'GET'
+		}
+	});
+	
+	var GameResource = $resource('/gameAdmin/:id', {
+		id : '@id'
+	}, {
+		deleteGame : {
 			method : 'DELETE'
 		}
 	}, {
@@ -172,6 +186,11 @@ function FootballManager($resource, $timeout, $http) {
 		vm.tournaments = TournamentResource.query();
 		return TournamentResource.query();
 	}
+	
+	vm.getGames = function(){
+		vm.games = GameResource.query();
+		return GameResource.query();
+	}
 
 	vm.setModifyReferee = function(referee) {
 		vm.modifyReferee = referee;
@@ -204,6 +223,14 @@ function FootballManager($resource, $timeout, $http) {
 
 	vm.addCourt = function(addCourt) {
 		CourtResource.save(addCourt);
+	}
+	
+	vm.addTeam = function(addTeam) {
+		TeamResource.save(addTeam);
+	}
+	
+	vm.addGame = function(addGame) {
+		GameResource.save(addGame);
 	}
 
 	vm.modifying = function(referee) {
@@ -300,6 +327,7 @@ function FootballManager($resource, $timeout, $http) {
 		vm.player = vm.getPlayers();
 		vm.courts = vm.getCourts();
 		vm.tournaments = vm.getTournaments();
+		vm.games = vm.getGames();
 	}
 
 
