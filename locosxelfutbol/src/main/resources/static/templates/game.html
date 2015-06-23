@@ -25,8 +25,8 @@
 		
 		</core-toolbar>
 				<!-- Modificar para mostrar los partidos de un torneo -->
-		<h2>Partidos</h2>
-		<div class="table-responsive-vertical shadow-z-1">
+		<div class="table-responsive-vertical shadow-z-1" ng-repeat="tournament in vm.tournaments">
+		<h2 style="text-align: -webkit-center; padding: 1em;">{{tournament.name}}</h2>
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
 				<thead>
@@ -41,8 +41,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="game in vm.games">
-						<td data-title="Equipo local">{{game.local.name}}</td>
+					<tr ng-repeat="game in tournament.games">
+						<td data-title="Equipo local">{{game.visitant.name}}</td>
 						<td data-title="Goles equipo local">{{game.goalsLocal}}</td>
 						<td>-</td>
 						<td data-title="Goles equipo visitante">{{game.goalsVisitant}}</td>
