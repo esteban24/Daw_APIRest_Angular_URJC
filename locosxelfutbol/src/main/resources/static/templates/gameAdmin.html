@@ -1,0 +1,101 @@
+<div ng-controller="GameController as vm">
+	<div ng-if="vm.valido">
+		<core-toolbar class="medium-tall">
+		<div flex>
+			<!-- Locos x el FÃƒÂºtbol -->
+			<a href="#/carrousel"><paper-button id="homeButton">Locos
+				x el Fútbol</paper-button></a>
+		</div>
+		<a ng-click="vm.logout()"> <paper-button raised
+				id="logOutAdminButton"> <core-icon
+				id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión </paper-button>
+		</a>
+		<div class="bottom fit" horizontal layout>
+			<paper-tabs selected="0" flex style="max-width: 600px;">
+			<paper-tab>
+			<a href="#/tournamentAdmin" horizontal center-center layout>Torneos</a></paper-tab>
+			<paper-tab>
+			<a href="#/courtAdmin" horizontal center-center layout>Pistas</a></paper-tab> <paper-tab>
+			<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
+			<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
+			<paper-tab>
+			<a href="#/refereeAdmin" horizontal center-center layout>Árbitros</a></paper-tab><paper-tab>
+			<a href="#/gameAdmin" horizontal center-center layout>Partidos</a></paper-tab>
+			</paper-tabs>
+		</div>
+		</core-toolbar>
+		
+		<a href="#/createGame"><paper-fab id="addButton" icon="add"
+					title="add"></paper-fab></a>
+		<h2>Partidos</h2>
+		
+		<div class="table-responsive-vertical shadow-z-1">
+			<!-- Table starts here -->
+			<table id="table" class="table table-hover table-mc-light-blue">
+				<thead>
+					<tr>
+						<th>Local</th>
+						<th></th>
+						<th>vs</th>
+						<th></th>
+						<th>Visitante</th>
+						
+						<!--  th>Eliminar</th Por el momento no se puede eliminar, hay que eliminar los partidos que tienen equipos asociados previamente -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="game in vm.games">
+						<td data-title="Equipo local">{{game.local.name}}</td>
+						<td data-title="Goles equipo local">{{game.goalsLocal}}</td>
+						<td>-</td>
+						<td data-title="Goles equipo visitante">{{game.goalsVisitant}}</td>
+						<td data-title="Equipo visitante">{{game.visitant.name}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<!-- div id="simple-dialog" class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="alert alert-dismissable alert-danger">
+							<strong>Oh error!</strong> <a href="#/playerAdmin"
+								class="alert-link">Elimina en primer lugar los jugadores</a> y
+							prueba de nuevo.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div -->
+
+
+	</div>
+	<div ng-if="!vm.valido">
+		<div>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃƒÂºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
+			</div>
+			<a href="#/home"> <paper-button raised id="logOutAdminButton">
+				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
+				sesión </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
+			</div>
+			</core-toolbar>
+
+		</div>
+
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
+		</div>
+	</div>
+</div>
