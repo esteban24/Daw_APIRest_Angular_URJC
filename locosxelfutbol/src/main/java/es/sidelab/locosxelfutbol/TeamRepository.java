@@ -23,4 +23,19 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 	@Query("update Team t set t.points = ?2 where t.id=?1")
 	void setPoints(long id, int points);
 	
+	@Modifying
+	@Transactional
+	@Query("update Team t set t.points = ?2 where t.id=?1")
+	void setWinGame(long id, int wins);
+	
+	@Modifying
+	@Transactional
+	@Query("update Team t set t.points = ?2 where t.id=?1")
+	void setDrawGame(long id, int draws);
+	
+	@Modifying
+	@Transactional
+	@Query("update Team t set t.points = ?2 where t.id=?1")
+	void setLostGame(long id, int losts);
+	
 }

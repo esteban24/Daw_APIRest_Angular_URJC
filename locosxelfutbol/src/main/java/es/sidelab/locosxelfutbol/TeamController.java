@@ -55,6 +55,34 @@ public class TeamController {
 			teamRepository.delete(id);
 		}
 	}
+	
+	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
+	public void modifyWins(@PathVariable long id, int wins, HttpSession sesion){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			teamRepository.setWinGame(id, wins);
+		}
+	}
+	
+	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
+	public void modifyDraws(@PathVariable long id, int draws, HttpSession sesion){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			teamRepository.setDrawGame(id, draws);
+		}
+	}
+	
+	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
+	public void modifyLosts(@PathVariable long id, int losts, HttpSession sesion){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			teamRepository.setLostGame(id, losts);
+		}
+	}
+	
+	@RequestMapping(value = "/{id}", method=RequestMethod.PUT)
+	public void modifyPoints(@PathVariable long id, int points, HttpSession sesion){
+		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
+			teamRepository.setPoints(id, points);
+		}
+	}
 
 
 }

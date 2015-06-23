@@ -29,11 +29,6 @@ function GameController(footballManager, $timeout, $location) {
 		vm.reload();}
 	,500);
 	
-	/*ojooooooo*/vm.modify5 = function(team){
-		vm.modifyTeam=footballManager.setModifyTeam(team);
-		vm.reload();
-		$location.path('/modifyTeam');
-	}
 	
 	vm.logout = function() {
 		footballManager.logout();

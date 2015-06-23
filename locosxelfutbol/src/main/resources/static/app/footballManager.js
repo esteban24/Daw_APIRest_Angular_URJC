@@ -119,6 +119,14 @@ function FootballManager($resource, $timeout, $http) {
 			method : 'GET'
 		}
 	});
+	
+	var GameModifyResource = $resource('/gameAdmin/:id', {
+		id : '@id'
+	}, {
+		'update' : {
+			method : 'PUT'
+		}
+	});
 
 	var RefereeModifyResource = $resource('/refereeAdmin/:id', {
 		id : '@id'
