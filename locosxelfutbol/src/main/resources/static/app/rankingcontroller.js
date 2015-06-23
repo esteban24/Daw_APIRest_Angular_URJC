@@ -1,8 +1,8 @@
-angular.module("app").controller("GameController", GameController);
+angular.module("app").controller("RankingController", RankingController);
 
-GameController.$inject = ["footballManager", "$timeout", "$location"];
+RankingController.$inject = ["footballManager", "$timeout", "$location"];
 
-function GameController(footballManager, $timeout, $location) {
+function RankingController(footballManager, $timeout, $location) {
 
 	var vm = this;
 	
@@ -10,13 +10,13 @@ function GameController(footballManager, $timeout, $location) {
 	vm.tournament={};
 	vm.games=[];
 	vm.game={};
+	vm.teams=[];
+	vm.team={};
 	vm.games= footballManager.getGames();
 	vm.tournaments= footballManager.getTournaments();
+	vm.teams= footballManager.getTeams();
 	vm.valido = footballManager.getValido();
 	vm.validouser= footballManager.getValidouser();
-
-	
-	vm.games= footballManager.getGames();
 	
 	//Controller actions
 	
@@ -24,6 +24,7 @@ function GameController(footballManager, $timeout, $location) {
 		footballManager.reload();
 		vm.games=footballManager.games;
 		vm.tournaments= footballManager.getTournaments();
+		vm.teams= footballManager.getTeams();
 		vm.valido = footballManager.getValido();
 		vm.validouser= footballManager.getValidouser();
 	}

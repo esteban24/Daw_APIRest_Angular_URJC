@@ -1,14 +1,16 @@
-<div ng-controller="GameController as vm">
-	<div ng-if="vm.valido">
+<div class="list-group" ng-controller="RankingController as vm">
+
+	<div ng-if="vm.validouser">
 		<core-toolbar class="medium-tall">
 		<div flex>
-			<!-- Locos x el FÃƒÂºtbol -->
+			<!-- Locos x el FÃºtbol -->
 			<a href="#/carrousel"><paper-button id="homeButton">Locos
 				x el Fútbol</paper-button></a>
 		</div>
-		<a ng-click="vm.logout()"> <paper-button raised
-				id="logOutAdminButton"> <core-icon
-				id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión </paper-button>
+		<a href="#/accessAdmin"> <paper-button raised
+				id="accessAdminButton"> <core-icon
+				id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+			admin </paper-button>
 		</a>
 		<div class="bottom fit" horizontal layout>
 			<paper-tabs selected="0" flex style="max-width: 100%;">
@@ -22,60 +24,43 @@
 			<a href="#/rankingAdmin" horizontal center-center layout>Clasificación</a></paper-tab>
 			</paper-tabs>
 		</div>
+		
 		</core-toolbar>
-		
-		<a href="#/createGame"><paper-fab id="addButton" icon="add"
-					title="add"></paper-fab></a>
-		
-		<div class="table-responsive-vertical shadow-z-1" ng-repeat="tournament in vm.tournaments">
-		<h2 style="text-align: -webkit-center; padding: 1em;">{{tournament.name}}</h2>
+				<!-- Modificar para mostrar los partidos de un torneo -->
+		<div class="table-responsive-vertical shadow-z-1">
+		<h2 style="text-align: -webkit-center; padding: 1em;">Clasificación</h2>
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
 				<thead>
 					<tr>
-						<th>Local</th>
-						<th></th>
-						<th>vs</th>
-						<th></th>
-						<th>Visitante</th>
-						
-						<!--  th>Eliminar</th Por el momento no se puede eliminar, hay que eliminar los partidos que tienen equipos asociados previamente -->
+						<th>Equipo</th>
+						<th>Puntos</th>
+						<th>Victorias</th>
+						<th>Empates</th>
+						<th>Derrotas</th>
+						<th>GF</th>
+						<th>GC</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="game in tournament.games">
-						<td data-title="Equipo local">{{game.local.name}}</td>
-						<td data-title="Goles equipo local">{{game.goalsLocal}}</td>
-						<td>-</td>
-						<td data-title="Goles equipo visitante">{{game.goalsVisitant}}</td>
-						<td data-title="Equipo visitante">{{game.visitant.name}}</td>
+					<tr>
+						<td data-title="Equipo"></td>
+						<td data-title="Puntos"></td>
+						<td data-title="Victorias"></td>
+						<td data-title="Empates"></td>
+						<td data-title="Derrotas"></td>
+						<td data-title="GF"></td>
+						<td data-title="GC"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+	<div ng-if="!vm.validouser">
 
-
-		<!-- div id="simple-dialog" class="modal fade" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="alert alert-dismissable alert-danger">
-							<strong>Oh error!</strong> <a href="#/playerAdmin"
-								class="alert-link">Elimina en primer lugar los jugadores</a> y
-							prueba de nuevo.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div -->
-
-
-	</div>
-	<div ng-if="!vm.valido">
 		<div>
 			<core-toolbar class="medium-tall">
 			<div flex>
-				<!-- Locos x el FÃƒÂºtbol -->
+				<!-- Locos x el FÃºtbol -->
 				<a href="#/carrousel"><paper-button id="homeButton">Locos
 					x el Fútbol</paper-button></a>
 			</div>
@@ -96,5 +81,9 @@
 			<h3>No tiene permisos para acceder a esta sección</h3>
 			<a href="#/home">Volver</a>
 		</div>
+
 	</div>
+
+
+
 </div>

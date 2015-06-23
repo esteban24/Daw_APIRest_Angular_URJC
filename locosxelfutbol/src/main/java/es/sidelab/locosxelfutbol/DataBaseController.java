@@ -274,7 +274,15 @@ public class DataBaseController implements CommandLineRunner{
 		teams1.add(team6);
 		teams1.add(team7);
 		
-		//List<Team> teams2 = new ArrayList<Team>();
+		List<Team> teams2 = new ArrayList<Team>();
+		
+		teams2.add(team1);
+		teams2.add(team2);
+		teams2.add(team3);
+		teams2.add(team4);
+		teams2.add(team5);
+		teams2.add(team6);
+		teams2.add(team7);
 		
 		
 		List<Game> matches1 = new ArrayList<Game>();
@@ -296,6 +304,8 @@ public class DataBaseController implements CommandLineRunner{
 		matches2.add(match12);
 		
 		Tournament tournament1 = new Tournament("Copa Santiago Bernabéu","img/siiuu.jpg",teams1, matches1);
+		
+		Tournament tournament2 = new Tournament("Champions League", "img/champions.jpg", teams2, matches2);
 		
 		//All saves
 		teamRepository.save(team1);
@@ -366,9 +376,10 @@ public class DataBaseController implements CommandLineRunner{
 		matchRepository.save(match9);
 		matchRepository.save(match10);
 		matchRepository.save(match11);
-		
+		matchRepository.save(match12);
 		
 		tournamentRepository.save(tournament1);
+		tournamentRepository.save(tournament2);
 
 	}
 }

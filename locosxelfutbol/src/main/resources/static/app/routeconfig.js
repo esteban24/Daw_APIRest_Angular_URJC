@@ -13,6 +13,8 @@ function RouteConfig($routeProvider) {
 	$routeProvider.when('/addTeam', { templateUrl : "templates/addTeam.html" });
 	$routeProvider.when('/game', { templateUrl : "templates/game.html" });
 	$routeProvider.when('/gameAdmin', { templateUrl : "templates/gameAdmin.html" });
+	$routeProvider.when('/ranking', { templateUrl : "templates/ranking.html" });
+	$routeProvider.when('/rankingAdmin', { templateUrl : "templates/rankingAdmin.html" });
 	$routeProvider.when('/createGame', { templateUrl : "templates/createGame.html" });
 	$routeProvider.when('/referee', { templateUrl : "templates/referee.html" });
 	$routeProvider.when('/refereeAdmin', { templateUrl : "templates/refereeAdmin.html" });

@@ -1,4 +1,4 @@
-<div ng-controller="PlayerController as vm">
+<div class="list-group" ng-controller="RankingController as vm">
 
 	<div ng-if="vm.validouser">
 		<core-toolbar class="medium-tall">
@@ -7,8 +7,9 @@
 			<a href="#/carrousel"><paper-button id="homeButton">Locos
 				x el Fútbol</paper-button></a>
 		</div>
-		<a href="#/home"> <paper-button raised id="accessAdminButton">
-			<core-icon id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+		<a href="#/accessAdmin"> <paper-button raised
+				id="accessAdminButton"> <core-icon
+				id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
 			admin </paper-button>
 		</a>
 		<div class="bottom fit" horizontal layout>
@@ -23,33 +24,39 @@
 			<a href="#/ranking" horizontal center-center layout>Clasificación</a></paper-tab> </paper-tabs> 
 			</paper-tabs>
 		</div>
+		
 		</core-toolbar>
-		<h2>Jugadores</h2>
-
-
+				<!-- Modificar para mostrar los partidos de un torneo -->
 		<div class="table-responsive-vertical shadow-z-1">
+		<h2 style="text-align: -webkit-center; padding: 1em;">Clasificación</h2>
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
 				<thead>
 					<tr>
-						<th>Posicion</th>
 						<th>Equipo</th>
+						<th>Puntos</th>
 						<th>Victorias</th>
+						<th>Empates</th>
 						<th>Derrotas</th>
+						<th>GF</th>
+						<th>GC</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="player in vm.players">
-						<td data-title="Posicion">1</td>
-						<td data-title="Equipo">{{player.name}}</td>
-						<td data-title="Victorias">5</td>
-						<td data-title="Derrotas">2</td>
+					<tr>
+						<td data-title="Equipo"></td>
+						<td data-title="Puntos"></td>
+						<td data-title="Victorias"></td>
+						<td data-title="Empates"></td>
+						<td data-title="Derrotas"></td>
+						<td data-title="GF"></td>
+						<td data-title="GC"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-	</div>
 	<div ng-if="!vm.validouser">
+
 		<div>
 			<core-toolbar class="medium-tall">
 			<div flex>
@@ -74,6 +81,9 @@
 			<h3>No tiene permisos para acceder a esta sección</h3>
 			<a href="#/home">Volver</a>
 		</div>
+
 	</div>
+
+
 
 </div>
