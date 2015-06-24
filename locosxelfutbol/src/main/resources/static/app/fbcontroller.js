@@ -14,7 +14,7 @@ function CourtController(footballManager, $timeout, $location) {
 	
 	setTimeout( function (){
 		vm.reload();}
-	,500);	
+	,50000);	
 	
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');

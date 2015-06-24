@@ -19,7 +19,7 @@ function TournamentController(footballManager, $timeout, $location) {
 	
 	setTimeout( function (){
 		vm.reload();}
-	,500);		
+	,50000);		
 	
 	/*ojooooooo*/vm.modify3 = function(tournament){
 		vm.modifyTournament=footballManager.setModifyTournament(tournament);

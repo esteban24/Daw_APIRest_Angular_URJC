@@ -24,7 +24,7 @@ function TeamController(footballManager, $timeout, $location) {
 	
 	setTimeout( function (){
 		vm.reload();}
-	,500);
+	,50000);
 	
 	/*ojooooooo*/vm.modify5 = function(team){
 		vm.modifyTeam=footballManager.setModifyTeam(team);

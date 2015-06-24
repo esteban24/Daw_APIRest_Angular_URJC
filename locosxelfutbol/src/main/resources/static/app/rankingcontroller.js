@@ -31,7 +31,7 @@ function RankingController(footballManager, $timeout, $location) {
 	
 	setTimeout( function (){
 		vm.reload();}
-	,500);
+	,50000);
 	
 	
 	vm.logout = function() {

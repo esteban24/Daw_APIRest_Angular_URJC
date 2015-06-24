@@ -25,7 +25,7 @@ function RefereeController(footballManager, $timeout, $location) {
 	
 	setTimeout( function (){
 		vm.reload();}
-	,500);		
+	,50000);	
 	
 	vm.modify = function(referee){
 		vm.modifyReferee=footballManager.setModifyReferee(referee);
