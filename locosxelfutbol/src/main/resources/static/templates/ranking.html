@@ -27,8 +27,8 @@
 		
 		</core-toolbar>
 				<!-- Modificar para mostrar los partidos de un torneo -->
-		<div class="table-responsive-vertical shadow-z-1">
-		<h2 style="text-align: -webkit-center; padding: 1em;">Clasificación</h2>
+		<div class="table-responsive-vertical shadow-z-1" ng-repeat="tournament in vm.tournaments">
+		<h2 style="text-align: -webkit-center; padding: 1em;">{{tournament.name}}</h2>
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
 				<thead>
@@ -43,14 +43,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td data-title="Equipo"></td>
-						<td data-title="Puntos"></td>
-						<td data-title="Victorias"></td>
-						<td data-title="Empates"></td>
-						<td data-title="Derrotas"></td>
-						<td data-title="GF"></td>
-						<td data-title="GC"></td>
+					<tr ng-repeat="team in tournament.teams | orderBy:'-points'">
+						<td data-title="Equipo">{{team.name}}</td>
+						<td data-title="Puntos">{{team.points}}</td>
+						<td data-title="Victorias">{{team.win}}</td>
+						<td data-title="Empates">{{team.draw}}</td>
+						<td data-title="Derrotas">{{team.defeat}}</td>
+						<td data-title="GF">{{team.gf}}</td>
+						<td data-title="GC">{{team.gc}}</td>
 					</tr>
 				</tbody>
 			</table>

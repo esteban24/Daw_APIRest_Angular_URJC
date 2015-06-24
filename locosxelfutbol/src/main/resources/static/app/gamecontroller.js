@@ -14,9 +14,6 @@ function GameController(footballManager, $timeout, $location) {
 	vm.tournaments= footballManager.getTournaments();
 	vm.valido = footballManager.getValido();
 	vm.validouser= footballManager.getValidouser();
-
-	
-	vm.games= footballManager.getGames();
 	
 	//Controller actions
 	
@@ -27,6 +24,7 @@ function GameController(footballManager, $timeout, $location) {
 		vm.valido = footballManager.getValido();
 		vm.validouser= footballManager.getValidouser();
 	}
+	
 	
 	setTimeout( function (){
 		vm.reload();}
