@@ -27,7 +27,43 @@
 			</core-toolbar>
 			<div>
 				<h2>Torneos</h2>
-				<div>
+				<div class="createGameTournaments"
+					ng-repeat="tournament in vm.tournaments">
+
+					<div id="tournament{{tournament.id}}">
+						<h2 ng-click="vm.setTournamentId(tournament.id);">{{tournament.name}}</h2>
+						<div ng-if="tournament.id == vm.selectedTournamentId">
+							<div class="createGameInput">
+							<h4>Seleccione equipo local</h4>
+							<select name="equipoLocal">
+								<option ng-repeat="team in tournament.teams" value="team"
+									selected="selected">{{team.name}}</option>
+							</select>
+
+							<h5>Introduzca el numero de goles a favor</h5>
+							<input id="local{{tournament.id}}" type="number" name="goalsLocal"/>
+
+						</div>
+
+						<div class="createGameInput">
+							<h4>Seleccione equipo visitante</h4>
+							<select name="equipoVisitante">
+								<option ng-repeat="team in tournament.teams" value="team"
+									selected="selected">{{team.name}}</option>
+							</select>
+							<h5>Introduzca el numero de goles a favor</h5>
+							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant"/>
+						</div>
+						<div class="createGameButton">
+							<paper-button raised ng-click="vm.sendGoals((tournament.id), (tournament.id));">Crear Partido</paper-button>
+						</div>
+						<div ng-if="vm.error">
+							<h4 style="color:red; margin:1.3em;">Error, los datos introducidos no son correctos</h4>
+						</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div>
 					<div class="createGameTournaments" ng-repeat="tournament in vm.tournaments">
 						<h3>{{tournament.name}}</h3>
 						<div class="createGameInput">
@@ -38,7 +74,7 @@
 							</select>
 
 							<h5>Introduzca el numero de goles a favor</h5>
-							<input type="number" name="goalsLocal" ng-click="setLocalValue(4);"/>
+							<input type="number" name="goalsLocal" ng-click="vm.setLocalValue(4);"/>
 
 						</div>
 
@@ -52,10 +88,10 @@
 							<input type="number" name="goalsVisitant" ng-click="vm.setVisitantValue(4);"/>
 						</div>
 						<div class="createGameButton">
-						<paper-button raised>Crear Partido</paper-button>
+							<paper-button raised>Crear Partido</paper-button>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 
 
@@ -83,7 +119,7 @@
 			</div>
 
 			<div>
-				<h3>No tiene permisos para acceder a esta secci�n</h3>
+				<h3>No tiene permisos para acceder a esta sección</h3>
 				<a href="#/home">Volver</a>
 			</div>
 			<h1>error, no tiene permisos</h1>

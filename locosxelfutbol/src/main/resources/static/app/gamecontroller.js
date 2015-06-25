@@ -8,8 +8,12 @@ function GameController(footballManager, $timeout, $location) {
 	
 	vm.tournaments=[];
 	vm.tournament={};
+	vm.selectedTournamentId = {};
 	vm.games=[];
 	vm.game={};
+	vm.goalsLocal = {};
+	vm.goalsVisitant = {};
+	vm.error = false;
 	vm.games= footballManager.getGames();
 	vm.tournaments= footballManager.getTournaments();
 	vm.valido = footballManager.getValido();
@@ -35,4 +39,33 @@ function GameController(footballManager, $timeout, $location) {
 		footballManager.logout();
 		$location.path("/");
 	};
+	
+	vm.setTournamentId = function setTournamentId(id){
+		vm.error = false;
+		vm.goalsLocal = {};
+		vm.goalsVisitant = {};
+		vm.selectedTournamentId = id;
+	};
+	
+	vm.sendGoals = function(local, visitant){
+		var uno = document.getElementById("local"+local);
+		var dos = document.getElementById("visitant"+visitant);
+		if((uno.value < "0") || (dos.value < "0")){
+			vm.error = true;
+		}else{
+			vm.error = false;
+			vm.setGoalsLocal(uno.value);
+			vm.setGoalsVisitant(dos.value);
+			alert(vm.goalsLocal);
+			alert(vm.goalsVisitant);
+		};
+	};
+	
+	vm.setGoalsLocal = function(goals){
+		vm.goalsLocal = goals
+	};
+	
+	vm.setGoalsVisitant = function(goals){
+		vm.goalsVisitant = goals
+	}
 };
