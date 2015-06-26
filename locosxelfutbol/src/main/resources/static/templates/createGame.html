@@ -35,27 +35,27 @@
 						<div ng-if="tournament.id == vm.selectedTournamentId">
 							<div class="createGameInput">
 							<h4>Seleccione equipo local</h4>
-							<select name="equipoLocal">
-								<option ng-repeat="team in tournament.teams" value="team"
+							<select id="teamLocal" name="teamLocal">
+								<option ng-repeat="team in tournament.teams" value="{{team.name}}"
 									selected="selected">{{team.name}}</option>
 							</select>
 
-							<h5>Introduzca el numero de goles a favor</h5>
-							<input id="local{{tournament.id}}" type="number" name="goalsLocal"/>
+							<h5>Introduzca el numero de goles</h5>
+							<input id="local{{tournament.id}}" type="number" name="goalsLocal" value="0"/>
 
 						</div>
 
 						<div class="createGameInput">
 							<h4>Seleccione equipo visitante</h4>
-							<select name="equipoVisitante">
-								<option ng-repeat="team in tournament.teams" value="team"
-									selected="selected">{{team.name}}</option>
+							<select id="teamVisitant">
+								<option id="teamVisitant" ng-repeat="team in tournament.teams" value="{{team.name}}"
+									>{{team.name}}</option>
 							</select>
-							<h5>Introduzca el numero de goles a favor</h5>
-							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant"/>
+							<h5>Introduzca el numero de goles</h5>
+							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant" value="0"/>
 						</div>
 						<div class="createGameButton">
-							<paper-button raised ng-click="vm.sendGoals((tournament.id), (tournament.id));">Crear Partido</paper-button>
+							<paper-button raised ng-click="vm.sendGoals(tournament.id);">Crear Partido</paper-button>
 						</div>
 						<div ng-if="vm.error">
 							<h4 style="color:red; margin:1.3em;">Error, los datos introducidos no son correctos</h4>
