@@ -6,7 +6,7 @@ function GameController(footballManager, $timeout, $location) {
 
 	var vm = this;
 	
-	vm.tournaments=[];
+	/*vm.tournaments=[];
 	vm.tournament={};
 	vm.selectedTournamentId = {};
 	vm.games=[];
@@ -118,7 +118,7 @@ function GameController(footballManager, $timeout, $location) {
 				footballManager.addGame(idTournament, idLocalTeam, idVisistantTeam, vm.goalsLocal, vm.goalsVisitant);
 			}else{
 				vm.error = true;
-			};*/
+			};
 		};
 	};
 	
@@ -138,6 +138,38 @@ function GameController(footballManager, $timeout, $location) {
 	
 	vm.setTeamVisitant = function(name){
 		vm.teamVisitant = name;
+	};*/
+	vm.games= footballManager.getGames();
+	vm.game={};
+	vm.teams=[];
+	vm.team={};
+	vm.tournaments=[];
+	vm.tournament={};
+	vm.teams=footballManager.getTeams();
+	vm.tournaments= footballManager.getTournaments();
+	vm.valido = footballManager.getValido();
+	vm.validouser= footballManager.getValidouser();
+	vm.selectedTournamentId = {};
+	
+	vm.setTournamentId = function setTournamentId(id){
+		//Cada vez que pulsamos un torneo debemos inicializar las variables del controlador para que no haya problemas
+		//Asignamos el valor del id que nos pasa el usuario a la variable del controlador
+		vm.selectedTournamentId = id;
 	};
+	
+	vm.reload= function(){
+		footballManager.reload();
+		vm.games=footballManager.games;
+		vm.tournaments= footballManager.getTournaments();
+		vm.valido = footballManager.getValido();
+		vm.validouser= footballManager.getValidouser();
+	}
+	
+	vm.addGame= function(game){
+		footballManager.addGame(game);
+		vm.game={};
+		vm.reload();
+		$location.path('/gameAdmin');
+	}
 	
 };

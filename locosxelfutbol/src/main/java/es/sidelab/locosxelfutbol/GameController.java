@@ -20,6 +20,8 @@ public class GameController {
 	
 	@Autowired
 	GameRepository gameRepository;
+	@Autowired
+	TeamRepository teamRepository;
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Game getGame(@PathVariable long id) {
@@ -35,6 +37,32 @@ public class GameController {
 	public ResponseEntity<Game> addGame(@RequestBody Game game, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			gameRepository.save(game);
+			Team local = teamRepository.findById(game.getLocal().getId());
+			Team visitant = teamRepository.findById(game.getVisitant().getId());
+			int goalslocal = game.getGoalsLocal();
+			int goalsvisitant = game.getGoalsVisitant();
+			if (goalslocal==goalsvisitant){
+				local.setDraw(local.getDraw()+1);
+				visitant.setDraw(visitant.getDraw()+1);
+				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
+				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				teamRepository.setDrawGame(local.getId(), local.getDraw());
+				teamRepository.setDrawGame(visitant.getId(), visitant.getDraw());
+			}else if (goalslocal>goalsvisitant){
+				local.setWin(local.getWin()+1);
+				visitant.setDefeat(visitant.getDefeat()+1);
+				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
+				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				teamRepository.setWinGame(local.getId(), local.getWin());
+				teamRepository.setLostGame(visitant.getId(), visitant.getDefeat());
+			}else if (goalslocal<goalsvisitant){
+				visitant.setWin(local.getWin()+1);
+				local.setDefeat(visitant.getDefeat()+1);
+				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
+				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				teamRepository.setWinGame(visitant.getId(), visitant.getWin());
+				teamRepository.setLostGame(local.getId(), local.getDefeat());
+			}
 			return new ResponseEntity<>(game, HttpStatus.CREATED);
 		}else{
 			return null;
