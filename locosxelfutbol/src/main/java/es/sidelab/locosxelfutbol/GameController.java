@@ -47,12 +47,18 @@ public class GameController {
 			int goalslocal = game.getGoalsLocal();
 			int goalsvisitant = game.getGoalsVisitant();
 			if (goalslocal==goalsvisitant){
-				local.setDraw(local.getDraw()+1);
-				visitant.setDraw(visitant.getDraw()+1);
-				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
-				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				int draw = (int)local.getDraw();
+				int draw2 = (int)visitant.getDraw();
+				local.setDraw(draw+1);
+				visitant.setDraw(draw2+1);
+				System.out.println(visitant.getPoints());
+				local.refreshPoints((int)local.getWin(), (int)local.getDraw(), (int)local.getDefeat());
+				visitant.refreshPoints((int)visitant.getWin(), (int)visitant.getDraw(), (int)visitant.getDefeat());
+				System.out.println(visitant.getPoints());
 				teamRepository.setDrawGame(local.getId(), local.getDraw());
 				teamRepository.setDrawGame(visitant.getId(), visitant.getDraw());
+				teamRepository.setPoints(local.getId(), local.getPoints());
+				teamRepository.setPoints(visitant.getId(), visitant.getPoints());
 			}else if (goalslocal>goalsvisitant){
 				//System.out.println("equipo"+local.getName());
 				//System.out.println("equipo"+local.getWin());
@@ -68,13 +74,22 @@ public class GameController {
 				teamRepository.setPoints(local.getId(), local.getPoints());
 				teamRepository.setPoints(visitant.getId(), visitant.getPoints());
 			}else if (goalslocal<goalsvisitant){
-				visitant.setWin(local.getWin()+1);
-				local.setDefeat(visitant.getDefeat()+1);
-				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
-				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				int win = (int)visitant.getWin();
+				int defeat = (int)local.getDefeat();
+				visitant.setWin(win+1);
+				local.setDefeat(defeat+1);
+				System.out.println(visitant.getPoints());
+				visitant.refreshPoints((int)visitant.getWin(), (int)visitant.getDraw(), (int)visitant.getDefeat());
+				System.out.println(visitant.getPoints());
 				teamRepository.setWinGame(visitant.getId(), visitant.getWin());
 				teamRepository.setLostGame(local.getId(), local.getDefeat());
+				teamRepository.setPoints(local.getId(), local.getPoints());
+				teamRepository.setPoints(visitant.getId(), visitant.getPoints());
 			}
+			teamRepository.setGF(local.getId(), local.getGf()+gl);
+			teamRepository.setGF(visitant.getId(), visitant.getGf()+gv);
+			teamRepository.setGC(local.getId(), local.getGc()+gv);
+			teamRepository.setGC(visitant.getId(), visitant.getGc()+gl);
 			return new ResponseEntity<>(game, HttpStatus.CREATED);
 		}else{
 			return null;
