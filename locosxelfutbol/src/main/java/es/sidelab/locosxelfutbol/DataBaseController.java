@@ -251,18 +251,18 @@ public class DataBaseController implements CommandLineRunner{
 		//Insert Tournaments
 		
 		//Insert Matches
-		Game match1 = new Game (team1, team2, 4, 3);
-		Game match2 = new Game (team3, team4, 1, 2);
-		Game match3 = new Game (team5, team6, 0, 7);
-		Game match4 = new Game (team1, team3, 2, 2);
-		Game match5 = new Game (team2, team6, 2, 6);
-		Game match6 = new Game (team4, team5, 1, 0);
-		Game match7 = new Game (team1, team6, 0, 0);
-		Game match8 = new Game (team2, team5, 3, 2);
-		Game match9 = new Game (team7, team4, 10, 3);
-		Game match10 = new Game (team3, team4, 10, 3);
-		Game match11 = new Game (team3, team7, 10, 3);
-		Game match12 = new Game (team7, team1, 3, 1);
+		Game match1 = new Game (team1.getName(), team2.getName(), 4, 3);
+		Game match2 = new Game (team3.getName(), team4.getName(), 1, 2);
+		Game match3 = new Game (team5.getName(), team6.getName(), 0, 7);
+		Game match4 = new Game (team1.getName(), team3.getName(), 2, 2);
+		Game match5 = new Game (team2.getName(), team6.getName(), 2, 6);
+		Game match6 = new Game (team4.getName(), team5.getName(), 1, 0);
+		Game match7 = new Game (team1.getName(), team6.getName(), 0, 0);
+		Game match8 = new Game (team2.getName(), team5.getName(), 3, 2);
+		Game match9 = new Game (team7.getName(), team4.getName(), 10, 3);
+		Game match10 = new Game (team3.getName(), team4.getName(), 10, 3);
+		Game match11 = new Game (team3.getName(), team7.getName(), 10, 3);
+		Game match12 = new Game (team7.getName(), team1.getName(), 3, 1);
 		
 		List<Team> teams1 = new ArrayList<Team>();
 		

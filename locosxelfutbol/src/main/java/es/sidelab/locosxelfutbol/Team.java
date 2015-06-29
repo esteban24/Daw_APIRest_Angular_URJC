@@ -178,7 +178,7 @@ public class Team{
 	}
 
 	public int getWin() {
-		return win;
+		return this.win;
 	}
 
 	public void setWin(int win) {
@@ -186,7 +186,7 @@ public class Team{
 	}
 
 	public int getDraw() {
-		return draw;
+		return this.draw;
 	}
 
 	public void setDraw(int draw) {
@@ -194,7 +194,7 @@ public class Team{
 	}
 
 	public int getDefeat() {
-		return defeat;
+		return this.defeat;
 	}
 
 	public void setDefeat(int defeat) {

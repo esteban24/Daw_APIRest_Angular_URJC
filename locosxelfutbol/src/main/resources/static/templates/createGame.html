@@ -4,11 +4,11 @@
 			<core-toolbar class="medium-tall">
 			<div flex>
 				<a href="#/carrousel"><paper-button id="homeButton">Locos
-					x el Fútbol</paper-button></a>
+					x el FÃºtbol</paper-button></a>
 			</div>
 			<a ng-click="vm.logout()"> <paper-button raised
 					id="logOutAdminButton"> <core-icon
-					id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesión
+					id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar sesiÃ³n
 				</paper-button>
 			</a>
 			<div class="bottom fit" horizontal layout>
@@ -19,9 +19,9 @@
 				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
 				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
 				<paper-tab> <a href="#/refereeAdmin" horizontal
-					center-center layout>Árbitros</a></paper-tab> <paper-tab> <a
+					center-center layout>Ã�rbitros</a></paper-tab> <paper-tab> <a
 					href="#/gameAdmin" horizontal center-center layout>Partidos</a></paper-tab> <paper-tab>
-				<a href="#/rankingAdmin" horizontal center-center layout>Clasificación</a></paper-tab>
+				<a href="#/rankingAdmin" horizontal center-center layout>ClasificaciÃ³n</a></paper-tab>
 				</paper-tabs>
 			</div>
 			</core-toolbar>
@@ -35,27 +35,21 @@
 						<div ng-if="tournament.id == vm.selectedTournamentId">
 							<div class="createGameInput">
 							<h4>Seleccione equipo local</h4>
-							<select id="teamLocal" name="teamLocal">
-								<option ng-repeat="team in tournament.teams" value="{{team.name}}"
-									selected="selected">{{team.name}}</option>
-							</select>
+							<input type="text" ng-model="vm.game.local">
 
 							<h5>Introduzca el numero de goles</h5>
-							<input id="local{{tournament.id}}" type="number" name="goalsLocal" value="0"/>
+							<input id="local{{tournament.id}}" type="number" name="goalsLocal" ng-model="vm.game.goalsLocal" value="0"/>
 
 						</div>
 
 						<div class="createGameInput">
 							<h4>Seleccione equipo visitante</h4>
-							<select id="teamVisitant">
-								<option id="teamVisitant" ng-repeat="team in tournament.teams" value="{{team.name}}"
-									>{{team.name}}</option>
-							</select>
+							<input type="text" ng-model="vm.game.visitant">
 							<h5>Introduzca el numero de goles</h5>
-							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant" value="0"/>
+							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant" ng-model="vm.game.goalsVisitant" value="0"/>
 						</div>
 						<div class="createGameButton">
-							<paper-button raised ng-click="vm.sendGoals(tournament.id);">Crear Partido</paper-button>
+							<paper-button raised ng-click="vm.addGame(vm.game);">Crear Partido</paper-button>
 						</div>
 						<div ng-if="vm.error">
 							<h4 style="color:red; margin:1.3em;">Error, los datos introducidos no son correctos</h4>
@@ -101,13 +95,13 @@
 			<div>
 				<core-toolbar class="medium-tall">
 				<div flex>
-					<!-- Locos x el Fútbol -->
+					<!-- Locos x el FÃºtbol -->
 					<a href="#/carrousel"><paper-button id="homeButton">Locos
-						x el Fútbol</paper-button></a>
+						x el FÃºtbol</paper-button></a>
 				</div>
 				<a href="#/home"> <paper-button raised id="logOutAdminButton">
 					<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-					sesión </paper-button>
+					sesiÃ³n </paper-button>
 				</a>
 				<div class="bottom fit" horizontal layout>
 					<paper-tabs selected="0" flex style="max-width: 600px;">
@@ -119,7 +113,7 @@
 			</div>
 
 			<div>
-				<h3>No tiene permisos para acceder a esta sección</h3>
+				<h3>No tiene permisos para acceder a esta secciÃ³n</h3>
 				<a href="#/home">Volver</a>
 			</div>
 			<h1>error, no tiene permisos</h1>

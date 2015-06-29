@@ -37,8 +37,13 @@ public class GameController {
 	public ResponseEntity<Game> addGame(@RequestBody Game game, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			gameRepository.save(game);
-			Team local = teamRepository.findById(game.getLocal().getId());
-			Team visitant = teamRepository.findById(game.getVisitant().getId());
+			String loc = game.getLocal();
+			String vis = game.getVisitant();
+			int gl = game.getGoalsLocal();
+			int gv = game.getGoalsVisitant();
+			Team local = teamRepository.findByName(game.getLocal());
+			Team visitant = teamRepository.findByName(game.getVisitant());
+			System.out.println(visitant.getPoints());
 			int goalslocal = game.getGoalsLocal();
 			int goalsvisitant = game.getGoalsVisitant();
 			if (goalslocal==goalsvisitant){
@@ -49,12 +54,19 @@ public class GameController {
 				teamRepository.setDrawGame(local.getId(), local.getDraw());
 				teamRepository.setDrawGame(visitant.getId(), visitant.getDraw());
 			}else if (goalslocal>goalsvisitant){
-				local.setWin(local.getWin()+1);
-				visitant.setDefeat(visitant.getDefeat()+1);
-				local.refreshPoints(local.getWin(), local.getDraw(), local.getDefeat());
-				local.refreshPoints(visitant.getWin(), visitant.getDraw(), visitant.getDefeat());
+				//System.out.println("equipo"+local.getName());
+				//System.out.println("equipo"+local.getWin());
+				int win = (int)local.getWin();
+				int defeat = (int)visitant.getDefeat();
+				local.setWin(win+1);
+				visitant.setDefeat(defeat+1);
+				System.out.println(visitant.getPoints());
+				local.refreshPoints((int)local.getWin(), (int)local.getDraw(), (int)local.getDefeat());
+				System.out.println(visitant.getPoints());
 				teamRepository.setWinGame(local.getId(), local.getWin());
 				teamRepository.setLostGame(visitant.getId(), visitant.getDefeat());
+				teamRepository.setPoints(local.getId(), local.getPoints());
+				teamRepository.setPoints(visitant.getId(), visitant.getPoints());
 			}else if (goalslocal<goalsvisitant){
 				visitant.setWin(local.getWin()+1);
 				local.setDefeat(visitant.getDefeat()+1);

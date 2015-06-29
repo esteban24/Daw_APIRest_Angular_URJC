@@ -14,21 +14,21 @@ public class Game{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
-	@OneToOne
-	private Team local;
-	@OneToOne
-	private Team visitant;
+	//@OneToOne
+	private String local;
+	//@OneToOne
+	private String visitant;
 	private int goalsLocal;
 	private int goalsVisitant;
 	
 	public Game(){
-		this.local= null;
-		this.visitant= null;
-		this.goalsLocal=0;
-		this.goalsVisitant=0;
+		//this.local= null;
+		//this.visitant= null;
+		//this.goalsLocal=0;
+		//this.goalsVisitant=0;
 	}
 
-	public Game(Team local, Team visitant, int goalsLocal, int goalsVisitant){
+	public Game(String local, String visitant, int goalsLocal, int goalsVisitant){
 		this.local= local;
 		this.visitant= visitant;
 		this.goalsLocal= goalsLocal;
@@ -43,19 +43,19 @@ public class Game{
 		this.id = id;
 	}
 	
-	public Team getLocal() {
+	public String getLocal() {
 		return local;
 	}
 	
-	public void setLocal(Team local) {
+	public void setLocal(String local) {
 		this.local = local;
 	}
 
-	public Team getVisitant() {
+	public String getVisitant() {
 		return visitant;
 	}
 
-	public void setVisitant(Team visitant) {
+	public void setVisitant(String visitant) {
 		this.visitant = visitant;
 	}
 
