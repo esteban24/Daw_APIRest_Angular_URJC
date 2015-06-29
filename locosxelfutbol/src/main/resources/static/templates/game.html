@@ -3,7 +3,7 @@
 	<div ng-if="vm.validouser">
 		<core-toolbar class="medium-tall">
 		<div flex>
-			<!-- Locos x el FÃºtbol -->
+			<!-- Locos x el Fútbol -->
 			<a href="#/carrousel"><paper-button id="homeButton">Locos
 				x el Fútbol</paper-button></a>
 		</div>
@@ -43,12 +43,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="game in tournament.games">
-						<td data-title="Equipo local">{{game.local.name}}</td>
+					<tr ng-repeat="game in vm.games">
+						<td data-title="Equipo local">{{game.local}}</td>
 						<td data-title="Goles equipo local">{{game.goalsLocal}}</td>
 						<td>-</td>
 						<td data-title="Goles equipo visitante">{{game.goalsVisitant}}</td>
-						<td data-title="Equipo visitante">{{game.visitant.name}}</td>
+						<td data-title="Equipo visitante">{{game.visitant}}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -58,7 +58,7 @@
 		<div>
 			<core-toolbar class="medium-tall">
 			<div flex>
-				<!-- Locos x el FÃºtbol -->
+				<!-- Locos x el FÃƒÂºtbol -->
 				<a href="#/carrousel"><paper-button id="homeButton">Locos
 					x el Fútbol</paper-button></a>
 			</div>

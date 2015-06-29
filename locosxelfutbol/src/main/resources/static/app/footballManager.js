@@ -59,7 +59,7 @@ function FootballManager($resource, $timeout, $http) {
 			method : 'GET'
 		}
 	});
-	
+
 	var GameResource = $resource('/gameAdmin/:id', {
 		id : '@id'
 	}, {
@@ -119,7 +119,7 @@ function FootballManager($resource, $timeout, $http) {
 			method : 'GET'
 		}
 	});
-	
+
 	var GameModifyResource = $resource('/gameAdmin/:id', {
 		id : '@id'
 	}, {
@@ -194,8 +194,8 @@ function FootballManager($resource, $timeout, $http) {
 		vm.tournaments = TournamentResource.query();
 		return TournamentResource.query();
 	}
-	
-	vm.getGames = function(){
+
+	vm.getGames = function() {
 		vm.games = GameResource.query();
 		return GameResource.query();
 	}
@@ -232,11 +232,11 @@ function FootballManager($resource, $timeout, $http) {
 	vm.addCourt = function(addCourt) {
 		CourtResource.save(addCourt);
 	}
-	
+
 	vm.addTeam = function(addTeam) {
 		TeamResource.save(addTeam);
 	}
-	
+
 	vm.addGame = function(addGame) {
 		GameResource.save(addGame);
 	}
@@ -337,6 +337,5 @@ function FootballManager($resource, $timeout, $http) {
 		vm.tournaments = vm.getTournaments();
 		vm.games = vm.getGames();
 	}
-
 
 }

@@ -1,7 +1,6 @@
 package es.sidelab.locosxelfutbol;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -257,12 +256,6 @@ public class DataBaseController implements CommandLineRunner{
 		Game match4 = new Game (team1.getName(), team3.getName(), 2, 2);
 		Game match5 = new Game (team2.getName(), team6.getName(), 2, 6);
 		Game match6 = new Game (team4.getName(), team5.getName(), 1, 0);
-		Game match7 = new Game (team1.getName(), team6.getName(), 0, 0);
-		Game match8 = new Game (team2.getName(), team5.getName(), 3, 2);
-		Game match9 = new Game (team7.getName(), team4.getName(), 10, 3);
-		Game match10 = new Game (team3.getName(), team4.getName(), 10, 3);
-		Game match11 = new Game (team3.getName(), team7.getName(), 10, 3);
-		Game match12 = new Game (team7.getName(), team1.getName(), 3, 1);
 		
 		List<Team> teams1 = new ArrayList<Team>();
 		
@@ -293,20 +286,9 @@ public class DataBaseController implements CommandLineRunner{
 		matches1.add(match4);
 		matches1.add(match5);
 		matches1.add(match6);
-
-		List<Game> matches2 = new ArrayList<Game>();
-
-		matches2.add(match7);
-		matches2.add(match8);
-		matches2.add(match9);
-		matches2.add(match10);
-		matches2.add(match11);
-		matches2.add(match12);
 		
 		Tournament tournament1 = new Tournament("Copa Santiago Bernabéu","img/siiuu.jpg",teams1, matches1);
-		
-		Tournament tournament2 = new Tournament("Champions League", "img/champions.jpg", teams2, matches2);
-		
+				
 		//All saves
 		teamRepository.save(team1);
 		teamRepository.save(team2);
@@ -352,8 +334,7 @@ public class DataBaseController implements CommandLineRunner{
 		playerRepository.save(player34);
 		playerRepository.save(player35);
 		
-
-		
+	
 		courtRepository.save(court1);
 		courtRepository.save(court2);
 		courtRepository.save(court3);
@@ -371,15 +352,9 @@ public class DataBaseController implements CommandLineRunner{
 		matchRepository.save(match4);
 		matchRepository.save(match5);
 		matchRepository.save(match6);
-		matchRepository.save(match7);
-		matchRepository.save(match8);
-		matchRepository.save(match9);
-		matchRepository.save(match10);
-		matchRepository.save(match11);
-		matchRepository.save(match12);
+		
 		
 		tournamentRepository.save(tournament1);
-		tournamentRepository.save(tournament2);
 
 	}
 }

@@ -36,7 +36,6 @@ public class GameController {
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Game> addGame(@RequestBody Game game, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
-			gameRepository.save(game);
 			String loc = game.getLocal();
 			String vis = game.getVisitant();
 			int gl = game.getGoalsLocal();
@@ -60,8 +59,6 @@ public class GameController {
 				teamRepository.setPoints(local.getId(), local.getPoints());
 				teamRepository.setPoints(visitant.getId(), visitant.getPoints());
 			}else if (goalslocal>goalsvisitant){
-				//System.out.println("equipo"+local.getName());
-				//System.out.println("equipo"+local.getWin());
 				int win = (int)local.getWin();
 				int defeat = (int)visitant.getDefeat();
 				local.setWin(win+1);
@@ -90,6 +87,7 @@ public class GameController {
 			teamRepository.setGF(visitant.getId(), visitant.getGf()+gv);
 			teamRepository.setGC(local.getId(), local.getGc()+gv);
 			teamRepository.setGC(visitant.getId(), visitant.getGc()+gl);
+			gameRepository.save(game);
 			return new ResponseEntity<>(game, HttpStatus.CREATED);
 		}else{
 			return null;

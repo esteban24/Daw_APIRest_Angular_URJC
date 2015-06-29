@@ -2,7 +2,7 @@
 	<div ng-if="vm.valido">
 		<core-toolbar class="medium-tall">
 		<div flex>
-			<!-- Locos x el FÃƒÂºtbol -->
+			<!-- Locos x el FÃƒÆ’Ã‚Âºtbol -->
 			<a href="#/carrousel"><paper-button id="homeButton">Locos
 				x el Fútbol</paper-button></a>
 		</div>
@@ -43,39 +43,23 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="game in tournament.games">
-						<td data-title="Equipo local">{{game.local.name}}</td>
+					<tr ng-repeat="game in vm.games">
+						<td data-title="Equipo local">{{game.local}}</td>
 						<td data-title="Goles equipo local">{{game.goalsLocal}}</td>
 						<td>-</td>
 						<td data-title="Goles equipo visitante">{{game.goalsVisitant}}</td>
-						<td data-title="Equipo visitante">{{game.visitant.name}}</td>
+						<td data-title="Equipo visitante">{{game.visitant}}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-
-
-		<!-- div id="simple-dialog" class="modal fade" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="alert alert-dismissable alert-danger">
-							<strong>Oh error!</strong> <a href="#/playerAdmin"
-								class="alert-link">Elimina en primer lugar los jugadores</a> y
-							prueba de nuevo.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div -->
-
 
 	</div>
 	<div ng-if="!vm.valido">
 		<div>
 			<core-toolbar class="medium-tall">
 			<div flex>
-				<!-- Locos x el FÃƒÂºtbol -->
+				<!-- Locos x el FÃƒÆ’Ã‚Âºtbol -->
 				<a href="#/carrousel"><paper-button id="homeButton">Locos
 					x el Fútbol</paper-button></a>
 			</div>
