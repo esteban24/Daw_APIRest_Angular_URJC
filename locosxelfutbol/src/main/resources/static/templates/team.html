@@ -25,9 +25,6 @@
 		</div>
 		</core-toolbar>
 
-		<h2>Equipos</h2>
-
-
 		<div class="table-responsive-vertical shadow-z-1">
 			<!-- Table starts here -->
 			<table id="table" class="table table-hover table-mc-light-blue">
@@ -36,20 +33,14 @@
 						<th><a href="" ng-click="predicate = 'team'; reverse=false">Equipos</a>
 						</th>
 						<th><a href=""
-							ng-click="predicate = 'points'; reverse=!reverse">Puntos</a></th>
-						<th><a href="" ng-click="predicate = 'gf'; reverse=!reverse">Goles
-								a favor</a></th>
-						<th><a href="" ng-click="predicate = 'gc'; reverse=!reverse">Goles
-								en contra</a></th>
+							ng-click="predicate = 'points'; reverse=!reverse">Correo</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="team in vm.teams |  orderBy:predicate:reverse">
 						<td data-title="Equipo"><a data-toggle="modal"
 							data-target="#simple-dialog">{{team.name}}</a></td>
-						<td data-title="Puntos">{{team.points}}</a></td>
-						<td data-title="Goles a favor">{{team.gf}}</td>
-						<td data-title="Goles encajados">{{team.gc}}</td>
+						<td data-title="Correo">{{team.correo}}</a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -85,9 +76,10 @@
 				<a href="#/carrousel"><paper-button id="homeButton">Locos
 					x el Fútbol</paper-button></a>
 			</div>
-			<a href="#/home"> <paper-button raised id="logOutAdminButton">
-				<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-				sesión </paper-button>
+			<a href="#/accessAdmin"> <paper-button raised
+					id="accessAdminButton"> <core-icon
+					id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+				admin </paper-button>
 			</a>
 			<div class="bottom fit" horizontal layout>
 				<paper-tabs selected="0" flex style="max-width: 600px;">

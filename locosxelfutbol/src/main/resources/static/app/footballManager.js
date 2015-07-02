@@ -48,7 +48,7 @@ function FootballManager($resource, $timeout, $http) {
 		return vm.validouser;
 	}
 
-	var TeamResource = $resource('/team/:id', {
+	var TeamResource = $resource('/teamAdmin/:id', {
 		id : '@id'
 	}, {
 		deleteTeam : {
@@ -72,7 +72,7 @@ function FootballManager($resource, $timeout, $http) {
 		}
 	});
 
-	var PlayerResource = $resource('/player/:id', {
+	var PlayerResource = $resource('/playerAdmin/:id', {
 		id : '@id'
 	}, {
 		deletePlayer : {
@@ -160,7 +160,7 @@ function FootballManager($resource, $timeout, $http) {
 		}
 	});
 
-	var TeamModifyResource = $resource('/playerAdmin/:id', {
+	var TeamModifyResource = $resource('/teamAdmin/:id', {
 		id : '@id'
 	}, {
 		'update' : {

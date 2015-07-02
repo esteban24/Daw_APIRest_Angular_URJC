@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/playerAdmin")
 public class PlayerController {
 
 	@Autowired
@@ -32,7 +32,7 @@ public class PlayerController {
 	public void modificar(@PathVariable long id, @RequestBody Player player, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			playerRepository.setName(id,player.getName());
-			//playerRepository.setLastName(id,player.getLastName());
+			playerRepository.setLastName(id,player.getLastName());
 		}
 	}
 	

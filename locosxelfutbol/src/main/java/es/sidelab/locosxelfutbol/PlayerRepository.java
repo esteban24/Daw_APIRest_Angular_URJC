@@ -13,6 +13,10 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 	@Transactional
 	@Query("update Player p set p.name = ?2 where p.id=?1")
 	void setName(long id, String name);
-	
+
+	@Modifying
+	@Transactional
+	@Query("update Player p set p.lastName = ?2 where p.id=?1")
+	void setLastName(long id, String lastName);
 }
 

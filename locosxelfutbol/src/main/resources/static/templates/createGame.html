@@ -34,30 +34,35 @@
 						<h2 ng-click="vm.setTournamentId(tournament.id);">{{tournament.name}}</h2>
 						<div ng-if="tournament.id == vm.selectedTournamentId">
 							<div class="createGameInput">
-							<h4>Seleccione equipo local</h4>
-							<input type="text" ng-model="vm.game.local">
+								<h4>Seleccione equipo local</h4>
+								<div ng-repeat="team in vm.teams"></div>
+								<input type="text" ng-model="vm.game.local">
 
-							<h5>Introduzca el numero de goles</h5>
-							<input id="local{{tournament.id}}" type="number" name="goalsLocal" ng-model="vm.game.goalsLocal" value="0"/>
+								<h5>Introduzca el numero de goles</h5>
+								<input id="local{{tournament.id}}" type="number"
+									name="goalsLocal" ng-model="vm.game.goalsLocal" value="0" />
 
-						</div>
+							</div>
 
-						<div class="createGameInput">
-							<h4>Seleccione equipo visitante</h4>
-							<input type="text" ng-model="vm.game.visitant">
-							<h5>Introduzca el numero de goles</h5>
-							<input id="visitant{{tournament.id}}" type="number" name="goalsVisitant" ng-model="vm.game.goalsVisitant" value="0"/>
-						</div>
-						<div class="createGameButton">
-							<paper-button raised ng-click="vm.addGame(vm.game)">Crear Partido</paper-button>
-						</div>
-						<div ng-if="vm.error">
-							<h4 style="color:red; margin:1.3em;">Error, los datos introducidos no son correctos</h4>
-						</div>
+							<div class="createGameInput">
+								<h4>Seleccione equipo visitante</h4>
+								<input type="text" ng-model="vm.game.visitant">
+								<h5>Introduzca el numero de goles</h5>
+								<input id="visitant{{tournament.id}}" type="number"
+									name="goalsVisitant" ng-model="vm.game.goalsVisitant" value="0" />
+							</div>
+							<div class="createGameButton">
+								<paper-button raised ng-click="vm.addGame(vm.game)">Crear
+								Partido</paper-button>
+							</div>
+							<div ng-if="vm.error">
+								<h4 style="color: red; margin: 1.3em;">Error, los datos
+									introducidos no son correctos</h4>
+							</div>
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 
 
@@ -71,9 +76,10 @@
 					<a href="#/carrousel"><paper-button id="homeButton">Locos
 						x el Fútbol</paper-button></a>
 				</div>
-				<a href="#/home"> <paper-button raised id="logOutAdminButton">
-					<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-					sesión </paper-button>
+				<a href="#/accessAdmin"> <paper-button raised
+						id="accessAdminButton"> <core-icon
+						id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+					admin </paper-button>
 				</a>
 				<div class="bottom fit" horizontal layout>
 					<paper-tabs selected="0" flex style="max-width: 600px;">

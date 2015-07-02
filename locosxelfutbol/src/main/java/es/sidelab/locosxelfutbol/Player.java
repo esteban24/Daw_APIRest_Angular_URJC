@@ -27,7 +27,6 @@ public class Player implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="TEAM")
 	private Team team;
-	//private String team;
 
 	public Player(){
 		this.name="";
@@ -45,14 +44,6 @@ public class Player implements Serializable{
 		this.team = team;
 	}
 	
-	/*public Player(String name, String lastName, Positions position, int age, String team) {
-		this.name = name;
-		this.lastName = lastName;
-		this.position = position;
-		this.age = age;
-		this.team = team;
-	}*/
-
 	public void setTeam(Team team) {
         setTeam(team, true);
     }
@@ -123,17 +114,5 @@ public class Player implements Serializable{
 	public Team getTeam() {
 		return team;
 	}
-	
-	/*public String getTeam() {
-		return team;
-	}*/
-
-	/*public void setTeam(Team team) {
-		this.team = team;
-	}*/
-	
-	/*public void setTeam(String team) {
-		this.team = team;
-	}*/
 
 }

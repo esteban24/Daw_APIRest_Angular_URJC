@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/team")
+@RequestMapping("/teamAdmin")
 public class TeamController {
 
 	
@@ -45,7 +45,7 @@ public class TeamController {
 	public void modificar(@PathVariable long id, @RequestBody Team team, HttpSession sesion){
 		if((sesion!=null)&&((sesion.getAttribute("admin") != null)&&((Boolean)sesion.getAttribute("admin")))){
 			teamRepository.setName(id,team.getName());
-			teamRepository.setPoints(id,team.getPoints());
+			teamRepository.setCorreo(id,team.getCorreo());
 		}
 	}
 	

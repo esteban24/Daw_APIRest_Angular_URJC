@@ -21,11 +21,10 @@
 				<a href="#/teamAdmin" horizontal center-center layout>Equipos</a></paper-tab> <paper-tab>
 				<a href="#/playerAdmin" horizontal center-center layout>Jugadores</a></paper-tab>
 				<paper-tab> <a href="#/refereeAdmin" horizontal
-					center-center layout>Árbitros</a></paper-tab>
-				<paper-tab> <a href="#/gameAdmin" horizontal
-					center-center layout>Partidos</a></paper-tab>
-				<paper-tab> <a href="#/rankingAdmin" horizontal
-					center-center layout>Clasificación</a></paper-tab> </paper-tabs>
+					center-center layout>Árbitros</a></paper-tab> <paper-tab> <a
+					href="#/gameAdmin" horizontal center-center layout>Partidos</a></paper-tab> <paper-tab>
+				<a href="#/rankingAdmin" horizontal center-center layout>Clasificación</a></paper-tab>
+				</paper-tabs>
 			</div>
 			</core-toolbar>
 			<!-- Modificar para mostrar los partidos de un torneo -->
@@ -37,17 +36,21 @@
 					<thead>
 						<tr>
 							<th>Equipo</th>
-							<th>Puntos</th>
-							<th>Victorias</th>
-							<th>Empates</th>
-							<th>Derrotas</th>
-							<th>GF</th>
-							<th>GC</th>
+							<th><a href=""
+								ng-click="predicate = 'points'; reverse=!reverse">Puntos</a></th>
+							<th><a href=""
+								ng-click="predicate = 'win'; reverse=!reverse">Victorias</a></th>
+							<th><a href=""
+								ng-click="predicate = 'draw'; reverse=!reverse">Empates</a></th>
+							<th><a href=""
+								ng-click="predicate = 'defeat'; reverse=!reverse">Derrotas</a></th>
+							<th><a href="" ng-click="predicate = 'gf'; reverse=!reverse">GF</a></th>
+							<th><a href="" ng-click="predicate = 'gc'; reverse=!reverse">GC</a></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr
-							ng-repeat="team in tournament.teams | orderBy:['-points','-gf']">
+							ng-repeat="team in tournament.teams | orderBy:predicate:reverse">
 							<td data-title="Equipo">{{team.name}}</td>
 							<td data-title="Puntos">{{team.points}}</td>
 							<td data-title="Victorias">{{team.win}}</td>
@@ -60,31 +63,32 @@
 				</table>
 			</div>
 		</div>
-		<div ng-if="!vm.valido">
-			<div>
-				<core-toolbar class="medium-tall">
-				<div flex>
-					<!-- Locos x el FÃºtbol -->
-					<a href="#/carrousel"><paper-button id="homeButton">Locos
-						x el Fútbol</paper-button></a>
-				</div>
-				<a href="#/home"> <paper-button raised id="logOutAdminButton">
-					<core-icon id="logOutAdminButtonIcon" icon="launch"></core-icon>Cerrar
-					sesión </paper-button>
-				</a>
-				<div class="bottom fit" horizontal layout>
-					<paper-tabs selected="0" flex style="max-width: 600px;">
-					<paper-tab> <a href="#/access" horizontal center-center
-						layout>Accede</a></paper-tab> <paper-tab>
-				</div>
-				</core-toolbar>
-
+	</div>
+	<div ng-if="!vm.valido">
+		<div>
+			<core-toolbar class="medium-tall">
+			<div flex>
+				<!-- Locos x el FÃºtbol -->
+				<a href="#/carrousel"><paper-button id="homeButton">Locos
+					x el Fútbol</paper-button></a>
 			</div>
-
-			<div>
-				<h3>No tiene permisos para acceder a esta sección</h3>
-				<a href="#/home">Volver</a>
+			<a href="#/accessAdmin"> <paper-button raised
+					id="accessAdminButton"> <core-icon
+					id="accessAdminButtonIcon" icon="account-circle"></core-icon>Acceso
+				admin </paper-button>
+			</a>
+			<div class="bottom fit" horizontal layout>
+				<paper-tabs selected="0" flex style="max-width: 600px;">
+				<paper-tab> <a href="#/access" horizontal center-center
+					layout>Accede</a></paper-tab> <paper-tab>
 			</div>
+			</core-toolbar>
+
+		</div>
+
+		<div>
+			<h3>No tiene permisos para acceder a esta sección</h3>
+			<a href="#/home">Volver</a>
 		</div>
 	</div>
 </div>

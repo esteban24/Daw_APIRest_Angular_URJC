@@ -1,8 +1,8 @@
-angular.module("app").controller("FbController", CourtController);
+angular.module("app").controller("FbController", FbController);
 
 FbController.$inject = ["footballManager", "$timeout", "$location"];
 
-function CourtController(footballManager, $timeout, $location) {
+function FbController(footballManager, $timeout, $location) {
 
 	var vm = this;
 
@@ -19,12 +19,15 @@ function CourtController(footballManager, $timeout, $location) {
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
 		console.log(response);
+		window.location.assign("#/access");
+		$location.path("/access");
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
 		// Full docs on the response object can be found in the documentation
 		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
-			// Logged into your app and Facebook.
+			window.location.assign("#/carrousel");
+			//alert("hello");
 			testAPI();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
@@ -36,6 +39,10 @@ function CourtController(footballManager, $timeout, $location) {
 			document.getElementById('status').innerHTML = 'Please log '
 					+ 'into Facebook.';
 		}
+		//alert("hello2");
+		window.location.assign("#/access");
+		$location.path("/access");
+
 	}
 
 	// This function is called when someone finishes with the Login
@@ -56,23 +63,11 @@ function CourtController(footballManager, $timeout, $location) {
 			version : 'v2.3' // use version 2.2
 		});
 
-		// Now that we've initialized the JavaScript SDK, we call
-		// FB.getLoginStatus(). This function gets the state of the
-		// person visiting this page and can return one of three states to
-		// the callback you provide. They can be:
-		//
-		// 1. Logged into your app ('connected')
-		// 2. Logged into Facebook, but not your app ('not_authorized')
-		// 3. Not logged into Facebook and can't tell if they are logged into
-		// your app or not.
-		//
-		// These three cases are handled in the callback function.
-
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
 			if (response.status === 'connected') {
 				vm.validouser= footballManager.setValidouser(true);
-				$location.path("#/carrousel");
+				window.location.assign("#/carrousel");
 			}
 		});
 
@@ -102,5 +97,6 @@ function CourtController(footballManager, $timeout, $location) {
 							document.getElementById('status').innerHTML = 'Thanks for logging in, '
 									+ response.name + '!';
 						});
-	}
+		window.location.assign("#/access");
+		$location.path("/access");	}
 }

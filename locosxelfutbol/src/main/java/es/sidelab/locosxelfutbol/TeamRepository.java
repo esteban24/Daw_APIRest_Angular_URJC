@@ -1,18 +1,11 @@
 package es.sidelab.locosxelfutbol;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
-
-
-
 
 
 public interface TeamRepository extends JpaRepository<Team, Long> {
@@ -25,6 +18,11 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 	@Transactional
 	@Query("update Team t set t.name = ?2 where t.id=?1")
 	void setName(long id, String name);
+	
+	@Modifying
+	@Transactional
+	@Query("update Team t set t.correo = ?2 where t.id=?1")
+	void setCorreo(long id, String correo);
 	
 	@Modifying
 	@Transactional
